@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استشارات الذكاء الاصطناعي - Bright AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="consultation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:;">
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <h1>استشارات الذكاء الاصطناعي للأعمال</h1>
+            <p>نساعد شركتك على التحول الرقمي وتحسين الإنتاجية من خلال حلول الذكاء الاصطناعي المخصصة</p>
+             <button class="cta-button hero-cta" onclick="showForm()">احجز استشارة مجانية</button>
+        </section>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="consultation.html" class="active">استشارات</a></li>
+                <li><a href="smart-automation.html">الأتمتة الذكية</a></li>
+                <li><a href="data-analysis.html">تحليل البيانات</a></li>
+                <li><a href="blog.html">مدونة</a></li>
+                <li><a href="our-products.html">منتجاتنا</a></li>
+                <li><a href="tools.html">الادوات</a></li>
+            </ul>
+        </nav>
+         <div id="chart-container"></div>
+        <section class="services-section">
+            <h2>خدماتنا الاستشارية</h2>
+             <div class="services-grid">
+                 <div class="service-card">
+                     <i class="fas fa-database service-icon"></i>
+                     <h3>تحليل البيانات المتقدم</h3>
+                     <p>استخدام خوارزميات الذكاء الاصطناعي لتحليل البيانات الضخمة واستخراج رؤى قيمة لتحسين الأداء التجاري.</p>
+                 </div>
+                 <div class="service-card">
+                     <i class="fas fa-user-check service-icon"></i>
+                     <h3>التنبؤ بسلوك العملاء</h3>
+                     <p>توظيف نماذج التعلم الآلي للتنبؤ بسلوك العملاء وتحسين تجربة المستخدم.</p>
+                 </div>
+                 <div class="service-card">
+                     <i class="fas fa-cogs service-icon"></i>
+                     <h3>أتمتة العمليات</h3>
+                     <p>تطبيق حلول الذكاء الاصطناعي لأتمتة المهام المتكررة وتحسين الكفاءة التشغيلية.</p>
+                 </div>
+                 <div class="service-card">
+                    <i class="fas fa-clipboard-check service-icon"></i>
+                     <h3>تقييم الجاهزية</h3>
+                     <p>نقوم بتحليل شامل لعمليات شركتك لتحديد أفضل مجالات تطبيق الذكاء الاصطناعي.</p>
+                 </div>
+                 <div class="service-card">
+                     <i class="fas fa-tasks service-icon"></i>
+                     <h3>استراتيجية التنفيذ</h3>
+                     <p>نصمم خطة تنفيذ مخصصة تتناسب مع احتياجات عملك وميزانيتك.</p>
+                 </div>
+                 <div class="service-card">
+                     <i class="fas fa-chalkboard-teacher service-icon"></i>
+                     <h3>التدريب والدعم</h3>
+                     <p>نقدم تدريباً شاملاً لفريقك ودعماً مستمراً لضمان نجاح التنفيذ.</p>
+                 </div>
+                 <div class="service-card">
+                    <i class="fas fa-wrench service-icon"></i>
+                     <h3>حلول مخصصة</h3>
+                     <p>نطور حلول ذكاء اصطناعي مخصصة تناسب احتياجات عملك الفريدة.</p>
+                 </div>
+             </div>
+        </section>
+          <button class="cta-button" onclick="showForm()">احجز استشارة مجانية</button>
+
+
+        <div class="contact-form" id="contactForm">
+            <h2>اتصل بنا للاستشارة</h2>
+             <form action="mailto:info@brightaii.com" method="POST" enctype="text/plain">
+                 <div class="form-group">
+                    <label for="name">الاسم</label>
+                     <input type="text" id="name" name="name" required>
+                 </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                     <input type="email" id="email" name="email" required>
+                 </div>
+                 <div class="form-group">
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="tel" id="phone" name="phone">
+                 </div>
+                <div class="form-group">
+                     <label for="message">تفاصيل الاستشارة</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                 <button type="submit" class="submit-btn">إرسال الطلب</button>
+             </form>
+        </div>
+
+
+        <div class="benefits-section">
+            <h2>لماذا تختارنا؟</h2>
+             <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-brain benefit-icon"></i>
+                    <h3 class="benefit-title">خبرة متخصصة</h3>
+                    <p class="benefit-description">استفد من خبرة متخصصينا في مجال الذكاء الاصطناعي لتطوير حلول مبتكرة لعملك.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-line benefit-icon"></i>
+                   <h3 class="benefit-title">تحسين الأداء</h3>
+                    <p class="benefit-description">زيادة كفاءة عملياتك التجارية من خلال حلول الذكاء الاصطناعي المتقدمة.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt benefit-icon"></i>
+                     <h3 class="benefit-title">حلول آمنة</h3>
+                   <p class="benefit-description">ضمان أمان وخصوصية بياناتك مع أحدث تقنيات الحماية والأمان.</p>
+                </div>
+            </div>
+        </div>
+         <section class="testimonials">
+            <h2>آراء عملائنا</h2>
+              <div class="testimonial-grid">
+                <div class="testimonial-card">
+                     <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"كانت تجربة العمل مع Bright AI مذهلة. لقد ساعدونا في فهم بياناتنا بشكل أفضل وتحسين عملياتنا بشكل كبير."</p>
+                     <p class="testimonial-author">- العميل أ</p>
+                 </div>
+                <div class="testimonial-card">
+                     <i class="fas fa-quote-left quote-icon"></i>
+                   <p class="testimonial-text">"لقد تجاوزت الحلول التي قدمتها Bright AI توقعاتنا. إنهم فريق محترف ومبتكر."</p>
+                    <p class="testimonial-author">- العميل ب</p>
+                </div>
+            </div>
+         </section>
+      <section class="faq">
+        <h2>الأسئلة الشائعة</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3 class="faq-question">ما هي مدة الاستشارة؟</h3>
+                <p class="faq-answer">تستغرق الاستشارة الأولية عادةً حوالي ساعة واحدة.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">هل يمكن تخصيص الحلول لتناسب احتياجاتنا؟</h3>
+                <p class="faq-answer">بالتأكيد، نقوم بتخصيص الحلول لتلبية احتياجات كل عميل على حدة.</p>
+            </div>
+             <div class="faq-item">
+                <h3 class="faq-question">كيف يمكن البدء؟</h3>
+               <p class="faq-answer">ابدأ بحجز استشارة مجانية وسيقوم فريقنا بالتواصل معك لتحديد الخطوات التالية.</p>
+            </div>
+        </div>
+     </section>
+        <section class="team">
+           <h2>فريقنا</h2>
+             <div class="team-grid">
+                <div class="team-member">
+                    <img src="team-member-1.webp" alt="Team Member 1" class="team-member-img">
+                    <h3>اسم العضو 1</h3>
+                    <p>محلل بيانات</p>
+                </div>
+                 <div class="team-member">
+                   <img src="team-member-2.webp" alt="Team Member 2" class="team-member-img">
+                     <h3>اسم العضو 2</h3>
+                    <p>مهندس ذكاء اصطناعي</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <footer>
+        <div class="social-media">
+             <h3>تابعنا على</h3>
+               <a href="https://x.com/BrightAIII" target="_blank" title="X"> <img src="x-logo.webp" alt="X" > </a>
+               <a href="https://www.youtube.com/@TeechLab" target="_blank" title="Youtube">  <img src="youtube-logo.webp" alt="Youtube"> </a>
+               <a href="https://instagram.com/" target="_blank" title="Instagram"> <img src="instagram-logo.webp" alt="Instagram"></a>
+        </div>
+        <div class="contact-info">
+             <h3>تواصل معنا</h3>
+             <p><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com </p>
+             <p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i class="fab fa-whatsapp"></i>  </a></p>
+         </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script src="consultation.js"></script>
+</body>
+</html>
