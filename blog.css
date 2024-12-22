@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
 /* General Styles */
 body {
     font-family: 'Cairo', sans-serif;
@@ -23,6 +25,7 @@ body {
     z-index: 1000;
     transition: opacity 0.3s ease;
 }
+
 .loader.hidden {
     opacity: 0;
     pointer-events: none;
@@ -55,6 +58,11 @@ body {
     font-size: 2em;
 }
 
+.header i {
+    margin-left: 10px;
+    color: #3498db;
+}
+
 /* Navigation Bar */
 nav {
     background: #34495e;
@@ -79,20 +87,21 @@ nav {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     padding: 10px 15px;
     border-radius: 5px;
     display: inline-block;
 }
-.navbar a.active{
-      background-color: #2c3e50;
 
+.navbar a.active {
+    background-color: #2c3e50;
 }
+
 .navbar a:hover {
     background-color: #2c3e50;
-    color: #ddd;
+    color: #3498db;
+    transform: translateY(-2px);
 }
-
 
 /* Main Content */
 .blog-container {
@@ -104,57 +113,73 @@ nav {
 .article {
     background: white;
     border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
 }
 
-.article img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 5px;
+.article:hover {
+    transform: translateY(-5px);
+}
+
+.article .article-icon {
+    font-size: 50px;
+    color: #3498db;
     margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.article:hover .article-icon {
+    transform: scale(1.1);
 }
 
 .article h2 {
     font-size: 1.8em;
     margin-bottom: 10px;
-    color: #333;
+    color: #2c3e50;
 }
 
 .article .date {
     font-size: 0.9em;
     color: #777;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .article .description {
     color: #555;
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 20px;
 }
 
 .read-more {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     padding: 10px 20px;
     background-color: #3498db;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    align-self: flex-end;
 }
 
 .read-more:hover {
     background-color: #2980b9;
+    transform: translateX(-5px);
 }
-/* Footer */
+/* Footer Enhancements */
 footer {
     background-color: #2c3e50;
     color: white;
-    padding: 30px 20px;
+    padding: 40px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -162,44 +187,38 @@ footer .social-media,
 footer .contact-info {
     text-align: center;
     margin-bottom: 20px;
-    width: calc(50% - 20px);
+    flex: 1;
+    min-width: 250px;
 }
-footer .social-media img {
-  width: 30px;
-    margin: 0 10px;
-    border-radius: 5px;
-}
-footer .social-media a {
- display: inline-block;
-  margin: 5px;
-}
-
 
 footer h3 {
     font-size: 1.4em;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    color: #3498db;
 }
 
-footer p {
-    font-size: 1em;
-    margin-bottom: 10px;
-}
-footer .contact-info a {
-color: white;
-  margin: 5px;
-}
-footer .contact-info a i{
-    margin-left: 5px;
+footer .social-media i {
+    font-size: 24px;
+    margin: 0 10px;
+    transition: all 0.3s ease;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navbar li {
-        display: block;
-        margin: 10px 0;
-    }
-    footer .social-media,
-    footer .contact-info {
-        width: 100%;
-    }
+footer .social-media a {
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+footer .social-media a:hover i {
+    color: #3498db;
+    transform: translateY(-5px);
+}
+
+footer .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #aaa;
 }
