@@ -1,3 +1,157 @@
+/* إعدادات عامة */
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.8;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* الهيدر */
+header {
+    background: linear-gradient(to right, #3498db, #2c3e50);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    font-size: 2.8em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* أقسام الصفحة */
+section {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+section p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* قائمة الخدمات */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(45% - 20px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service i {
+    font-size: 2.5em;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.service h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* لماذا نحن */
+.why-us ul {
+    list-style: none;
+    padding: 0;
+}
+
+.why-us li {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.why-us li i {
+    color: #3498db;
+    margin-left: 10px;
+}
+
+/* أمثلة من الخدمات */
+.examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.example {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(30% - 20px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.example h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.example p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* القسم الختامي */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2c3e50;
+    color: white;
+}
+
+footer a {
+    color: #3498db;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 /* General Styles */
 body {
