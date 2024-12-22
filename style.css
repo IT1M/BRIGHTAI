@@ -1,8 +1,7 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+/* style.css */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
-/* Global styles */
+/* المتغيرات */
 :root {
     --primary-color: #007bff;
     --secondary-color: #6c757d;
@@ -12,6 +11,7 @@
     --background-color: #f0f2f5;
 }
 
+/* الخط العام */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -20,7 +20,7 @@ body {
     text-align: right;
     color: var(--dark-gray);
     background-color: var(--background-color);
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
 .container {
@@ -30,73 +30,69 @@ body {
     padding: 0 15px;
 }
 
-/* Header styles */
+/* الهيدر */
 header {
     background-color: var(--light-gray);
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative; /* Add relative position for 3D effect */
-    z-index: 2; /* Ensure header is on top of the parallax */
+    position: relative;
+    z-index: 2;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-.logo i {
-    margin-left: 0.5rem;
-}
-
-.nav-links {
+.navbar {
     display: flex;
     gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.nav-links a {
+.navbar li a {
     text-decoration: none;
     color: var(--dark-gray);
-    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    position: relative; /* Required for the underline effect */
+    overflow: hidden;
+    display: inline-block;
+
 }
 
-.nav-links a:hover {
+.navbar li a:hover {
     color: var(--primary-color);
+    background-color: rgba(0, 123, 255, 0.1);
+}
+.navbar li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0); /* Start with no underline */
+    transform-origin: bottom right; /* Start from right */
+    transition: transform 0.3s ease; /* Transition for the underline animation */
 }
 
-.nav-links a i {
-    margin-left: 0.3rem;
-}
 
-/* Hero section styles */
+.navbar li a:hover::before {
+    transform: scaleX(1); /* Expand the underline */
+    transform-origin: bottom left; /* End on left */
+}
+.navbar li a:active {
+    background-color: rgba(0, 123, 255, 0.2); /* Slightly darker background on click */
+    transform: translateY(0px); /* Cancel lift effect on click */
+}
+/* القسم البطل */
 .hero {
      padding: 5rem 0;
     text-align: center;
-    position: relative; /* Make hero section relative for parallax effect */
-    overflow: hidden; /* Hide overflow to contain parallax elements */
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(135deg, var(--light-gray), white);
-}
-
-
-.hero:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(135deg, var(--light-gray), white);
-    transform: translateZ(-100px) scale(1.1);
-    z-index: -1;
-    filter: blur(3px);
+        perspective: 1000px; /* Add perspective for 3D effect */
 }
 
 .hero h1 {
@@ -117,45 +113,32 @@ nav {
 }
 
 .button {
-    display: inline-flex;
-    align-items: center;
     padding: 0.8rem 1.5rem;
-    text-decoration: none;
     color: white;
     background-color: var(--primary-color);
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
     border: none;
+    border-radius: 5px;
+    text-decoration: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
 }
 
 .button:hover {
     background-color: #0056b3;
 }
-
 .button i {
     margin-left: 0.5rem;
 }
 
-/* Services section styles */
+/* الأقسام الأخرى */
 .services {
     padding: 4rem 0;
-    position: relative; /* Add relative position */
-    z-index: 1; /* ensure services are in front of parallax */
+     position: relative;
+    perspective: 800px;
 }
 
-.services:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: white;
-    transform: translateZ(-50px) scale(1.1);
-    z-index: -1;
-    filter: blur(2px);
-}
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -163,26 +146,20 @@ nav {
 }
 
 .service-card {
-    text-align: center;
-    transition: transform 0.3s ease;
-    background-color: #fff;
+     background: white;
     padding: 1.5rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative; /* Add relative position to allow the learn more button */
+    text-align: center;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+
+    position: relative;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-}
+    transform: translateY(-5px) translateZ(10px); /* Lift and push card a bit forward */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
-.service-card h3 {
-    margin-bottom: 0.5rem;
-}
-
-.service-card p {
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
 }
 .learn-more-btn {
     background-color: var(--primary-color);
@@ -194,7 +171,7 @@ nav {
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s ease;
-    position: absolute;
+     position: absolute;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
@@ -203,26 +180,27 @@ nav {
     background-color: #0056b3;
 }
 
-/* About section styles */
+.dynamic-background {
+    position: relative;
+   overflow: hidden;
+    /* transform-style: preserve-3d;  */
+}
+.dynamic-background canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+
+}
 .about {
     padding: 4rem 0;
     text-align: center;
-    position: relative; /* Add relative position */
-    z-index: 1; /* ensure services are in front of parallax */
+    position: relative;
+    perspective: 800px;
 }
-.about:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: white;
-    transform: translateZ(-40px) scale(1.1);
-    z-index: -1;
-    filter: blur(2px);
-}
-
 .about-content p {
     color: var(--secondary-color);
     margin-bottom: 1rem;
@@ -235,27 +213,12 @@ nav {
 .read-more-btn i {
     margin-left: 0.5rem;
 }
-
 /* Stats section styles */
 .stats {
     background-color: var(--light-gray);
     padding: 4rem 0;
-    position: relative; /* Add relative position */
-    z-index: 1; /* ensure services are in front of parallax */
-    overflow: hidden;
-}
-
-.stats:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: var(--light-gray);
-   transform: translateZ(-50px) scale(1.1);
-    z-index: -1;
-    filter: blur(2px);
+     position: relative;
+   perspective: 800px;
 }
 .stat-item {
     display: flex;
@@ -274,22 +237,11 @@ nav {
 
 /* Testimonials section styles */
 .testimonials {
-    padding: 4rem 0;
+   padding: 4rem 0;
     background-color: var(--light-gray);
-    position: relative; /* Add relative position */
-    z-index: 1; /* ensure services are in front of parallax */
-}
-.testimonials:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: var(--light-gray);
-    transform: translateZ(-50px) scale(1.1);
-    z-index: -1;
-    filter: blur(2px);
+     position: relative;
+        perspective: 800px;
+
 }
 .testimonials-grid {
     display: grid;
@@ -299,7 +251,7 @@ nav {
 }
 
 .testimonial {
-    background: white;
+     background: white;
     padding: 1.5rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -326,21 +278,10 @@ nav {
 /* FAQ section styles */
 .faq {
     padding: 4rem 0;
-    position: relative; /* Add relative position */
-    z-index: 1; /* ensure services are in front of parallax */
+     position: relative;
+     perspective: 800px;
 }
-.faq:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: white;
-    transform: translateZ(-50px) scale(1.1);
-    z-index: -1;
-    filter: blur(2px);
-}
+
 .faq-item {
     margin-bottom: 1rem;
     border: 1px solid var(--light-gray);
@@ -375,21 +316,10 @@ nav {
 .partners {
     padding: 4rem 0;
     background-color: var(--light-gray);
-    position: relative; /* Add relative position */
-    z-index: 1; /* ensure services are in front of parallax */
+    position: relative;
+      perspective: 800px;
 }
-.partners:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: var(--light-gray);
-    transform: translateZ(-50px) scale(1.1);
-    z-index: -1;
-    filter: blur(2px);
-}
+
 .partners-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -414,21 +344,10 @@ nav {
 .newsletter {
     padding: 4rem 0;
     text-align: center;
-    position: relative; /* Add relative position */
-    z-index: 1; /* ensure services are in front of parallax */
+     position: relative;
+        perspective: 800px;
 }
-.newsletter:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: white;
-    transform: translateZ(-50px) scale(1.1);
-    z-index: -1;
-    filter: blur(2px);
-}
+
 .newsletter form {
     display: flex;
     justify-content: center;
@@ -445,13 +364,15 @@ nav {
 }
 
 .newsletter button {
-    padding: 0.8rem 1.5rem;
+     padding: 0.8rem 1.5rem;
     background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+        display: inline-flex;
+    align-items: center;
 }
 
 .newsletter button:hover {
@@ -463,21 +384,10 @@ footer {
     background-color: var(--dark-gray);
     color: white;
     padding: 2rem 0;
-    position: relative; /* Add relative position */
-    z-index: 1; /* ensure services are in front of parallax */
+    position: relative;
+       perspective: 800px;
 }
-footer:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: var(--dark-gray);
-    transform: translateZ(-50px) scale(1.1);
-    z-index: -1;
-    filter: blur(2px);
-}
+
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -557,22 +467,22 @@ footer:before {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
-}
-
-/* Modal styles */
-.modal {
+    }
+    
+    /* Modal styles */
+    .modal {
     display: none;
     position: fixed;
-    z-index: 3; /* Ensure the modals are on top */
+    z-index: 3;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
     background-color: var(--modal-overlay-color);
-}
-
-.modal-content {
+    }
+    
+    .modal-content {
     background-color: white;
     margin: 10% auto;
     padding: 20px;
@@ -581,23 +491,23 @@ footer:before {
     max-width: 600px;
     border-radius: 5px;
     position: relative;
-}
-
-.about-modal-header {
+    }
+    
+    .about-modal-header {
     text-align: center;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-}
-
-.about-modal-header i {
+    }
+    
+    .about-modal-header i {
     font-size: 1.8rem;
     color: var(--primary-color);
-}
-
-.close-modal {
+    }
+    
+    .close-modal {
     color: #aaa;
     position: absolute;
     top: 10px;
@@ -605,91 +515,83 @@ footer:before {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-}
-
-.close-modal:hover,
-.close-modal:focus {
+    }
+    
+    .close-modal:hover,
+    .close-modal:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
-
-.modal-content p {
+    }
+    
+    .modal-content p {
     color: var(--secondary-color);
-}
-/* Service detail Modal Styles */
-.service-modal {
-  display: none;
-  position: fixed;
-  z-index: 4; /* Make the service modals on top of the general modal */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: var(--modal-overlay-color);
-}
-.service-modal .modal-content{
+    }
+    /* Service detail Modal Styles /
+    .service-modal {
+    display: none;
+    position: fixed;
+    z-index: 4; / Make the service modals on top of the general modal */
+    .service-modal .modal-content{
     max-height: 80vh;
     overflow-y: auto;
-}
-.service-modal .modal-content h2 {
+    }
+    .service-modal .modal-content h2 {
     text-align: center;
-     margin-bottom: 1rem;
-}
-
-.service-modal .modal-content ul {
+    margin-bottom: 1rem;
+    }
+    
+    .service-modal .modal-content ul {
     padding-right: 1rem;
     list-style-type: disc;
     color: var(--secondary-color);
-}
-
-.service-modal .modal-content li {
+    }
+    
+    .service-modal .modal-content li {
     margin-bottom: 0.5rem;
-}
-/* ... (بقية الأنماط السابقة) ... */
-
-/* Header styles */
-header {
+    }
+    /* ... (بقية الأنماط السابقة) ... */
+    
+    /* Header styles */
+    header {
     background-color: var(--light-gray);
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 2;
-}
-
-nav {
+    }
+    
+    nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.navbar {
+    }
+    
+    .navbar {
     display: flex;
     gap: 1.5rem;
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-
-.navbar li a {
+    }
+    
+    .navbar li a {
     text-decoration: none;
     color: var(--dark-gray);
-    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease; /* Add transition properties */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease; /* Add transition properties /
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    position: relative; /* Required for the underline effect */
+    position: relative; / Required for the underline effect */
     overflow: hidden;
     display: inline-block;
-}
-
-.navbar li a:hover {
+    }
+    
+    .navbar li a:hover {
     color: var(--primary-color);
-    background-color: rgba(0, 123, 255, 0.1); /* Slight background on hover */
-    transform: translateY(-2px); /* Slight lift on hover */
-}
-.navbar li a::before {
+    background-color: rgba(0, 123, 255, 0.1); /* Slight background on hover /
+    transform: translateY(-2px); / Slight lift on hover /
+    }
+    .navbar li a::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -697,28 +599,28 @@ nav {
     width: 100%;
     height: 2px;
     background-color: var(--primary-color);
-    transform: scaleX(0); /* Start with no underline */
-    transform-origin: bottom right; /* Start from right */
-    transition: transform 0.3s ease; /* Transition for the underline animation */
-}
-
-
-.navbar li a:hover::before {
-    transform: scaleX(1); /* Expand the underline */
-    transform-origin: bottom left; /* End on left */
-}
-.navbar li a:active {
-    background-color: rgba(0, 123, 255, 0.2); /* Slightly darker background on click */
-    transform: translateY(0px); /* Cancel lift effect on click */
-}
-/* data analysis section */
-.data-analysis {
+    transform: scaleX(0); / Start with no underline /
+    transform-origin: bottom right; / Start from right /
+    transition: transform 0.3s ease; / Transition for the underline animation */
+    }
+    
+    .navbar li a:hover::before {
+    transform: scaleX(1); /* Expand the underline /
+    transform-origin: bottom left; / End on left /
+    }
+    .navbar li a:active {
+    background-color: rgba(0, 123, 255, 0.2); / Slightly darker background on click /
+    transform: translateY(0px); / Cancel lift effect on click /
+    }
+    / data analysis section /
+    .data-analysis {
     padding: 4rem 0;
-      position: relative; /* Add relative position */
-    z-index: 1; /* ensure services are in front of parallax */
-}
-.data-analysis:before {
-      content: "";
+    position: relative; / Add relative position /
+    z-index: 1; / ensure services are in front of parallax */
+    perspective: 800px;
+    }
+    .data-analysis:before {
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -728,114 +630,229 @@ nav {
     transform: translateZ(-50px) scale(1.1);
     z-index: -1;
     filter: blur(2px);
-}
-.data-input-area {
-     background: white;
-     padding: 20px;
-     border-radius: 8px;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-     display: flex;
-      flex-wrap: wrap;
-       justify-content: space-between;
-       align-items: center;
-       gap: 1rem;
-}
-.data-input-area label{
+    }
+    .data-input-area {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    }
+    .data-input-area label{
     margin-bottom: 0.5rem;
-}
-.data-input-area .input-group {
+    }
+    .data-input-area .input-group {
     display: flex;
     flex-direction: column;
-     width: auto;
-      flex-grow: 1;
+    width: auto;
+    flex-grow: 1;
     max-width: 200px;
-}
-.data-input-area select,
-.data-input-area input[type="text"],
-.data-input-area input[type="date"],
-.data-input-area textarea,
-.data-input-area input[type="file"]{
+    }
+    .data-input-area select,
+    .data-input-area input[type="text"],
+    .data-input-area input[type="date"],
+    .data-input-area textarea,
+    .data-input-area input[type="file"]{
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
-}
-.data-input-area textarea {
+    }
+    .data-input-area textarea {
     width: 100%;
-}
-.data-input-area #custom-range-inputs {
+    }
+    .data-input-area #custom-range-inputs {
     display: flex;
     gap: 0.5rem;
-      flex-wrap: wrap;
-}
-.data-analysis #analysis-results{
+    flex-wrap: wrap;
+    }
+    .data-analysis #analysis-results{
     margin-top: 20px;
-     padding: 20px;
-     background: white;
-     border-radius: 8px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-     position: relative;
-}
-.data-analysis #loading-indicator {
-   display: flex;
-     align-items: center;
-     justify-content: center;
-      font-size: 1.2rem;
-     margin-bottom: 1rem;
-}
-.data-analysis #loading-indicator i{
-    margin-left: 0.5rem;
-}
-.data-analysis #summary{
+    position: relative;
+    }
+    .data-analysis #loading-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
-}
-.data-analysis #gemini-insights{
-  margin-bottom: 1rem;
-}
-.data-analysis #data-chart {
-  width: 100%;
+    }
+    .data-analysis #loading-indicator i{
+    margin-left: 0.5rem;
+    }
+    .data-analysis #summary{
+    margin-bottom: 1rem;
+    }
+    .data-analysis #gemini-insights{
+    margin-bottom: 1rem;
+    }
+    .data-analysis #data-chart {
+    width: 100%;
     max-height: 400px;
     margin-bottom: 1rem;
-}
-.data-analysis .modal-content h2 {
+    }
+    .data-analysis .modal-content h2 {
     text-align: center;
-     margin-bottom: 1rem;
-}
- .data-analysis .modal-content ul {
-   padding-right: 1rem;
+    margin-bottom: 1rem;
+    }
+    .data-analysis .modal-content ul {
+    padding-right: 1rem;
     list-style-type: disc;
     color: var(--secondary-color);
-}
-
-.data-analysis .modal-content li {
+    }
+    
+    .data-analysis .modal-content li {
     margin-bottom: 0.5rem;
-}
-.gemini-area{
-      padding: 4rem 0;
-      position: relative; /* Add relative position */
-    z-index: 1; /* ensure services are in front of parallax */
-}
-.gemini-area:before {
-     content: "";
+    }
+    .gemini-area{
+    padding: 4rem 0;
+    position: relative; /* Add relative position /
+    z-index: 1; / ensure services are in front of parallax */
+    perspective: 800px;
+    
+    }
+    .gemini-area:before {
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background: var(--light-gray);
-     transform: translateZ(-50px) scale(1.1);
+    transform: translateZ(-50px) scale(1.1);
     z-index: -1;
     filter: blur(2px);
-}
-.gemini-area input[type='text']{
+    }
+    .gemini-area input[type='text']{
     width: 80%;
     padding: 10px;
     margin-bottom: 1rem;
     border-radius: 4px;
     border: 1px solid #ddd;
     text-align: right;
-}
-.gemini-area button{
-     margin-bottom: 1rem;
-}
-/* ... (بقية الأنماط السابقة) ... */
+    }
+    .gemini-area button{
+    margin-bottom: 1rem;
+    }
+    /* ... (بقية الأنماط السابقة) ... */
+    .banner3d {
+        padding: 6rem 0;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #1a237e, #0d47a1);
+        perspective: 1000px;
+    }
+    
+    .banner3d-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+    
+    .banner3d-text {
+        flex: 1;
+        color: white;
+        text-align: right;
+        z-index: 1;
+    }
+    
+    .banner3d-text h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        transform: translateZ(50px);
+    }
+    
+    .banner3d-text p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        transform: translateZ(30px);
+    }
+    
+    .banner3d-buttons {
+        display: flex;
+        gap: 1rem;
+        transform: translateZ(40px);
+    }
+    
+    .button-outline {
+        background-color: transparent;
+        border: 2px solid white;
+    }
+    
+    .button-outline:hover {
+        background-color: white;
+        color: var(--primary-color);
+    }
+    
+    .banner3d-cube {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1000px;
+    }
+    
+    .cube {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rotate 20s infinite linear;
+    }
+    
+    .face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+    }
+    
+    .front { transform: translateZ(100px); }
+    .back { transform: translateZ(-100px) rotateY(180deg); }
+    .right { transform: rotateY(90deg) translateZ(100px); }
+    .left { transform: rotateY(-90deg) translateZ(100px); }
+    .top { transform: rotateX(90deg) translateZ(100px); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }
+    
+    @keyframes rotate {
+        from { transform: rotateX(0) rotateY(0) rotateZ(0); }
+        to { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+    }
+    
+    @media (max-width: 768px) {
+        .banner3d-content {
+            flex-direction: column;
+        }
+        
+        .banner3d-text {
+            text-align: center;
+        }
+        
+        .banner3d-buttons {
+            justify-content: center;
+        }
+        
+        .cube {
+            width: 150px;
+            height: 150px;
+        }
+        
+        .face {
+            width: 150px;
+            height: 150px;
+        }
+    }
