@@ -1,7 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Loader
-    const loader = document.querySelector('.loader');
-    window.addEventListener('load', () => {
-        loader.classList.add('hidden');
-    });
+// إخفاء الـ Loader بعد تحميل الصفحة
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.classList.add('hidden');
 });
