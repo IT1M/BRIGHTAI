@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات Bright AI</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            line-height: 1.8;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #ffcc00;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .container {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .service {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .service h2 {
+            color: #ffcc00;
+            font-size: 2em;
+            text-align: center;
+        }
+        .service p {
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .list {
+            text-align: left;
+            max-width: 600px;
+            margin: auto;
+        }
+        .list li {
+            margin: 10px 0;
+        }
+        canvas {
+            display: block;
+            margin: 20px auto;
+        }
+        .progress {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px auto;
+            width: 80%;
+        }
+        .progress-bar {
+            height: 25px;
+            background: #ffcc00;
+            text-align: center;
+            color: #1e3c72;
+            font-weight: bold;
+        }
+        .testimonial {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+            color: #ffdd33;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            margin-top: 50px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>خدمات Bright AI</h1>
+        <p>
+            نهدف إلى تمكين المؤسسات من تحقيق أعلى مستويات الكفاءة والابتكار من خلال الذكاء الاصطناعي. 
+            نقدم حلولًا مبتكرة لأتمتة العمليات، تحليل البيانات، وتقديم الاستشارات المتخصصة.
+        </p>
+    </header>
+
+    <div class="container">
+        <!-- قسم أتمتة العمليات -->
+        <div class="service">
+            <h2>أتمتة العمليات</h2>
+            <p>أتمتة المهام لتحسين الكفاءة وخفض التكاليف.</p>
+            <ul class="list">
+                <li>تقليل الأخطاء التشغيلية بنسبة 85%.</li>
+                <li>زيادة الإنتاجية بنسبة 90%.</li>
+                <li>خفض التكاليف بنسبة 40%.</li>
+            </ul>
+            <select id="automationTask" style="padding: 10px; font-size: 1em; margin: 20px auto; display: block;">
+                <option value="email">إرسال بريد إلكتروني تلقائي</option>
+                <option value="data">تنظيم البيانات في جدول</option>
+                <option value="report">إنشاء تقرير يومي</option>
+            </select>
+            <button class="button" onclick="automateTask()">ابدأ</button>
+            <p id="automationResult" style="margin-top: 20px; font-weight: bold;"></p>
+        </div>
+
+        <!-- قسم تحليل البيانات -->
+        <div class="service">
+            <h2>تحليل البيانات</h2>
+            <p>تحليل البيانات لتحسين الأداء واتخاذ القرارات الاستراتيجية.</p>
+            <canvas id="dataChart" width="400" height="300"></canvas>
+        </div>
+
+        <!-- قسم الاستشارات -->
+        <div class="service">
+            <h2>الاستشارات</h2>
+            <p>كيف تساعد الاستشارات في تحسين كفاءتك:</p>
+            <div class="progress">
+                <div class="progress-bar" style="width: 80%;">تحسين الأداء (80%)</div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" style="width: 70%;">خفض التكاليف (70%)</div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" style="width: 90%;">زيادة الابتكار (90%)</div>
+            </div>
+        </div>
+
+        <!-- قسم تعليقات العملاء -->
+        <div class="service">
+            <h2>تعليقات العملاء</h2>
+            <p class="testimonial">"Bright AI ساعدتنا في خفض التكاليف بنسبة 40% وزيادة الكفاءة بشكل ملحوظ!"</p>
+            <p class="testimonial">"تجربة مذهلة! التحليل الذكي للبيانات جعل قراراتنا أكثر دقة."</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2024 Bright AI. جميع الحقوق محفوظة.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // نظام أتمتة العمليات
+        function automateTask() {
+            const task = document.getElementById('automationTask').value;
+            let result = '';
+            switch (task) {
+                case 'email':
+                    result = 'تم إرسال البريد الإلكتروني بنجاح!';
+                    break;
+                case 'data':
+                    result = 'تم تنظيم البيانات في جدول!';
+                    break;
+                case 'report':
+                    result = 'تم إنشاء التقرير اليومي!';
+                    break;
+                default:
+                    result = 'يرجى اختيار مهمة.';
+            }
+            document.getElementById('automationResult').innerText = result;
+        }
+
+        // تحليل البيانات باستخدام Chart.js
+        const ctx = document.getElementById('dataChart').getContext('2d');
+        const dataChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو'],
+                datasets: [{
+                    label: 'الأداء (%)',
+                    data: [70, 75, 85, 90, 95],
+                    borderColor: '#ffcc00',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
