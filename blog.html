@@ -5,71 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مدونة Bright AI</title>
     <link rel="stylesheet" href="blog.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="loader">
+    <!-- Loader -->
+    <div class="loader" id="loader">
         <div class="spinner"></div>
     </div>
 
-    <div class="header">
-        <h1>مدونة Bright AI</h1>
-    </div>
+    <!-- Header -->
+    <header class="header">
+        <h1><i class="fas fa-lightbulb"></i> مدونة Bright AI</h1>
+    </header>
+
+    <!-- Navigation Bar -->
     <nav>
         <ul class="navbar">
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="consultation.html">استشارات</a></li>
-            <li><a href="smart-automation.html">الأتمتة الذكية</a></li>
-            <li><a href="data-analysis.html">تحليل البيانات</a></li>
-            <li><a href="blog.html" class="active">مدونة</a></li>
-            <li><a href="our-products.html">منتجاتنا</a></li>
-               <li><a href="tools.html">الادوات</a></li>
+            <li><a href="#home" class="active">الرئيسية</a></li>
+            <li><a href="#services">استشارات</a></li>
+            <li><a href="#automation">الأتمتة الذكية</a></li>
+            <li><a href="#data-analysis">تحليل البيانات</a></li>
+            <li><a href="#blog">مدونة</a></li>
+            <li><a href="#products">منتجاتنا</a></li>
+            <li><a href="#tools">الأدوات</a></li>
         </ul>
     </nav>
-    <main class="blog-container">
-        <div class="article">
-            <img src="image1.jpg" alt="صورة المقال 2034" />
+
+    <!-- Main Content -->
+    <main class="blog-container" id="blog">
+        <!-- Article 1 -->
+        <article class="article">
+            <div class="article-icon">⚽</div>
             <h2>السعودية ومونديال 2034: رحلة طموحة نحو استضافة كأس العالم</h2>
-            <p class="date">12/11/2024 | 5 دقائق قراءة</p>
-            <p class="description">تستعد المملكة العربية السعودية لاستضافة حدث تاريخي غير مسبوق. اكتشف التفاصيل الكاملة حول الاستعدادات والمنشآت الرياضية الجديدة والتأثير الاقتصادي المتوقع.</p>
-            <a href="article_2034.html" class="read-more">اقرأ المزيد</a>
-        </div>
+            <div class="date"><i class="fas fa-calendar"></i> 12/11/2024 | 5 دقائق قراءة</div>
+            <p class="description">
+                تستعد المملكة العربية السعودية لاستضافة حدث تاريخي غير مسبوق. اكتشف التفاصيل الكاملة حول الاستعدادات والمنشآت الرياضية الجديدة والتأثير الاقتصادي المتوقع.
+            </p>
+            <a href="article_2.html" class="read-more"><i class="fas fa-arrow-left"></i> اقرأ المزيد</a>
+        </article>
 
-        <div class="article">
-            <img src="image2.jpg" alt="صورة المقال 2" />
+        <!-- Article 2 -->
+        <article class="article">
+            <div class="article-icon">📢</div>
             <h2>السعودية تترقب إعلان فيفا التاريخي</h2>
-            <p class="date">12/11/2024 | 3 دقائق قراءة</p>
-            <p class="description">لحظات تاريخية تنتظرها المملكة مع اقتراب إعلان فيفا الرسمي. تعرف على الخطط المستقبلية والتحضيرات الجارية لهذا الحدث العالمي.</p>
-            <a href="article_2.html" class="read-more">اقرأ المزيد</a>
-        </div>
+            <div class="date"><i class="fas fa-calendar"></i> 12/11/2024 | 3 دقائق قراءة</div>
+            <p class="description">
+                لحظات تاريخية تنتظرها المملكة مع اقتراب إعلان فيفا الرسمي. تعرف على الخطط المستقبلية والتحضيرات الجارية لهذا الحدث العالمي.
+            </p>
+            <a href="article_2034.html" class="read-more"><i class="fas fa-arrow-left"></i> اقرأ المزيد</a>
+        </article>
 
-        <div class="article">
-            <img src="image3.jpg" alt="صورة المقال 3" />
+        <!-- Article 3 -->
+        <article class="article">
+            <div class="article-icon">🤖</div>
             <h2>الذكاء الاصطناعي: مستقبل التقنية</h2>
-            <p class="date">12/4/2024 | 7 دقائق قراءة</p>
-            <p class="description">استكشف عالم الذكاء الاصطناعي وتطبيقاته المختلفة في حياتنا اليومية. دليل شامل يوضح المفاهيم الأساسية والتطورات الحديثة.</p>
-            <a href="article_3.html" class="read-more">اقرأ المزيد</a>
-        </div>
+            <div class="date"><i class="fas fa-calendar"></i> 12/4/2024 | 7 دقائق قراءة</div>
+            <p class="description">
+                استكشف عالم الذكاء الاصطناعي وتطبيقاته المختلفة في حياتنا اليومية. دليل شامل يوضح المفاهيم الأساسية والتطورات الحديثة.
+            </p>
+            <a href="article_3.html" class="read-more"><i class="fas fa-arrow-left"></i> اقرأ المزيد</a>
+        </article>
+
+        <!-- Additional Articles -->
+        <article class="article">
+            <div class="article-icon">📘</div>
+            <h2>المصطلحات والتعريفات</h2>
+            <p class="description">تعرف على أهم المصطلحات والتعريفات المستخدمة في مجال الذكاء الاصطناعي وتقنيات التحول الرقمي.</p>
+            <a href="definitions.html" class="read-more"><i class="fas fa-arrow-left"></i> اقرأ المزيد</a>
+        </article>
+
+        <article class="article">
+            <div class="article-icon">💼</div>
+            <h2>الاستشارات المتخصصة في تطوير الأعمال باستخدام تقنيات الذكاء الاصطناعي</h2>
+            <p class="description">كيف يمكن لتقنيات الذكاء الاصطناعي أن تساهم في تطوير الأعمال وزيادة الكفاءة؟</p>
+            <a href="consulting.html" class="read-more"><i class="fas fa-arrow-left"></i> اقرأ المزيد</a>
+        </article>
+
+        <article class="article">
+            <div class="article-icon">🌟</div>
+            <h2>Bright AI: مؤسسة سعودية رائدة في مجال الذكاء الاصطناعي</h2>
+            <p class="description">نفخر بكوننا جزءًا من المنظومة التقنية المتنامية في المملكة العربية السعودية.</p>
+            <a href="about-us.html" class="read-more"><i class="fas fa-arrow-left"></i> اقرأ المزيد</a>
+        </article>
+
+        <article class="article">
+            <div class="article-icon">📊</div>
+            <h2>فوائد تحليل البيانات</h2>
+            <p class="description">تحليل البيانات يساعد الشركات على اتخاذ قرارات أفضل وتحقيق النجاح.</p>
+            <a href="data-benefits.html" class="read-more"><i class="fas fa-arrow-left"></i> اقرأ المزيد</a>
+        </article>
+
+        <article class="article">
+            <div class="article-icon">🤖</div>
+            <h2>فوائد أتمتة الذكاء الاصطناعي</h2>
+            <p class="description">الأتمتة تسهم في تحسين الأداء وتقليل الأخطاء في العمليات اليومية.</p>
+            <a href="automation-benefits.html" class="read-more"><i class="fas fa-arrow-left"></i> اقرأ المزيد</a>
+        </article>
+
+        <article class="article">
+            <div class="article-icon">🌐</div>
+            <h2>نظرة عامة على الذكاء الاصطناعي</h2>
+            <p class="description">تعرف على أساسيات الذكاء الاصطناعي وكيف يغير العالم من حولنا.</p>
+            <a href="ai-overview.html" class="read-more"><i class="fas fa-arrow-left"></i> اقرأ المزيد</a>
+        </article>
     </main>
 
+    <!-- Footer -->
     <footer>
-    <div class="social-media">
-        <h3>تابعنا على</h3>
-           <a href="https://x.com/BrightAIII" target="_blank" title="X"> <img src="x-logo.webp" alt="X" > </a>
-         <a href="https://www.youtube.com/@TeechLab" target="_blank" title="Youtube">  <img src="youtube-logo.webp" alt="Youtube"> </a>
-         <a href="https://instagram.com/" target="_blank" title="Instagram"> <img src="instagram-logo.webp" alt="Instagram"></a>
+        <div class="social-media">
+            <h3>تابعنا على</h3>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="contact-info">
+            <h3>تواصل معنا</h3>
+            <a href="mailto:yazeedaiai0@gmail.com"><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com</a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Bright AI. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
 
-    </div>
-    <div class="contact-info">
-        <h3>تواصل معنا</h3>
-        <p><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com </p>
-           <p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i class="fab fa-whatsapp"></i>  </a></p>
-    </div>
-</footer>
     <script src="blog.js"></script>
 </body>
 </html>
