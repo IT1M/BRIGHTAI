@@ -6,215 +6,76 @@
     <title>الأتمتة الذكية بالذكاء الاصطناعي - Bright AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="smart-automation.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:;">
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="smart-automation.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>الأتمتة الذكية بالذكاء الاصطناعي</h1>
-            <p>حلول متكاملة لتحسين كفاءة عملك</p>
-        </div>
-          <nav>
+    <header class="header">
+        <h1>الأتمتة الذكية بالذكاء الاصطناعي</h1>
+        <p>حلول متكاملة لتحسين كفاءة عملك</p>
+        <nav>
             <ul class="navbar">
-                 <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="consultation.html">استشارات</a></li>
-                <li><a href="smart-automation.html"  class="active">الأتمتة الذكية</a></li>
+                <li><a href="smart-automation.html" class="active">الأتمتة الذكية</a></li>
                 <li><a href="data-analysis.html">تحليل البيانات</a></li>
                 <li><a href="blog.html">مدونة</a></li>
                 <li><a href="our-products.html">منتجاتنا</a></li>
-                   <li><a href="tools.html">الادوات</a></li>
+                <li><a href="tools.html">الأدوات</a></li>
             </ul>
         </nav>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>معالجة البيانات التلقائية</h3>
-                <p>تحليل وتنظيم البيانات باستخدام خوارزميات متقدمة</p>
-                <div class="chart-container" id="dataChart"></div>
-            </div>
+    </header>
 
-            <div class="service-card">
-                <h3>التنبؤ بالأعمال</h3>
-                <p>توقع اتجاهات السوق واتخاذ قرارات مدروسة</p>
-                <div class="chart-container" id="predictChart"></div>
+    <main>
+        <section class="services">
+            <h2>خدماتنا</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>معالجة البيانات التلقائية</h3>
+                    <p>تحليل وتنظيم البيانات باستخدام خوارزميات متقدمة</p>
+                </div>
+                <div class="card">
+                    <h3>التنبؤ بالأعمال</h3>
+                    <p>توقع اتجاهات السوق واتخاذ قرارات مدروسة</p>
+                </div>
+                <div class="card">
+                    <h3>أتمتة العمليات</h3>
+                    <p>تحسين سير العمل وتقليل الأخطاء البشرية</p>
+                </div>
             </div>
+        </section>
 
-            <div class="service-card">
-                <h3>أتمتة العمليات</h3>
-                <p>تحسين سير العمل وتقليل الأخطاء البشرية</p>
-                <div class="chart-container" id="processChart"></div>
-            </div>
-        </div>
-
-        <div class="stats">
-            <div class="stat-item">
-                <h4>زيادة الإنتاجية</h4>
-                <p>85%</p>
-            </div>
-            <div class="stat-item">
-                <h4>توفير التكاليف</h4>
-                <p>60%</p>
-            </div>
-            <div class="stat-item">
-                <h4>تحسين دقة العمل</h4>
-                <p>95%</p>
-            </div>
-        </div>
-
-        <div id="canvas3d"></div>
-    </div>
-
-    <section id="ai-automation-importance">
-        <div class="importance-container">
-            <h2>أهمية الأتمتة في عصر الذكاء الاصطناعي</h2>
+        <section class="importance">
+            <h2>أهمية الأتمتة</h2>
             <div class="importance-cards">
-                <div class="importance-card">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
                     <h3>زيادة الإنتاجية</h3>
-                    <p>تعزيز الكفاءة التشغيلية وتسريع العمليات بنسبة تصل إلى 80% من خلال الأتمتة المستمرة</p>
+                    <p>تعزيز الكفاءة التشغيلية وتسريع العمليات بنسبة تصل إلى 80%</p>
                 </div>
-                <div class="importance-card">
-                    <div class="card-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
+                <div class="card">
+                    <i class="fas fa-coins"></i>
                     <h3>خفض التكاليف</h3>
-                    <p>تقليل النفقات التشغيلية وتحسين استخدام الموارد مع تقليل الأخطاء البشرية</p>
-                </div>
-                <div class="importance-card">
-                    <div class="card-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>تحسين جودة العمل</h3>
-                    <p>ضمان دقة وجودة ثابتة في المخرجات مع تقليل نسبة الأخطاء بشكل كبير</p>
-                </div>
-                <div class="importance-card">
-                    <div class="card-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>العمل 24/7</h3>
-                    <p>تشغيل العمليات بشكل مستمر دون توقف مع ضمان الأداء المثالي</p>
+                    <p>تقليل النفقات التشغيلية مع تحسين استخدام الموارد</p>
                 </div>
             </div>
+        </section>
 
-            <div class="importance-stats">
-                <div class="stat-item">
-                    <span class="stat-number">80%</span>
-                    <span class="stat-text">زيادة في الإنتاجية</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">60%</span>
-                    <span class="stat-text">خفض في التكاليف</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">90%</span>
-                    <span class="stat-text">تقليل الأخطاء</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="contact">
+            <h2>تواصل معنا</h2>
+            <p><i class="fas fa-envelope"></i> yazeed1job@gmail.com</p>
+            <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/966501120781">تواصل عبر واتساب</a></p>
+        </section>
+    </main>
 
-    <section id="smart-automation">
-        <div class="container">
-            <h2 class="section-title">تقنيات الأتمتة الذكية</h2>
-            <div class="tech-cards">
-                <!-- التعلم الآلي -->
-                <div class="tech-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <i class="fas fa-brain"></i>
-                            <h3>التعلم الآلي</h3>
-                        </div>
-                        <div class="card-back">
-                            <h4>التعلم الآلي</h4>
-                            <ul>
-                                <li>خوارزميات التعلم العميق</li>
-                                <li>تحليل البيانات التنبؤي</li>
-                                <li>أنظمة التوصية</li>
-                                <li>تصنيف البيانات</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- معالجة اللغات الطبيعية -->
-                <div class="tech-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <i class="fas fa-language"></i>
-                            <h3>معالجة اللغات الطبيعية</h3>
-                        </div>
-                        <div class="card-back">
-                            <h4>معالجة اللغات الطبيعية</h4>
-                            <ul>
-                                <li>تحليل المشاعر</li>
-                                <li>استخراج المعلومات</li>
-                                <li>الترجمة الآلية</li>
-                                <li>المحادثات الآلية</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- الرؤية الحاسوبية -->
-                <div class="tech-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <i class="fas fa-eye"></i>
-                            <h3>الرؤية الحاسوبية</h3>
-                        </div>
-                        <div class="card-back">
-                            <h4>الرؤية الحاسوبية</h4>
-                            <ul>
-                                <li>التعرف على الصور</li>
-                                <li>تتبع الأجسام</li>
-                                <li>تحليل الفيديو</li>
-                                <li>الواقع المعزز</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- الروبوتات الذكية -->
-                <div class="tech-card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <i class="fas fa-robot"></i>
-                            <h3>الروبوتات الذكية</h3>
-                        </div>
-                        <div class="card-back">
-                            <h4>الروبوتات الذكية</h4>
-                            <ul>
-                                <li>التحكم الذاتي</li>
-                                <li>التفاعل مع البيئة</li>
-                                <li>المهام المعقدة</li>
-                                <li>التعاون الروبوتي</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <footer>
-    <div class="social-media">
-        <h3>تابعنا على</h3>
-           <a href="https://x.com/BrightAIII" target="_blank" title="X"> <img src="x-logo.webp" alt="X" > </a>
-         <a href="https://www.youtube.com/@TeechLab" target="_blank" title="Youtube">  <img src="youtube-logo.webp" alt="Youtube"> </a>
-         <a href="https://instagram.com/" target="_blank" title="Instagram"> <img src="instagram-logo.webp" alt="Instagram"></a>
-
-    </div>
-    <div class="contact-info">
-        <h3>تواصل معنا</h3>
-       <p><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com </p>
-         <p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i class="fab fa-whatsapp"></i>  </a></p>
-    </div>
-</footer>
-
-    <script src="smart-automation.js"></script>
+        <div class="social">
+            <a href="https://x.com/BrightAIII" target="_blank" title="X"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@TeechLab" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
 </body>
 </html>
