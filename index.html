@@ -1,3 +1,5 @@
+--- START OF FILE index.html ---
+
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
 <head>
@@ -6,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شريكك المشرق في  التحول الرقمي </title>
+    <meta name="description" content="نقدم حلول الذكاء الاصطناعي المبتكرة لتحويل أفكارك إلى واقع. استشارات، أتمتة ذكية، تحليل البيانات، واقع معزز، مكتبة رقمية.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -27,7 +30,7 @@
             </ul>
         </nav>
     </header>
-    
+
 <style>
     .banner3d {
         position: relative;
@@ -263,7 +266,7 @@
 
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+
         particles.forEach(particle => {
             particle.update();
             particle.draw();
@@ -274,11 +277,11 @@
 
     animate();
 </script>
-    
+
 <section id="services-section" class="services-section">
         <div class="container">
             <h1>البداية أمرها بسيط</h1>
-            
+
             <div class="services">
                 <div class="service-item">
                     <div class="icon">📊</div>
@@ -304,7 +307,6 @@
             </p>
         </div>
     </section>
-    
 
     <section style="background: linear-gradient(to right, #f8f9fa, #e9ecef); padding: 60px 20px; text-align: center;">
   <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 20px;">
@@ -312,7 +314,7 @@
       <div style="flex: 1; min-width: 300px;">
           <h2 style="font-size: 2rem; color: #212529; margin-bottom: 20px;">بأسلوب واحد مُبسط وسلس</h2>
           <p style="font-size: 1.2rem; color: #495057; line-height: 1.8;">
-              أصبح شركاؤنا يستطيعون مراقبة أعمالهم وموظفيهم، المخزون، الأداء المالي، 
+              أصبح شركاؤنا يستطيعون مراقبة أعمالهم وموظفيهم، المخزون، الأداء المالي،
               والكثير من أي مكان متواجدين فيه. كل ذلك بتكلفة أقل من السابق ودقة أعلى وبدون أخطاء بشرية.
           </p>
           <button style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">
@@ -338,7 +340,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="services dynamic-background" id="services">
         <canvas id="animated-bg-services"></canvas>
         <div class="container">
@@ -351,7 +353,7 @@
                     <i class="fas fa-brain icon"></i>
                     <h3>تطوير الذكاء الاصطناعي</h3>
                     <p>نقدم خدمات متكاملة لتصميم وتطوير حلول ذكاء اصطناعي مخصصة، تناسب احتياجات عملك وتساهم في تحسين الأداء والكفاءة. تشمل خدماتنا جميع مراحل تطوير الذكاء الاصطناعي بدءًا من بناء النماذج الأولية وصولًا إلى التطبيقات المتكاملة الجاهزة للاستخدام، مع التركيز على أحدث التقنيات والمنهجيات لضمان تحقيق أفضل النتائج.</p>
-                   
+
                 </div>
                 <div class="service-card" data-service="nlp-modal">
                     <i class="fas fa-language icon"></i>
@@ -367,7 +369,7 @@
                     <i class="fas fa-camera icon"></i>
                     <h3>الرؤية الحاسوبية</h3>
                     <p>نقدم أنظمة ذكية لتحليل ومعالجة الصور والفيديو، للكشف والتعرف والتحقق بدقة وفعالية. تساعد حلولنا في تحسين الكفاءة عبر مجموعة واسعة من القطاعات، من خلال توفير أدوات متقدمة للمراقبة، التحليل، والتحقق البصري.</p>
-                  
+
                 </div>
                 <div class="service-card" data-service="process-automation-modal">
                     <i class="fas fa-cogs icon"></i>
@@ -397,7 +399,121 @@
             </div>
         </div>
     </section>
-    
+
+    <section id="process-automation" class="dynamic-background" style="background-color: #e0f7fa; padding: 50px 0;">
+        <canvas id="animated-bg-process-automation"></canvas>
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-rocket" style="color: #00bcd4;"></i>
+                <h2>أتمتة العمليات</h2>
+            </div>
+            <div style="text-align: center;">
+                <p style="font-size: 1.1em; color: #333; line-height: 1.6;">
+                    حوّل مهامك الروتينية إلى عمليات مؤتمتة بالكامل. نقدم حلولًا ذكية لأتمتة سير العمل، مما يزيد الإنتاجية ويقلل الأخطاء البشرية. اكتشف كيف يمكن لأتمتة العمليات أن تعزز كفاءة عملك وتوفر وقتك الثمين.
+                </p>
+                <a href="smart-automation.html" class="button" style="margin-top: 20px;">
+                    <i class="fas fa-arrow-left"></i>
+                    اكتشف المزيد عن الأتمتة
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="data-analytics-insights" class="dynamic-background" style="background-color: #fce4ec; padding: 50px 0;">
+        <canvas id="animated-bg-data-analytics"></canvas>
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-chart-line" style="color: #f06292;"></i>
+                <h2>تحليل البيانات</h2>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px; padding: 20px; text-align: center;">
+                    <p style="font-size: 1.1em; color: #333; line-height: 1.6;">
+                        استخلص رؤى قيمة من بياناتك. نقدم خدمات تحليل متقدمة تساعدك على فهم عملائك، وتحديد الاتجاهات، واتخاذ قرارات مستنيرة لتحقيق النمو والنجاح.
+                    </p>
+                    <a href="data-analysis.html" class="button" style="margin-top: 20px;">
+                        <i class="fas fa-arrow-left"></i>
+                        استكشف تحليلات البيانات
+                    </a>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://www2.0zz0.com/2024/12/23/19/297467350.jpeg" alt="تحليل البيانات" style="border-radius: 10px; width: 100%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai-consultations" class="dynamic-background" style="background-color: #fff3e0; padding: 50px 0;">
+        <canvas id="animated-bg-ai-consultations"></canvas>
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-handshake" style="color: #ff9800;"></i>
+                <h2>الاستشارات</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="text-align: center;">
+                    <i class="fas fa-lightbulb fa-3x" style="color: #ff9800; margin-bottom: 20px;"></i>
+                    <p style="font-size: 1.1em; color: #333; line-height: 1.6;">
+                        احصل على استشارات متخصصة في مجال الذكاء الاصطناعي لمساعدتك في تحديد الفرص وتطبيق الحلول المناسبة لعملك. فريقنا من الخبراء يقدم لك الدعم والإرشاد لتحقيق أهدافك.
+                    </p>
+                    <a href="consultation.html" class="button" style="margin-top: 20px;">
+                        <i class="fas fa-arrow-left"></i>
+                        احجز استشارتك الآن
+                    </a>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-users-cog fa-3x" style="color: #ff9800; margin-bottom: 20px;"></i>
+                    <p style="font-size: 1.1em; color: #333; line-height: 1.6;">
+                        نساعدك في فهم التحديات وتطوير استراتيجيات فعالة لتكامل الذكاء الاصطناعي في مختلف جوانب عملك. استفد من خبراتنا لتحقيق أقصى استفادة من التكنولوجيا.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="augmented-virtual-reality" class="dynamic-background" style="background-color: #e8f5e9; padding: 50px 0;">
+        <canvas id="animated-bg-ar-vr"></canvas>
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-glasses" style="color: #4caf50;"></i>
+                <h2>الواقع المعزز والافتراضي</h2>
+            </div>
+            <div style="text-align: center;">
+                <p style="font-size: 1.1em; color: #333; line-height: 1.6;">
+                    انغمس في عالم التجارب الغامرة مع حلول الواقع المعزز والافتراضي. نقدم تطبيقات مبتكرة للتدريب، التسويق، والترفيه، مما يفتح آفاقًا جديدة للتفاعل والتعلم.
+                </p>
+                <a href="AAA.html" class="button" style="margin-top: 20px;">
+                    <i class="fas fa-arrow-left"></i>
+                    استكشف تطبيقات الواقع
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="digital-library" class="dynamic-background" style="background-color: #f5f5f5; padding: 50px 0;">
+        <canvas id="animated-bg-digital-library"></canvas>
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-book-open" style="color: #9e9e9e;"></i>
+                <h2>مكتبة رقمية</h2>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://www2.0zz0.com/2024/12/23/19/425062256.jpeg" alt="مكتبة رقمية" style="border-radius: 10px; width: 100%;">
+                </div>
+                <div style="flex: 1; min-width: 300px; padding: 20px; text-align: center;">
+                    <p style="font-size: 1.1em; color: #333; line-height: 1.6;">
+                        استفد من مكتبتنا الرقمية الغنية بالموارد والأدوات الذكية في مجال الذكاء الاصطناعي. نوفر لك كل ما تحتاجه لتطوير مهاراتك والبقاء على اطلاع بأحدث التطورات.
+                    </p>
+                    <a href="our-products.html" class="button" style="margin-top: 20px;">
+                        <i class="fas fa-arrow-left"></i>
+                        تصفح مكتبتنا
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="about dynamic-background" id="about">
         <canvas id="animated-bg-about"></canvas>
         <div class="container">
@@ -496,14 +612,6 @@
             </div>
             <div class="faq-item">
                 <div class="faq-question">
-                    <i class="fas fa-question"></i>
-                    ما الخدمات الرئيسية التي تقدمها Bright AI؟
-                </div>
-                <div class="faq-answer">خدماتنا تشمل تحليل البيانات المتقدم، الأتمتة الذكية، الاستشارات التقنية المتخصصة، والمكتبة الرقمية الذكية.</div>
-            </div>
-             <div class="faq-item">
-                <div class="faq-question">
-                    <i class="fas fa-question"></i>
                     كيف يمكنني الاستفادة من المكتبة الرقمية الذكية؟
                 </div>
                 <div class="faq-answer">المكتبة الرقمية تقدم أبحاثًا علمية، مقالات، ودورات تدريبية قصيرة تُساعدك على تطوير مهاراتك وفهم أحدث التقنيات.</div>
