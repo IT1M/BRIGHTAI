@@ -89,67 +89,100 @@
                 </div>
 
             </div>
-        </section>
         <section style="padding: 20px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 10px; margin: 20px;">
-    <div class="chart-container">
-        <h2 style="text-align: center;">الرسم البياني مع خاصية التصدير</h2>
+    <h2 style="text-align: center;">إنشاء رسوم بيانية تفاعلية</h2>
+    
+    <form id="chartForm" style="text-align: center; margin-bottom: 20px;">
+        <label for="chartType">اختر نوع الرسم البياني:</label>
+        <select id="chartType">
+            <option value="bar">شريطي</option>
+            <option value="line">خطّي</option>
+            <option value="pie">دائري</option>
+        </select>
+        <br><br>
+        <label for="labels">أدخل العناوين (مفصولة بفواصل):</label><br>
+        <input type="text" id="labels" placeholder="مثال: يناير, فبراير, مارس" style="width: 60%; padding: 5px; margin-bottom: 10px;">
+        <br>
+        <label for="data">أدخل القيم (مفصولة بفواصل):</label><br>
+        <input type="text" id="data" placeholder="مثال: 10, 20, 30" style="width: 60%; padding: 5px; margin-bottom: 10px;">
+        <br>
+        <button type="button" id="generateChart" style="padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px;">إنشاء الرسم البياني</button>
+    </form>
+
+    <div class="chart-container" style="text-align: center;">
         <canvas id="myChart" width="400" height="200"></canvas>
-        <div style="text-align: center; margin-top: 10px;">
-            <button id="exportPDF">تصدير كملف PDF</button>
-        </div>
+        <button id="exportPDF" style="margin-top: 10px; padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px;">تصدير كملف PDF</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script>
-        // إنشاء الرسم البياني باستخدام Chart.js
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'bar', // نوع الرسم البياني (مثلاً: bar, line, pie)
-            data: {
-                labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو'],
-                datasets: [{
-                    label: 'المبيعات',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
+        let chart; // متغير لتخزين الرسم البياني الحالي
+
+        document.getElementById('generateChart').addEventListener('click', () => {
+            const chartType = document.getElementById('chartType').value;
+            const labels = document.getElementById('labels').value.split(',');
+            const data = document.getElementById('data').value.split(',').map(Number);
+
+            // التحقق من صحة المدخلات
+            if (labels.length === 0 || data.length === 0 || labels.length !== data.length) {
+                alert('يرجى إدخال عناوين وقيم صحيحة.');
+                return;
+            }
+
+            const ctx = document.getElementById('myChart').getContext('2d');
+            
+            // إزالة الرسم البياني السابق إذا كان موجودًا
+            if (chart) {
+                chart.destroy();
+            }
+
+            // إنشاء الرسم البياني الجديد
+            chart = new Chart(ctx, {
+                type: chartType,
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'بيانات المستخدم',
+                        data: data,
+                        backgroundColor: chartType === 'pie' ? [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)',
+                            'rgba(255, 159, 64, 0.6)'
+                        ] : 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
                     }
                 }
-            }
+            });
         });
 
-        // خاصية تصدير الرسم البياني إلى PDF باستخدام jsPDF
+        // تصدير الرسم البياني إلى PDF
         document.getElementById('exportPDF').addEventListener('click', () => {
             const { jsPDF } = window.jspdf;
             const pdf = new jsPDF();
 
+            if (!chart) {
+                alert('يرجى إنشاء رسم بياني أولاً.');
+                return;
+            }
+
             // تحويل الرسم البياني إلى صورة
-            const chartImage = myChart.toBase64Image();
+            const chartImage = chart.toBase64Image();
 
             // إضافة الصورة إلى ملف PDF
-            pdf.text("الرسم البياني للمبيعات", 10, 10); // عنوان في PDF
+            pdf.text("الرسم البياني", 10, 10); // عنوان في PDF
             pdf.addImage(chartImage, 'PNG', 10, 20, 180, 100);
 
             // تنزيل ملف PDF
