@@ -1,3 +1,5 @@
+--- START OF FILE style.css ---
+
 /* style.css */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
@@ -75,7 +77,6 @@ header {
     transform-origin: bottom right; /* Start from right */
     transition: transform 0.3s ease; /* Transition for the underline animation */
 }
-
 
 .navbar li a:hover::before {
     transform: scaleX(1); /* Expand the underline */
@@ -642,10 +643,7 @@ footer {
     align-items: center;
     gap: 1rem;
     }
-    .data-input-area label{
-    margin-bottom: 0.5rem;
-    }
-    .data-input-area .input-group {
+     .data-input-area .input-group {
     display: flex;
     flex-direction: column;
     width: auto;
