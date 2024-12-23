@@ -107,3 +107,112 @@ footer .social a {
 footer .social a:hover {
     color: #FFD700;
 }
+/* إعدادات أساسية */
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #0078D7;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #005BB5;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.navbar a.active {
+    border-bottom: 2px solid #FFD700;
+}
+
+/* الأقسام */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.service-cards, .importance-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: #0078D7;
+    margin-bottom: 15px;
+}
+
+.card i {
+    font-size: 2em;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+/* قسم التواصل */
+.contact {
+    background: #0078D7;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.contact a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+/* تذييل */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer .social a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+footer .social a:hover {
+    color: #FFD700;
+}
