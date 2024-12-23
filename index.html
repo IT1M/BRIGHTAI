@@ -28,37 +28,252 @@
         </nav>
     </header>
     
-    <section class="banner3d dynamic-background">
-        <canvas id="animated-bg-banner"></canvas>
-        <div class="container">
-            <div class="banner3d-content">
-                <div class="banner3d-text">
-                    <h2>نحو مستقبل ذكي</h2>
-                    <p>نقدم حلول الذكاء الاصطناعي المبتكرة لتحويل أفكارك إلى واقع</p>
-                    <div class="banner3d-buttons">
-                        <a href="#services" class="button">
-                            <i class="fas fa-rocket"></i>
-                            اكتشف خدماتنا
-                        </a>
-                        <a href="#contact" class="button button-outline">
-                            <i class="fas fa-paper-plane"></i>
-                            تواصل معنا
-                        </a>
-                    </div>
+<style>
+    .banner3d {
+        position: relative;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #2a0845 0%, #6441A5 100%);
+        overflow: hidden;
+    }
+
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 120px;
+        height: auto;
+        z-index: 10;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .banner3d-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 80vh;
+    }
+
+    .banner3d-text {
+        flex: 1;
+        color: #fff;
+        text-align: right;
+        padding: 2rem;
+    }
+
+    .banner3d-text h2 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(45deg, #fff, #a855f7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .banner3d-text p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .banner3d-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .button {
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .button:first-child {
+        background: linear-gradient(45deg, #a855f7, #6441A5);
+        color: white;
+        border: none;
+    }
+
+    .button-outline {
+        border: 2px solid #a855f7;
+        color: #fff;
+    }
+
+    .button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .banner3d-cube {
+        flex: 1;
+        perspective: 1000px;
+    }
+
+    .cube {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rotate 20s infinite linear;
+    }
+
+    .face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: rgba(168, 85, 247, 0.2);
+        border: 2px solid #a855f7;
+        backdrop-filter: blur(5px);
+    }
+
+    @keyframes rotate {
+        from { transform: rotateX(0) rotateY(0); }
+        to { transform: rotateX(360deg) rotateY(360deg); }
+    }
+
+    .face.front  { transform: translateZ(100px); }
+    .face.back   { transform: translateZ(-100px) rotateY(180deg); }
+    .face.right  { transform: rotateY(90deg) translateZ(100px); }
+    .face.left   { transform: rotateY(-90deg) translateZ(100px); }
+    .face.top    { transform: rotateX(90deg) translateZ(100px); }
+    .face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+    #animated-bg-banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+        .banner3d-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .banner3d-text {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .banner3d-text h2 {
+            font-size: 2.5rem;
+        }
+
+        .banner3d-buttons {
+            justify-content: center;
+        }
+
+        .banner3d-cube {
+            margin-top: 2rem;
+        }
+
+        .cube {
+            transform: scale(0.8);
+        }
+    }
+</style>
+
+<section class="banner3d dynamic-background">
+    <img src="https://www2.0zz0.com/2024/12/23/15/152121425.png" alt="Bright AI Logo" class="logo">
+    <canvas id="animated-bg-banner"></canvas>
+    <div class="container">
+        <div class="banner3d-content">
+            <div class="banner3d-text">
+                <h2>نحو مستقبل ذكي</h2>
+                <p>نقدم حلول الذكاء الاصطناعي المبتكرة لتحويل أفكارك إلى واقع</p>
+                <div class="banner3d-buttons">
+                    <a href="#services" class="button">
+                        <i class="fas fa-rocket"></i>
+                        اكتشف خدماتنا
+                    </a>
+                    <a href="#contact" class="button button-outline">
+                        <i class="fas fa-paper-plane"></i>
+                        تواصل معنا
+                    </a>
                 </div>
-                <div class="banner3d-cube">
-                    <div class="cube">
-                        <div class="face front"></div>
-                        <div class="face back"></div>
-                        <div class="face right"></div>
-                        <div class="face left"></div>
-                        <div class="face top"></div>
-                        <div class="face bottom"></div>
-                    </div>
+            </div>
+            <div class="banner3d-cube">
+                <div class="cube">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    const canvas = document.getElementById('animated-bg-banner');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const particles = [];
+    const particleCount = 100;
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 2;
+            this.vy = (Math.random() - 0.5) * 2;
+            this.radius = Math.random() * 2;
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+            if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(168, 85, 247, 0.5)';
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach(particle => {
+            particle.update();
+            particle.draw();
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
     
 <section id="services-section" class="services-section">
         <div class="container">
@@ -90,18 +305,6 @@
         </div>
     </section>
     
-<section class="hero dynamic-background">
-        <canvas id="animated-bg-hero"></canvas>
-        <div class="container">
-            <i class="fas fa-robot icon"></i>
-            <h1>ريادة في الذكاء الاصطناعي</h1>
-            <p>بإلهام الذكاء الاصطناعي نصوغ غدًا أكثر إشراقًا</p>
-            <div class="hero-buttons">
-                <a href="mailto:yazeedaiai0@gmail.com" class="button"><i class="fas fa-envelope"></i> راسلنا عبر الايميل</a>
-                <a href="https://wa.me/966501120781" class="button" target="_blank"><i class="fab fa-whatsapp"></i> تواصل معنا عبر الواتس اب</a>
-            </div>
-        </div>
-    </section>
 
     <section style="background: linear-gradient(to right, #f8f9fa, #e9ecef); padding: 60px 20px; text-align: center;">
   <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 20px;">
@@ -122,6 +325,19 @@
       </div>
   </div>
 </section>
+
+    <section class="hero dynamic-background">
+        <canvas id="animated-bg-hero"></canvas>
+        <div class="container">
+            <i class="fas fa-robot icon"></i>
+            <h1>ريادة في الذكاء الاصطناعي</h1>
+            <p>بإلهام الذكاء الاصطناعي نصوغ غدًا أكثر إشراقًا</p>
+            <div class="hero-buttons">
+                <a href="mailto:yazeedaiai0@gmail.com" class="button"><i class="fas fa-envelope"></i> راسلنا عبر الايميل</a>
+                <a href="https://wa.me/966501120781" class="button" target="_blank"><i class="fab fa-whatsapp"></i> تواصل معنا عبر الواتس اب</a>
+            </div>
+        </div>
+    </section>
     
     <section class="services dynamic-background" id="services">
         <canvas id="animated-bg-services"></canvas>
