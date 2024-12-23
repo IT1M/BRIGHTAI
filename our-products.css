@@ -1,20 +1,24 @@
+--- START OF FILE our-products.css ---
+
 /* General Styles */
 body {
     font-family: 'Cairo', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(45deg, #f4f4f4, #e6e6e6);
     color: #333;
     line-height: 1.6;
     direction: rtl;
+    overflow-x: hidden; /* منع الشريط الأفقي */
 }
 
 /* Header */
 header {
-    background: #2c3e50;
+    background: linear-gradient(to bottom, #34495e, #2c3e50);
     color: white;
     text-align: center;
     padding: 30px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -70,15 +74,23 @@ nav {
     gap: 20px;
     padding: 30px 20px;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .subscription {
     background-color: white;
-    border-radius: 8px;
+    border-radius: 15px;
     padding: 20px;
     width: calc(30% - 20px);
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscription:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 .subscription h2 {
@@ -129,13 +141,20 @@ main h2 {
 
 .product {
     background-color: white;
-    border-radius: 8px;
+    border-radius: 15px;
     padding: 20px;
     width: calc(30% - 20px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-     position: relative;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
 .product h3 {
   font-size: 1.3em;
     color: #333;
@@ -152,7 +171,7 @@ main h2 {
     font-weight: bold;
      color: #3498db;
 }
-.buy-button {
+.buy-button, .details-button {
     display: inline-block;
     padding: 10px 20px;
     background-color: #3498db;
@@ -162,12 +181,89 @@ main h2 {
     transition: background-color 0.3s ease;
     margin-top: 10px;
     border: none;
-     cursor: pointer;
+    cursor: pointer;
+    font-size: 1em;
 }
-.buy-button:hover{
-  background-color: #2980b9;
 
+.buy-button:hover, .details-button:hover {
+  background-color: #2980b9;
 }
+
+.details-button {
+    background-color: #27ae60;
+}
+
+.details-button:hover {
+    background-color: #219653;
+}
+
+/* Product Details Modal */
+.product-details-modal {
+    display: none;
+    position: fixed;
+    z-index: 1100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.product-details-modal.active {
+    display: block;
+}
+
+.product-details-modal .modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 700px;
+    position: relative;
+}
+
+.product-details-modal h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.product-details-modal p {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.product-details-modal ul {
+    padding-right: 20px;
+    margin-bottom: 15px;
+}
+
+.product-details-modal li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.product-details-modal .close-button {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.product-details-modal .close-button:hover,
+.product-details-modal .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* Payment Modal */
 .payment-modal {
     display: none;
@@ -185,7 +281,7 @@ main h2 {
     display: block;
 }
 
-.modal-content {
+.payment-modal .modal-content {
     background-color: white;
     margin: 15% auto;
     padding: 20px;
@@ -194,17 +290,17 @@ main h2 {
     max-width: 600px;
     position: relative;
 }
-.modal-content h2{
+.payment-modal .modal-content h2{
     font-size: 1.8em;
     margin-bottom: 10px;
      text-align: center;
       color: #2c3e50;
 }
-.modal-content p{
+.payment-modal .modal-content p{
     margin-bottom: 10px;
 }
 
-.close-button {
+.payment-modal .close-button {
     color: #aaa;
     float: left;
     font-size: 28px;
@@ -216,8 +312,8 @@ main h2 {
 
 }
 
-.close-button:hover,
-.close-button:focus {
+.payment-modal .close-button:hover,
+.payment-modal .close-button:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -243,6 +339,154 @@ main h2 {
 
 .whatsapp-button:hover {
     background-color: #128C7E;
+}
+
+/* لماذا نحن Section */
+.why-choose-us {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.why-choose-us h2 {
+    font-size: 2em;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.why-choose-us .reasons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.why-choose-us .reason {
+    flex: 1 1 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+}
+
+.why-choose-us .reason i {
+    font-size: 2.5em;
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.why-choose-us .reason h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.why-choose-us .reason p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Testimonials Section */
+.testimonials {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+
+.testimonials h2 {
+    font-size: 2em;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.testimonials .testimonial-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.testimonials .testimonial {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 0 0 auto;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials .testimonial p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.testimonials .testimonial .author {
+    text-align: right;
+    font-style: italic;
+    color: #777;
+}
+
+/* Contact Us Section */
+.contact-us {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-us h2 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.contact-us p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.contact-us .contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-us .contact-methods div {
+    display: flex;
+    align-items: center;
+}
+
+.contact-us .contact-methods i {
+    font-size: 1.5em;
+    color: #3498db;
+    margin-left: 10px;
+}
+
+.contact-us .contact-methods p {
+    margin: 0;
+}
+
+.contact-us .contact-methods a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.contact-us .contact-methods a:hover {
+    text-decoration: underline;
 }
 
 /* Footer */
@@ -271,7 +515,6 @@ footer .social-media a {
   margin: 5px;
 }
 
-
 footer h3 {
     font-size: 1.4em;
     margin-bottom: 15px;
@@ -288,6 +531,7 @@ color: white;
 footer .contact-info a i{
     margin-left: 5px;
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar li {
@@ -295,16 +539,23 @@ footer .contact-info a i{
         margin: 10px 0;
     }
     .subscription,
-    .product {
+    .product,
+    .why-choose-us .reasons .reason {
         width: 100%;
+        margin-bottom: 20px;
     }
-      .modal-content {
+      .payment-modal .modal-content,
+    .product-details-modal .modal-content {
         width: 90%;
          margin: 30% auto;
-
      }
     footer .social-media,
     footer .contact-info {
         width: 100%;
+    }
+    .contact-us .contact-methods {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 }
