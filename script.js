@@ -89,7 +89,17 @@ window.addEventListener('load', function () {
         'animated-bg-faq',
         'animated-bg-partners',
         'animated-bg-newsletter',
-        'animated-bg-footer'
+        'animated-bg-footer',
+        'animated-bg-ai-development',
+        'animated-bg-nlp',
+        'animated-bg-ml',
+        'animated-bg-cv',
+        'animated-bg-process-automation',
+        'animated-bg-data-analytics',
+        'animated-bg-ai-consultations',
+        'animated-bg-ar-vr',
+        'animated-bg-digital-library',
+        'animated-bg-banner'
     ];
 
     canvasIds.forEach(canvasId => {
