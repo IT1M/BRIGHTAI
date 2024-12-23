@@ -856,3 +856,90 @@ footer {
             height: 150px;
         }
     }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.services-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.container {
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.service-item {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+.icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.service-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.cta-text {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.highlight:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+    }
+    
+    .service-item {
+        min-width: 100%;
+    }
+
+    .services-section {
+        padding: 40px 0;
+    }
+}
