@@ -1061,3 +1061,15 @@ h1 {
         height: 300px;
     }
 }
+/* إعدادات لجعل الخلفية تغطي الصفحة كاملة */
+.fullscreen-background {
+    position: fixed; /* تجعل العنصر ثابتًا */
+    top: 0;
+    left: 0;
+    width: 100vw; /* تغطي العرض الكامل */
+    height: 100vh; /* تغطي الارتفاع الكامل */
+    z-index: -1; /* تأكد من بقاء الخلفية في الخلف */
+    background-size: cover; /* تجعل الخلفية تغطي كامل العنصر */
+    background-position: center; /* محاذاة الخلفية إلى المنتصف */
+    background-repeat: no-repeat; /* منع تكرار الخلفية */
+}
