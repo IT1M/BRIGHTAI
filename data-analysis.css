@@ -1,3 +1,5 @@
+--- START OF FILE data-analysis.css ---
+
 /* إعدادات عامة */
 body {
     font-family: 'Cairo', sans-serif;
@@ -466,7 +468,6 @@ footer .social-media a {
  display: inline-block;
   margin: 5px;
 }
-
 
 footer h3 {
     font-size: 1.4em;
