@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     }]
               }),
           });
-      
+
           if (!response.ok) {
               const error = await response.json();
               throw new Error(`HTTP error! status: ${response.status}, details: ${JSON.stringify(error)}`);
-  
+
           }
-  
+
           const data = await response.json();
           if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts.length > 0 && data.candidates[0].content.parts[0].text)
           {
@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error("Error calling Gemini API:", error);
               throw error;
           }
-  
+
       }
-    
+
   window.analyzeInventory = async function () {
       const input = document.getElementById('inventory-input').value.trim();
       const outputDiv = document.getElementById('inventory-output');
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
          outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل المخزون:</strong><br> ${error.message}`;
       }
   };
- 
+
     window.analyzeSales = async function() {
     const input = document.getElementById('sales-input').value.trim();
         const outputDiv = document.getElementById('sales-output');
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
            return;
       }
      outputDiv.textContent = 'جاري تحليل بيانات المبيعات...';
- 
+
         try {
               const prompt = `قم بتحليل بيانات المبيعات التالية وتقديم توصيات: ${input}`;
              const result = await geminiRequest(prompt);
@@ -181,7 +181,7 @@ window.predictSuccess = async function() {
                outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل الواجب:</strong><br> ${error.message}`;
           }
      };
- 
+
       window.askTutor = async function() {
         const input = document.getElementById('tutor-input').value.trim();
           const outputDiv = document.getElementById('tutor-output');
@@ -261,7 +261,7 @@ window.predictSuccess = async function() {
                   return;
           }
            outputDiv.textContent = 'جاري إنشاء الصورة...';
- 
+
           try {
               const prompt = `قم بإنشاء صورة بناءً على الوصف التالي: ${input}`;
                const result = await geminiRequest(prompt);
@@ -271,7 +271,7 @@ window.predictSuccess = async function() {
             outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الصورة:</strong><br> ${error.message}`;
          }
      };
- 
+
      window.generateQuiz = async function() {
          const input = document.getElementById('quiz-input').value.trim();
          const outputDiv = document.getElementById('quiz-output');
@@ -496,4 +496,112 @@ window.predictSuccess = async function() {
             outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء السيرة الذاتية وخطاب التقديم:</strong><br> ${error.message}`;
         }
   };
+
+    window.generateHtmlCode = async function() {
+        const websiteType = document.getElementById('website-type').value;
+        const components = Array.from(document.querySelectorAll('input[name="components"]:checked')).map(c => c.value);
+        const colors = document.getElementById('colors').value;
+        const fonts = document.getElementById('fonts').value;
+        const content = document.getElementById('content').value;
+        const cssOption = document.querySelector('input[name="css_option"]:checked')?.value;
+        const inlineCssCode = document.getElementById('inline-css-code').value;
+        const externalCssFile = document.getElementById('external-css-file').value;
+        const outputDiv = document.getElementById('html-output');
+        const downloadButton = document.getElementById('download-html');
+
+        if (!websiteType || components.length === 0 || !content) {
+            outputDiv.textContent = 'الرجاء إدخال جميع المواصفات المطلوبة.';
+            return;
+        }
+
+        outputDiv.textContent = 'جاري إنشاء كود HTML...';
+
+        try {
+            let prompt = `أنشئ كود HTML ل${websiteType} يتضمن `;
+            if (components.length > 0) {
+                prompt += components.join(', ') + ' كمكونات أساسية. ';
+            }
+            prompt += `استخدم الألوان ${colors} والخطوط ${fonts}. المحتوى هو: ${content}. `;
+
+            if (cssOption === 'inline' && inlineCssCode) {
+                prompt += `أضف CSS مدمج: ${inlineCssCode}. `;
+            } else if (cssOption === 'external' && externalCssFile) {
+                prompt += `استخدم ملف CSS خارجي من الرابط: ${externalCssFile}. `;
+            }
+
+            prompt += "أضف تعليقات داخل الكود لشرح كل قسم، ودعم اللغة العربية.";
+
+            const generatedHTML = await geminiRequest(prompt);
+
+            // Example for contact page with simple form and link back to homepage
+            if (websiteType === 'contact') {
+                const exampleHTML = `
+                    <!-- بداية صفحة التواصل -->
+                    <!DOCTYPE html>
+                    <html lang="ar" dir="rtl">
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>تواصل معنا</title>
+                        <!-- إضافة CSS مدمج لتخصيص التصميم -->
+                        <style>
+                            body { font-family: Arial, sans-serif; }
+                            .container { width: 80%; margin: auto; text-align: center; }
+                            input[type="text"], textarea { width: 100%; padding: 10px; margin: 5px 0; }
+                            button { padding: 10px 20px; background-color: #007bff; color: white; border: none; }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="container">
+                            <h1>تواصل معنا</h1>
+                            <!-- نموذج الاتصال -->
+                            <form>
+                                <input type="text" placeholder="اسمك"><br>
+                                <input type="text" placeholder="بريدك الإلكتروني"><br>
+                                <textarea placeholder="رسالتك"></textarea><br>
+                                <button type="submit">إرسال</button>
+                            </form>
+                            <!-- رابط للعودة للصفحة الرئيسية -->
+                            <p><a href="index.html">العودة إلى الصفحة الرئيسية</a></p>
+                        </div>
+                    </body>
+                    </html>
+                    <!-- نهاية صفحة التواصل -->
+                `;
+                outputDiv.textContent = exampleHTML;
+                downloadButton.style.display = 'inline-block';
+            } else {
+                outputDiv.textContent = generatedHTML;
+                downloadButton.style.display = 'inline-block';
+            }
+
+        } catch (error) {
+            outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء كود HTML:</strong><br> ${error.message}`;
+        }
+    };
+
+    document.querySelectorAll('input[name="css_option"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === 'inline') {
+                document.getElementById('inline-css-code').style.display = 'block';
+                document.getElementById('external-css-file').style.display = 'none';
+            } else if (this.value === 'external') {
+                document.getElementById('inline-css-code').style.display = 'none';
+                document.getElementById('external-css-file').style.display = 'block';
+            }
+        });
+    });
+
+    document.getElementById('download-html').addEventListener('click', function() {
+        const content = document.getElementById('html-output').textContent;
+        const filename = 'generated_code.html';
+        const blob = new Blob([content], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
 });
