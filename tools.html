@@ -47,36 +47,6 @@ uTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
 <li><a href="tools.html" class="active">الادوات</a></li>
 </ul>
 </nav>
-<section style="padding: 20px; background-color: #f9f9f9; border: 1px solid #ddd;
-border-radius: 10px; margin: 20px;">
-<h2 style="text-align: center;">إنشاء رسوم بيانية تفاعلية</h2>
-<form id="chartForm" style="text-align: center; margin-bottom: 20px;">
-<label for="chartType"> اختر نوع الرسم البياني :</label>
-<select id="chartType">
-<option value="bar">شريطي</option>
-<option value="line">خطّي</option>
-<option value="pie">دائري</option>
-</select>
-<br><br>
-<label for="labels">أدخل العناوين (مفصولة بفواصل):</label><br>
-<input type="text" id="labels" placeholder="مثال: يناير, فبراير, مارس" style="width: 60%;
-padding: 5px; margin-bottom: 10px;">
-<br>
-<label for="data">أدخل القيم (مفصولة بفواصل) :</label><br>
-<input type="text" id="data" placeholder="30 ,20 ,10 :مثال" style="width: 60%; padding: 5px;
-margin-bottom: 10px;">
-<br>
-<button type="button" id="generateChart" style="padding: 10px 20px; font-size: 16px;
-background-color: #007bff; color: white; border: none; border-radius: 5px;">إنشاء الرسم
-البياني </button>
-</form>
-<div class="chart-container" style="text-align: center;">
-<canvas id="myChart" width="400" height="200"></canvas>
-</div>
-<button id="exportPDF" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
-background-color: #007bff; color: white; border: none; border-radius: 5px;">تصدير كملف
-PDF</button>
-</section>
 <section>
     <h2> خدماتنا </h2>
     <p style="text-align: center; color: #555; margin-bottom: 30px;">
@@ -116,6 +86,89 @@ PDF</button>
 <section>
     <h2> احدث الادوات </h2>
     <div class="tools-grid">
+        <div class="tool-card" id="resume-tool">
+             <div class="card-header">
+               <i class="fas fa-file-alt icon"></i>
+        <h3>مولد السيرة الذاتية وخطاب التقديم</h3>
+             </div>
+        <p>يقوم المستخدمون بإدخال معلوماتهم، وتقوم الأداة بإنشاء سير ذاتية وخطابات تقديم مُحسَّنة.</p>
+        <div class="tool-content">
+             <label for="template-select">قالب السيرة الذاتية:</label>
+             <select id="template-select">
+                <option value="modern">حديث</option>
+                 <option value="classic">تقليدي</option>
+                  <option value="creative">إبداعي</option>
+            </select>
+            <br><br>
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" placeholder="اسمك الكامل"><br><br>
+            <label for="title">المسمى الوظيفي:</label>
+            <input type="text" id="title" placeholder="مطور برمجيات، مدير تسويق، الخ"><br><br>
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" placeholder="youremail@example.com"><br><br>
+            <label for="phone">رقم الهاتف:</label>
+            <input type="tel" id="phone" placeholder="+1234567890"><br><br>
+            <label for="linkedin">LinkedIn:</label>
+            <input type="text" id="linkedin" placeholder="رابط ملفك الشخصي على LinkedIn"><br><br>
+
+            <h4>الهدف المهني</h4>
+            <textarea id="objective" placeholder="ملخص عن أهدافك المهنية"></textarea><br><br>
+
+            <h4>الخبرة المهنية</h4>
+            <div id="experience-fields">
+                <div class="experience-entry">
+                    <input type="text" class="company" placeholder="اسم الشركة">
+                    <input type="text" class="position" placeholder="المسمى الوظيفي">
+                    <input type="text" class="date" placeholder="تاريخ البدء - تاريخ الانتهاء">
+                    <textarea class="responsibilities" placeholder="المهام والمسؤوليات"></textarea>
+                    <button type="button" class="remove-experience">إزالة</button>
+                </div>
+            </div>
+            <button type="button" id="add-experience">إضافة خبرة</button><br><br>
+
+            <h4>التعليم</h4>
+            <div id="education-fields">
+                <div class="education-entry">
+                    <input type="text" class="degree" placeholder="الشهادة">
+                    <input type="text" class="university" placeholder="اسم الجامعة">
+                    <input type="text" class="graduation-date" placeholder="سنة التخرج">
+                    <button type="button" class="remove-education">إزالة</button>
+                </div>
+            </div>
+            <button type="button" id="add-education">إضافة تعليم</button><br><br>
+
+            <h4>المهارات</h4>
+            <textarea id="skills" placeholder="اذكر مهاراتك (افصل بينها بفواصل)"></textarea><br><br>
+
+            <h4>المشاريع</h4>
+            <div id="projects-fields">
+                <div class="project-entry">
+                    <input type="text" class="project-name" placeholder="اسم المشروع">
+                    <textarea class="project-description" placeholder="وصف المشروع"></textarea>
+                    <textarea class="project-tools" placeholder="الأدوات المستخدمة"></textarea>
+                    <button type="button" class="remove-project">إزالة</button>
+                </div>
+            </div>
+            <button type="button" id="add-project">إضافة مشروع</button><br><br>
+
+            <h4>خطاب التقديم</h4>
+            <label for="job-title">الوظيفة المستهدفة:</label>
+            <input type="text" id="job-title" placeholder="الوظيفة التي تتقدم لها"><br><br>
+            <label for="company-name">اسم الشركة:</label>
+            <input type="text" id="company-name" placeholder="اسم الشركة التي تتقدم إليها"><br><br>
+            <label for="relevant-skills">المهارات ذات الصلة:</label>
+            <textarea id="relevant-skills" placeholder="اذكر المهارات ذات الصلة بالوظيفة"></textarea><br><br>
+            <label for="interest-reason">سبب اهتمامك بالشركة:</label>
+            <textarea id="interest-reason" placeholder="لماذا أنت مهتم بالعمل في هذه الشركة؟"></textarea><br><br>
+
+            <button class="try-button" onclick="generateResume()">إنشاء</button>
+            <div id="resume-output" class="output-text" style="height: auto;"></div>
+            <button id="download-resume" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
+                background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل السيرة الذاتية (PDF)</button>
+            <button id="download-cover-letter" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
+                background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل خطاب التقديم (PDF)</button>
+        </div>
+    </div>
         <div class="tool-card" id="html-generator-tool">
             <div class="card-header">
                 <i class="fas fa-code icon"></i>
@@ -184,6 +237,38 @@ PDF</button>
           <div id="homework-output" class="output-text"></div>
       </div>
   </div>
+  <div class="tool-card">
+    <section style="padding: 0px; background-color: transparent; border: none;
+    border-radius: 0px; margin: 0px;">
+    <h3 style="text-align: center;font-size: 1.8em; margin-bottom: 15px;">إنشاء رسوم بيانية تفاعلية</h3>
+    <form id="chartForm" style="text-align: center; margin-bottom: 10px;">
+    <label for="chartType"> اختر نوع الرسم البياني :</label>
+    <select id="chartType">
+    <option value="bar">شريطي</option>
+    <option value="line">خطّي</option>
+    <option value="pie">دائري</option>
+    </select>
+    <br><br>
+    <label for="chartLabels">أدخل العناوين (مفصولة بفواصل):</label><br>
+    <input type="text" id="chartLabels" placeholder="مثال: يناير, فبراير, مارس" style="width: 60%;
+    padding: 5px; margin-bottom: 10px;">
+    <br>
+    <label for="chartData">أدخل القيم (مفصولة بفواصل) :</label><br>
+    <input type="text" id="chartData" placeholder="30 ,20 ,10 :مثال" style="width: 60%; padding: 5px;
+    margin-bottom: 10px;">
+    <br>
+    <button type="button" id="generateChart" style="padding: 10px 20px; font-size: 16px;
+    background-color: #007bff; color: white; border: none; border-radius: 5px;">إنشاء الرسم
+    البياني </button>
+    </form>
+    <div class="chart-container" style="text-align: center;">
+    <canvas id="myChart" width="400" height="200"></canvas>
+    </div>
+    <button id="exportPDF" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
+    background-color: #007bff; color: white; border: none; border-radius: 5px;">تصدير كملف
+    PDF</button>
+    </section>
+</div>
   <div class="tool-card" id="tutor-tool">
       <div class="card-header">
           <i class="fa fa-robot icon"></i>
@@ -472,113 +557,95 @@ PDF</button>
         <div class="tool-content">
             <textarea id="social-input" placeholder="أدخل بيانات وسائل التواصل الاجتماعي"></textarea>
             <button class="try-button" onclick="analyzeSocialMedia()">تحليل البيانات الاجتماعية</button>
-             <div id="social-output" class="output-text"></div>
-        </div>
-    </div>
-    <div class="tool-card" id="resume-tool">
-         <div class="card-header">
-           <i class="fas fa-file-alt icon"></i>
-        <h3>مولد السيرة الذاتية وخطاب التقديم</h3>
+             <div id="social-output" class="output        </div>
              </div>
-        <p>يقوم المستخدمون بإدخال معلوماتهم، وتقوم الأداة بإنشاء سير ذاتية وخطابات تقديم مُحسَّنة.</p>
-        <div class="tool-content">
-             <select id="template-select">
-                <option value="modern">حديث</option>
-                 <option value="classic">تقليدي</option>
-                  <option value="creative">إبداعي</option>
-            </select>
-            <textarea id="resume-input" placeholder="أدخل معلوماتك الشخصية والمهنية"></textarea>
-            <button class="try-button" onclick="generateResume()">إنشاء</button>
-            <div id="resume-output" class="output-text"></div>
-        </div>
-    </div>
-</div>
-</section>
-
-</div>
-<footer>
-<div class="social-media">
-<h3> تابعنا على </h3>
-<a href="https://x.com/BrightAIII" target="_blank" title="X"> <i class="fab fa-twitter"></i>
-</a>
-<a href="https://www.youtube.com/@TeechLab" target="_blank" title="Youtube"><i
-class="fab fa-youtube"></i></a>
-<a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab
-fa-instagram"></i></a>
-</div>
-<div class="contact-info">
-<h3> تواصل معنا </h3>
-<p><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com </p>
-<p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i
-class="fab fa-whatsapp"></i> </a></p>
-</div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-<script>
-  let chart;
-
-  document.getElementById('generateChart').addEventListener('click', () => {
-      const chartType = document.getElementById('chartType').value;
-      const labels = document.getElementById('labels').value.split(',');
-      const data = document.getElementById('data').value.split(',').map(Number);
-
-      if (labels.length === 0 || data.length === 0 || labels.length !== data.length) {
-          alert('يرجى إدخال عناوين وقيم صحيحة');
-          return;
-      }
-
-      const ctx = document.getElementById('myChart').getContext('2d');
-
-      if (chart) {
-          chart.destroy();
-      }
-
-      chart = new Chart(ctx, {
-        type: chartType,
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'بيانات المستخدم',
-                data: data,
-                backgroundColor: chartType === 'pie' ? [
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(255, 159, 64, 0.6)'
-                ]: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'top',
-                }
-            }
-        }
-      });
-  });
-
-    document.getElementById('exportPDF').addEventListener('click', () => {
-        const { jsPDF } = window.jspdf;
-        const pdf = new jsPDF();
-
-        if (!chart) {
-        alert('يرجى إنشاء رسم بياني أولاً');
-        return;
-      }
-
-        const chartImage = chart.toBase64Image();
-        pdf.text("PDF الرسم البياني", 10, 10);
-        pdf.addImage(chartImage, 'PNG', 10, 20, 180, 100);
-        pdf.save("chart.pdf");
-    });
-</script>
-<script src="tools.js"></script>
-</body>
-</html>
+         </div>
+         </section>
+         
+         </div>
+         <footer>
+         <div class="social-media">
+         <h3> تابعنا على </h3>
+         <a href="https://x.com/BrightAIII" target="_blank" title="X"> <i class="fab fa-twitter"></i>
+         </a>
+         <a href="https://www.youtube.com/@TeechLab" target="_blank" title="Youtube"><i
+         class="fab fa-youtube"></i></a>
+         <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab
+         fa-instagram"></i></a>
+         </div>
+         <div class="contact-info">
+         <h3> تواصل معنا </h3>
+         <p><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com </p>
+         <p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i
+         class="fab fa-whatsapp"></i> </a></p>
+         </div>
+         </footer>
+         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+         <script>
+           let chart;
+         
+           document.getElementById('generateChart').addEventListener('click', () => {
+               const chartType = document.getElementById('chartType').value;
+               const labels = document.getElementById('chartLabels').value.split(',');
+               const data = document.getElementById('chartData').value.split(',').map(Number);
+         
+               if (labels.length === 0 || data.length === 0 || labels.length !== data.length) {
+                   alert('يرجى إدخال عناوين وقيم صحيحة');
+                   return;
+               }
+         
+               const ctx = document.getElementById('myChart').getContext('2d');
+         
+               if (chart) {
+                   chart.destroy();
+               }
+         
+               chart = new Chart(ctx, {
+                 type: chartType,
+                 data: {
+                     labels: labels,
+                     datasets: [{
+                         label: 'بيانات المستخدم',
+                         data: data,
+                         backgroundColor: chartType === 'pie' ? [
+                             'rgba(255, 99, 132, 0.6)',
+                             'rgba(54, 162, 235, 0.6)',
+                             'rgba(255, 206, 86, 0.6)',
+                             'rgba(75, 192, 192, 0.6)',
+                             'rgba(153, 102, 255, 0.6)',
+                             'rgba(255, 159, 64, 0.6)'
+                         ]: 'rgba(75, 192, 192, 0.2)',
+                         borderColor: 'rgba(75, 192, 192, 1)',
+                         borderWidth: 1
+                     }]
+                 },
+                 options: {
+                     responsive: true,
+                     plugins: {
+                         legend: {
+                             position: 'top',
+                         }
+                     }
+                 }
+               });
+           });
+         
+             document.getElementById('exportPDF').addEventListener('click', () => {
+                 const { jsPDF } = window.jspdf;
+                 const pdf = new jsPDF();
+         
+                 if (!chart) {
+                 alert('يرجى إنشاء رسم بياني أولاً');
+                 return;
+               }
+         
+                 const chartImage = chart.toBase64Image();
+                 pdf.text("PDF الرسم البياني", 10, 10);
+                 pdf.addImage(chartImage, 'PNG', 10, 20, 180, 100);
+                 pdf.save("chart.pdf");
+             });
+         </script>
+         <script src="tools.js"></script>
+         </body>
+         </html>
