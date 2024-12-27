@@ -2,15 +2,6 @@
 <html lang="ar" dir="rtl">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX1R7HM1ZD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZX1R7HM1ZD');
-</script>
-  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZKTP4496K"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -19,6 +10,15 @@
 
   gtag('config', 'G-SZKTP4496K');
 </script>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZKTP4496K"></script>
+ <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+ 
+   gtag('config', 'G-SZKTP4496K');
+ </script>
 <script async
 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-54680676
 20830797"
@@ -43,7 +43,7 @@ uTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
 <li><a href="data-analysis.html">تحليل البيانات</a></li>
 <li><a href="blog.html">مدونة</a></li>
 <li><a href="our-products.html">منتجاتنا</a></li>
-<li><a href="tools.html">الادوات</a></li>
+<li><a href="tools.html" class="active">الادوات</a></li>
 </ul>
 </nav>
 <section style="padding: 20px; background-color: #f9f9f9; border: 1px solid #ddd;
@@ -234,6 +234,116 @@ PDF</button>
           <div id="employee-output" class="output-text"></div>
       </div>
   </div>
+  <div class="tool-card" id="presentation-tool">
+        <i class="fas fa-file-powerpoint icon"></i>
+        <h3>أداة إنشاء العروض التقديمية</h3>
+        <p>تساعد في إنشاء عروض تقديمية احترافية بناءً على النص المدخل.</p>
+        <div class="tool-content">
+            <textarea id="presentation-input" placeholder="أدخل موضوع العرض التقديمي"></textarea>
+            <button class="try-button" onclick="generatePresentation()">إنشاء العرض</button>
+            <div id="presentation-output" class="output-text"></div>
+        </div>
+    </div>
+    <div class="tool-card" id="sentiment-tool">
+        <i class="fas fa-comment-dots icon"></i>
+        <h3>أداة تحليل المشاعر</h3>
+        <p>تقوم بتحليل النص لتحديد المشاعر الإيجابية أو السلبية أو المحايدة.</p>
+        <div class="tool-content">
+            <textarea id="sentiment-input" placeholder="أدخل النص المراد تحليله"></textarea>
+            <button class="try-button" onclick="analyzeSentiment()">تحليل المشاعر</button>
+            <div id="sentiment-output" class="output-text"></div>
+        </div>
+    </div>
+     <div class="tool-card" id="literary-tool">
+        <i class="fas fa-book-reader icon"></i>
+        <h3>أداة تحليل النصوص الأدبية</h3>
+         <p>تقوم بتحليل النصوص الأدبية لتحديد السمات الأدبية مثل الاستعارات والتشبيهات.</p>
+        <div class="tool-content">
+            <textarea id="literary-input" placeholder="أدخل النص الأدبي"></textarea>
+             <button class="try-button" onclick="analyzeLiteraryText()">تحليل النص</button>
+            <div id="literary-output" class="output-text"></div>
+        </div>
+    </div>
+  <div class="tool-card" id="marketing-tool">
+        <i class="fas fa-bullhorn icon"></i>
+         <h3>أداة إنشاء الخطط التسويقية</h3>
+        <p>تساعد في إنشاء خطط تسويقية بناءً على البيانات المدخلة.</p>
+        <div class="tool-content">
+            <textarea id="marketing-input" placeholder="أدخل بيانات المنتج والسوق"></textarea>
+              <button class="try-button" onclick="generateMarketingPlan()">إنشاء الخطة</button>
+            <div id="marketing-output" class="output-text"></div>
+        </div>
+    </div>
+ <div class="tool-card" id="geographic-tool">
+        <i class="fas fa-map-marked-alt icon"></i>
+        <h3>أداة تحليل البيانات الجغرافية</h3>
+       <p>تقوم بتحليل البيانات الجغرافية وإظهار النتائج على خرائط تفاعلية.</p>
+        <div class="tool-content">
+           <textarea id="geographic-input" placeholder="أدخل البيانات الجغرافية"></textarea>
+             <button class="try-button" onclick="analyzeGeographicData()">تحليل البيانات</button>
+            <div id="geographic-output" class="output-text"></div>
+        </div>
+    </div>
+ <div class="tool-card" id="story-tool">
+        <i class="fas fa-book icon"></i>
+        <h3>أداة إنشاء القصص التفاعلية</h3>
+        <p>تساعد في إنشاء قصص تفاعلية بناءً على النص المدخل.</p>
+       <div class="tool-content">
+            <textarea id="story-input" placeholder="أدخل نص القصة"></textarea>
+               <button class="try-button" onclick="generateInteractiveStory()">إنشاء القصة</button>
+           <div id="story-output" class="output-text"></div>
+        </div>
+    </div>
+    <div class="tool-card" id="health-tool">
+        <i class="fas fa-heartbeat icon"></i>
+        <h3>أداة تحليل البيانات الصحية</h3>
+         <p>تقوم بتحليل البيانات الصحية وتقديم توصيات بناءً على النتائج.</p>
+        <div class="tool-content">
+             <textarea id="health-input" placeholder="أدخل البيانات الصحية (الوزن، الطول، النشاط)"></textarea>
+              <button class="try-button" onclick="analyzeHealthData()">تحليل البيانات</button>
+           <div id="health-output" class="output-text"></div>
+        </div>
+    </div>
+    <div class="tool-card" id="newsletter-tool">
+        <i class="fas fa-envelope-open-text icon"></i>
+        <h3>أداة إنشاء الرسائل الإخبارية</h3>
+      <p>تساعد في إنشاء رسائل إخبارية احترافية بناءً على النص المدخل.</p>
+         <div class="tool-content">
+            <textarea id="newsletter-input" placeholder="أدخل نص الرسالة الإخبارية"></textarea>
+               <button class="try-button" onclick="generateNewsletter()">إنشاء الرسالة</button>
+             <div id="newsletter-output" class="output-text"></div>
+        </div>
+    </div>
+   <div class="tool-card" id="finance-tool">
+        <i class="fas fa-piggy-bank icon"></i>
+        <h3>أداة تحليل البيانات المالية الشخصية</h3>
+       <p>تقوم بتحليل البيانات المالية الشخصية وتقديم توصيات لتحسين الإدارة المالية.</p>
+         <div class="tool-content">
+          <textarea id="finance-input" placeholder="أدخل البيانات المالية (الدخل، المصروفات)"></textarea>
+              <button class="try-button" onclick="analyzePersonalFinance()">تحليل البيانات المالية</button>
+            <div id="finance-output" class="output-text"></div>
+        </div>
+    </div>
+  <div class="tool-card" id="legal-tool">
+        <i class="fas fa-gavel icon"></i>
+        <h3>أداة إنشاء الوثائق القانونية</h3>
+     <p>تساعد في إنشاء وثائق قانونية بناءً على النص المدخل.</p>
+      <div class="tool-content">
+            <textarea id="legal-input" placeholder="أدخل تفاصيل الوثيقة القانونية"></textarea>
+              <button class="try-button" onclick="generateLegalDocument()">إنشاء الوثيقة</button>
+             <div id="legal-output" class="output-text"></div>
+        </div>
+    </div>
+    <div class="tool-card" id="social-tool">
+        <i class="fas fa-share-alt icon"></i>
+        <h3>أداة تحليل البيانات الاجتماعية</h3>
+         <p>تقوم بتحليل البيانات الاجتماعية من وسائل التواصل الاجتماعي وإظهار النتائج.</p>
+        <div class="tool-content">
+            <textarea id="social-input" placeholder="أدخل بيانات وسائل التواصل الاجتماعي"></textarea>
+            <button class="try-button" onclick="analyzeSocialMedia()">تحليل البيانات الاجتماعية</button>
+             <div id="social-output" class="output-text"></div>
+        </div>
+    </div>
 </div>
 </section>
 
