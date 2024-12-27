@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  const apiKey = 'AIzaSyCMrm1LjmlJObZsVCQEuy_wTkh9ZEEc8aQ'; // Replace with your actual API key
+  const apiKey = 'AIzaSyCMrm1LjmlJObZsVCQEuy_wTkh9ZEEc8aQ'; // ضع هنا مفتاح API الفعلي
 
   async function geminiRequest(prompt) {
     const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"; // Replace with actual Gemini API endpoint
@@ -128,25 +128,70 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch (error) {
       outputDiv.innerHTML = `<strong>${language === 'ar' ? 'حدث خطأ أثناء إنشاء السيرة الذاتية وخطاب التقديم' : 'Error generating resume and cover letter'}:</strong><br> ${error.message}`;
     }
-   };
-
-  window.downloadResumePDF = function() {
-    const { jsPDF } = window.jspdf;
-    const language = document.getElementById('language-select').value;
-    const pdf = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
-    pdf.setFont(language === 'ar' ? 'Amiri-Regular' : 'Helvetica', 'normal');
-    pdf.text(document.getElementById('resume-output').dataset.cvContent, 10, 10, { align: language === 'ar' ? 'right' : 'left' });
-    pdf.save("resume.pdf");
   };
 
-  window.downloadCoverLetterPDF = function() {
-    const { jsPDF } = window.jspdf;
-    const language = document.getElementById('language-select').value;
-    const pdf = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
-    pdf.setFont(language === 'ar' ? 'Amiri-Regular' : 'Helvetica', 'normal');
-    pdf.text(document.getElementById('resume-output').dataset.coverLetterContent, 10, 10, { align: language === 'ar' ? 'right' : 'left' });
-    pdf.save("cover_letter.pdf");
-  };
+    document.getElementById('download-resume').addEventListener('click', function () {
+        const { jsPDF } = window.jspdf;
+        const language = document.getElementById('language-select').value;
+        const pdf = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
+        pdf.setFont(language === 'ar' ? 'Amiri-Regular' : 'Helvetica', 'normal');
+        pdf.text(document.getElementById('resume-output').dataset.cvContent, 10, 10, { align: language === 'ar' ? 'right' : 'left' });
+        pdf.save("resume.pdf");
+    });
+
+    document.getElementById('download-cover-letter').addEventListener('click', function () {
+        const { jsPDF } = window.jspdf;
+        const language = document.getElementById('language-select').value;
+        const pdf = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
+        pdf.setFont(language === 'ar' ? 'Amiri-Regular' : 'Helvetica', 'normal');
+        pdf.text(document.getElementById('resume-output').dataset.coverLetterContent, 10, 10, { align: language === 'ar' ? 'right' : 'left' });
+        pdf.save("cover_letter.pdf");
+    });
+
+    // --- Saudi Job Search Tool ---
+    window.searchSaudiJobs = async function () {
+       const location = document.getElementById('job-location').value;
+       const jobField = document.getElementById('job-field').value;
+        const skills = document.getElementById('job-skills').value;
+        const resumeFile = document.getElementById('resume-upload').files[0];
+        const outputDiv = document.getElementById('saudi-jobs-output');
+        const downloadButton = document.getElementById('download-search-results');
+        outputDiv.textContent = 'جاري البحث عن الوظائف...';
+
+        try {
+            let resumeText = '';
+           if (resumeFile) {
+                resumeText = await new Promise((resolve, reject) => {
+                 const reader = new FileReader();
+                    reader.onload = (event) => resolve(event.target.result);
+                 reader.onerror = (error) => reject(error);
+                   reader.readAsText(resumeFile);
+              });
+              }
+          let prompt = `ابحث عن وظائف في المملكة العربية السعودية، في مدينة ${location} ومجال ${jobField}، مستخدماً المهارات التالية: ${skills}. `;
+            if(resumeText){
+            prompt += ` بالإضافة إلى تحليل السيرة الذاتية المرفقة لتحسين فرص القبول: ${resumeText}`;
+           }
+            prompt += 'قم بإعداد تقرير يتضمن فرص التحسين في السيرة الذاتية، وأبرز الوظائف المناسبة التي تم العثور عليها، بالإضافة إلى نصائح عملية لتطوير السيرة الذاتية وزيادة فرص القبول.';
+
+            const result = await geminiRequest(prompt);
+            outputDiv.innerHTML = `<strong>نتائج البحث:</strong><br><pre>${result}</pre>`;
+             // Store generated content for download
+           outputDiv.dataset.searchContent = result;
+            downloadButton.style.display = 'inline-block';
+
+        } catch (error) {
+            outputDiv.innerHTML = `<strong>حدث خطأ أثناء البحث عن الوظائف:</strong><br> ${error.message}`;
+           }
+      };
+   document.getElementById('download-search-results').addEventListener('click', function() {
+       const { jsPDF } = window.jspdf;
+       const language = document.getElementById('language-select').value;
+      const pdf = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
+       pdf.setFont(language === 'ar' ? 'Amiri-Regular' : 'Helvetica', 'normal');
+        pdf.text(document.getElementById('saudi-jobs-output').dataset.searchContent, 10, 10, { align: language === 'ar' ? 'right' : 'left' });
+       pdf.save("job_search_results.pdf");
+    });
 
   // --- Interactive Chart ---
   let chart;
@@ -492,7 +537,7 @@ document.addEventListener('DOMContentLoaded', function() {
     try {
       const prompt = `قم بتحليل النص الأدبي التالي لتحديد السمات الأدبية: ${input}`;
       const result = await geminiRequest(prompt);
-       outputDiv.innerHTML = `<strong>تحليل النص الأدبي:</strong><br>${result}`;
+      outputDiv.innerHTML = `<strong>تحليل النص الأدبي:</strong><br>${result}`;
     } catch (error) {
       outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل النص الأدبي:</strong><br> ${error.message}`;
     }
@@ -626,87 +671,89 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  window.generateHtmlCode = async function() {
-    const websiteType = document.getElementById('website-type').value;
-    const components = Array.from(document.querySelectorAll('input[name="components"]:checked')).map(c => c.value);
-    const colors = document.getElementById('colors').value;
-    const fonts = document.getElementById('fonts').value;
-    const content = document.getElementById('content').value;
-    const cssOption = document.querySelector('input[name="css_option"]:checked')?.value;
-    const inlineCssCode = document.getElementById('inline-css-code').value;
-    const externalCssFile = document.getElementById('external-css-file').value;
-    const outputDiv = document.getElementById('html-output');
-    const downloadButton = document.getElementById('download-html');
+   window.generateHtmlCode = async function() {
+        const websiteType = document.getElementById('website-type').value;
+        const components = Array.from(document.querySelectorAll('input[name="components"]:checked')).map(c => c.value);
+        const colors = document.getElementById('colors').value;
+        const fonts = document.getElementById('fonts').value;
+        const content = document.getElementById('content').value;
+        const cssOption = document.querySelector('input[name="css_option"]:checked')?.value;
+        const inlineCssCode = document.getElementById('inline-css-code').value;
+        const externalCssFile = document.getElementById('external-css-file').value;
+        const outputDiv = document.getElementById('html-output');
+        const downloadButton = document.getElementById('download-html');
 
-    if (!websiteType || components.length === 0 || !content) {
-      outputDiv.textContent = 'الرجاء إدخال جميع المواصفات المطلوبة.';
-      return;
-    }
+        if (!websiteType || components.length === 0 || !content) {
+            outputDiv.textContent = 'الرجاء إدخال جميع المواصفات المطلوبة.';
+           return;
+        }
 
-    outputDiv.textContent = 'جاري إنشاء كود HTML...';
+        outputDiv.textContent = 'جاري إنشاء كود HTML...';
 
-    try {
-      let prompt = `أنشئ كود HTML ل${websiteType} يتضمن `;
-      if (components.length> 0) {
-        prompt += components.join(', ') + ' كمكونات أساسية. ';
-      }
-      prompt += `استخدم الألوان ${colors} والخطوط ${fonts}. المحتوى هو: ${content}. `;
+        try {
+            let prompt = `أنشئ كود HTML ل${websiteType} يتضمن `;
+            if (components.length> 0) {
+              prompt += components.join(', ') + ' كمكونات أساسية. ';
+           }
+            prompt += `استخدم الألوان ${colors} والخطوط ${fonts}. المحتوى هو: ${content}. `;
 
-      if (cssOption === 'inline' && inlineCssCode) {
-        prompt += `أضف CSS مدمج: ${inlineCssCode}. `;
-      } else if (cssOption === 'external' && externalCssFile) {
-        prompt += `استخدم ملف CSS خارجي من الرابط: ${externalCssFile}. `;
-      }
+            if (cssOption === 'inline' && inlineCssCode) {
+                prompt += `أضف CSS مدمج: ${inlineCssCode}. `;
+           } else if (cssOption === 'external' && externalCssFile) {
+                prompt += `استخدم ملف CSS خارجي من الرابط: ${externalCssFile}. `;
+            }
 
-      prompt += "أضف تعليقات داخل الكود لشرح كل قسم، ودعم اللغة العربية.";
+          prompt += "أضف تعليقات داخل الكود لشرح كل قسم، ودعم اللغة العربية.";
 
-      const generatedHTML = await geminiRequest(prompt);
+           const generatedHTML = await geminiRequest(prompt);
 
-      // Example for contact page with simple form and link back to homepage
-      if (websiteType === 'contact') {
-        const exampleHTML = `
+            // Example for contact page with simple form and link back to homepage
+            if (websiteType === 'contact') {
+               const exampleHTML = `
                     <!-- بداية صفحة التواصل -->
-                    <!DOCTYPE html>
+                   <!DOCTYPE html>
                     <html lang="ar" dir="rtl">
                     <head>
                         <meta charset="UTF-8">
-                        <title>تواصل معنا</title>
+                       <title>تواصل معنا</title>
                         <!-- إضافة CSS مدمج لتخصيص التصميم -->
-                        <style>
-                            body { font-family: Arial, sans-serif; }
-                            .container { width: 80%; margin: auto; text-align: center; }
-                            input[type="text"], textarea { width: 100%; padding: 10px; margin: 5px 0; }
+                       <style>
+                           body { font-family: Arial, sans-serif; }
+                           .container { width: 80%; margin: auto; text-align: center; }
+                           input[type="text"], textarea { width: 100%; padding: 10px; margin: 5px 0; }
                             button { padding: 10px 20px; background-color: #007bff; color: white; border: none; }
-                        </style>
-                    </head>
-                    <body>
-                        <div class="container">
+                       </style>
+                   </head>
+                  <body>
+                      <div class="container">
                             <h1>تواصل معنا</h1>
-                            <!-- نموذج الاتصال -->
+                           <!-- نموذج الاتصال -->
                             <form>
-                                <input type="text" placeholder="اسمك"><br>
-                                <input type="text" placeholder="بريدك الإلكتروني"><br>
-                                <textarea placeholder="رسالتك"></textarea><br>
-                                <button type="submit">إرسال</button>
+                               <input type="text" placeholder="اسمك"><br>
+                              <input type="text" placeholder="بريدك الإلكتروني"><br>
+                                 <textarea placeholder="رسالتك"></textarea><br>
+                            <button type="submit">إرسال</button>
                             </form>
                             <!-- رابط للعودة للصفحة الرئيسية -->
                             <p><a href="index.html">العودة إلى الصفحة الرئيسية</a></p>
-                        </div>
+                       </div>
                     </body>
-                    </html>
-                    <!-- نهاية صفحة التواصل -->
-                `;
-        outputDiv.textContent = exampleHTML;
-        downloadButton.style.display = 'inline-block';
-      } else {
-        outputDiv.textContent = generatedHTML;
-        downloadButton.style.display = 'inline-block';
-      }
+                  </html>
+                   <!-- نهاية صفحة التواصل -->
+                  `;
+           outputDiv.innerHTML = exampleHTML;
+            downloadButton.style.display = 'inline-block';
+            } else {
+              outputDiv.innerHTML = `<pre><code class="language-html">${generatedHTML}</code></pre>`;
+             downloadButton.style.display = 'inline-block';
+                hljs.highlightAll();
+           }
 
-    } catch (error) {
-      outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء كود HTML:</strong><br> ${error.message}`;
-    }
-  };
+
+        } catch (error) {
+           outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء كود HTML:</strong><br> ${error.message}`;
+         }
+    };
 
   document.querySelectorAll('input[name="css_option"]').forEach(radio => {
     radio.addEventListener('change', function() {
@@ -720,17 +767,63 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  document.getElementById('download-html').addEventListener('click', function() {
-    const content = document.getElementById('html-output').textContent;
-    const filename = 'generated_code.html';
-    const blob = new Blob([content], { type: 'text/html' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  });
+   document.getElementById('download-html').addEventListener('click', function() {
+        const content = document.getElementById('html-output').textContent;
+      const filename = 'generated_code.html';
+       const blob = new Blob([content], { type: 'text/html' });
+     const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
+  document.getElementById('add-experience').addEventListener('click', function() {
+        const experienceFields = document.getElementById('experience-fields');
+        const newEntry = document.createElement('div');
+        newEntry.classList.add('experience-entry');
+        newEntry.innerHTML = `
+            <input type="text" class="company" placeholder="اسم الشركة">
+            <input type="text" class="position" placeholder="المسمى الوظيفي">
+             <input type="text" class="date" placeholder="تاريخ البدء - تاريخ الانتهاء">
+            <textarea class="responsibilities" placeholder="المهام والمسؤوليات"></textarea>
+            <button type="button" class="remove-experience">إزالة</button>
+        `;
+        experienceFields.appendChild(newEntry);
+        newEntry.querySelector('.remove-experience').addEventListener('click', function() {
+            newEntry.remove();
+        });
+    });
+     document.getElementById('add-education').addEventListener('click', function() {
+            const educationFields = document.getElementById('education-fields');
+            const newEntry = document.createElement('div');
+            newEntry.classList.add('education-entry');
+            newEntry.innerHTML = `
+                <input type="text" class="degree" placeholder="الشهادة">
+                <input type="text" class="university" placeholder="اسم الجامعة">
+                <input type="text" class="graduation-date" placeholder="سنة التخرج">
+                <button type="button" class="remove-education">إزالة</button>
+            `;
+            educationFields.appendChild(newEntry);
+            newEntry.querySelector('.remove-education').addEventListener('click', function() {
+                newEntry.remove();
+            });
+        });
+        document.getElementById('add-project').addEventListener('click', function() {
+            const projectFields = document.getElementById('projects-fields');
+            const newEntry = document.createElement('div');
+            newEntry.classList.add('project-entry');
+            newEntry.innerHTML = `
+                 <input type="text" class="project-name" placeholder="اسم المشروع">
+                 <textarea class="project-description" placeholder="وصف المشروع"></textarea>
+                 <textarea class="project-tools" placeholder="الأدوات المستخدمة"></textarea>
+                <button type="button" class="remove-project">إزالة</button>
+           `;
+            projectFields.appendChild(newEntry);
+            newEntry.querySelector('.remove-project').addEventListener('click', function() {
+               newEntry.remove();
+         });
+       });
 });
