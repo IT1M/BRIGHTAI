@@ -344,6 +344,21 @@ PDF</button>
              <div id="social-output" class="output-text"></div>
         </div>
     </div>
+    <div class="tool-card" id="resume-tool">
+        <i class="fas fa-file-alt icon"></i>
+        <h3>مولد السيرة الذاتية وخطاب التقديم</h3>
+        <p>يقوم المستخدمون بإدخال معلوماتهم، وتقوم الأداة بإنشاء سير ذاتية وخطابات تقديم مُحسَّنة.</p>
+        <div class="tool-content">
+             <select id="template-select">
+                <option value="modern">حديث</option>
+                 <option value="classic">تقليدي</option>
+                  <option value="creative">إبداعي</option>
+            </select>
+            <textarea id="resume-input" placeholder="أدخل معلوماتك الشخصية والمهنية"></textarea>
+            <button class="try-button" onclick="generateResume()">إنشاء</button>
+            <div id="resume-output" class="output-text"></div>
+        </div>
+    </div>
 </div>
 </section>
 
