@@ -476,4 +476,24 @@ window.predictSuccess = async function() {
           outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل البيانات الاجتماعية:</strong><br> ${error.message}`;
       }
   };
+  window.generateResume = async function() {
+       const input = document.getElementById('resume-input').value.trim();
+       const template = document.getElementById('template-select').value;
+       const outputDiv = document.getElementById('resume-output');
+
+        if (!input) {
+            outputDiv.textContent = 'الرجاء إدخال معلوماتك الشخصية والمهنية.';
+            return;
+        }
+        outputDiv.textContent = 'جاري إنشاء السيرة الذاتية وخطاب التقديم...';
+    try {
+      const prompt = `قم بإنشاء سيرة ذاتية وخطاب تقديم احترافي بناءً على المعلومات التالية، باستخدام قالب ${template}: ${input}`;
+       const result = await geminiRequest(prompt);
+       outputDiv.innerHTML = `<strong>السيرة الذاتية وخطاب التقديم:</strong><br>${result}`;
+
+    }
+     catch(error){
+            outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء السيرة الذاتية وخطاب التقديم:</strong><br> ${error.message}`;
+        }
+  };
 });
