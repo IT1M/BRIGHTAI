@@ -36,72 +36,115 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // --- Resume and Cover Letter Generator ---
-  window.generateEnhancedResume = async function() {
-    const template = document.getElementById('enhanced-template-select').value;
-    const name = document.getElementById('resume-name').value;
-    const address = document.getElementById('resume-address').value;
-    const email = document.getElementById('resume-email').value;
-    const phone = document.getElementById('resume-phone').value;
-    const objective = document.getElementById('resume-objective').value;
-    const experience = document.getElementById('resume-experience').value;
-    const education = document.getElementById('resume-education').value;
-    const skills = document.getElementById('resume-skills').value;
-    const projects = document.getElementById('resume-projects').value;
+  window.generateResume = async function() {
+    const template = document.getElementById('template-select').value;
+    const language = document.getElementById('language-select').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const linkedin = document.getElementById('linkedin').value;
+    const objective = document.getElementById('objective').value;
 
-    const jobTitle = document.getElementById('cover-job-title').value;
-    const companyName = document.getElementById('cover-company-name').value;
-    const relevantSkills = document.getElementById('cover-relevant-skills').value;
-    const interestReason = document.getElementById('cover-interest-reason').value;
+    let experience = '';
+    document.querySelectorAll('#experience-fields .experience-entry').forEach(entry => {
+      const company = entry.querySelector('.company').value;
+      const position = entry.querySelector('.position').value;
+      const date = entry.querySelector('.date').value;
+      const responsibilities = entry.querySelector('.responsibilities').value;
+      experience += `${language === 'ar' ? 'الشركة' : 'Company'}: ${company}\n${language === 'ar' ? 'المسمى الوظيفي' : 'Position'}: ${position}\n${language === 'ar' ? 'الفترة' : 'Period'}: ${date}\n${language === 'ar' ? 'المسؤوليات' : 'Responsibilities'}: ${responsibilities}\n\n`;
+    });
 
-    const outputDiv = document.getElementById('enhanced-resume-output');
-    outputDiv.textContent = 'جاري إنشاء السيرة الذاتية وخطاب التقديم...';
+    let education = '';
+    document.querySelectorAll('#education-fields .education-entry').forEach(entry => {
+      const degree = entry.querySelector('.degree').value;
+      const university = entry.querySelector('.university').value;
+      const graduationDate = entry.querySelector('.graduation-date').value;
+      education += `${language === 'ar' ? 'الشهادة' : 'Degree'}: ${degree}\n${language === 'ar' ? 'الجامعة' : 'University'}: ${university}\n${language === 'ar' ? 'سنة التخرج' : 'Graduation Year'}: ${graduationDate}\n\n`;
+    });
+
+    const skills = document.getElementById('skills').value;
+
+    let projects = '';
+    document.querySelectorAll('#projects-fields .project-entry').forEach(entry => {
+      const projectName = entry.querySelector('.project-name').value;
+      const projectDescription = entry.querySelector('.project-description').value;
+      const projectTools = entry.querySelector('.project-tools').value;
+      projects += `${language === 'ar' ? 'اسم المشروع' : 'Project Name'}: ${projectName}\n${language === 'ar' ? 'الوصف' : 'Description'}: ${projectDescription}\n${language === 'ar' ? 'الأدوات' : 'Tools'}: ${projectTools}\n\n`;
+    });
+
+    const jobTitle = document.getElementById('job-title').value;
+    const companyName = document.getElementById('company-name').value;
+    const relevantSkills = document.getElementById('relevant-skills').value;
+    const interestReason = document.getElementById('interest-reason').value;
+
+    const outputDiv = document.getElementById('resume-output');
+    outputDiv.textContent = `${language === 'ar' ? 'جاري إنشاء السيرة الذاتية وخطاب التقديم...' : 'Generating resume and cover letter...'}`;
 
     try {
-      let cvPrompt = `قم بإنشاء سيرة ذاتية احترافية بناءً على المعلومات التالية، باستخدام قالب ${template}:\n`;
-      cvPrompt += `الاسم: ${name}\nالعنوان: ${address}\nالبريد الإلكتروني: ${email}\nرقم الهاتف: ${phone}\n`;
-      cvPrompt += `الهدف المهني: ${objective}\nالخبرة المهنية: ${experience}\nالتعليم: ${education}\n`;
-      cvPrompt += `المهارات: ${skills}\nالمشاريع: ${projects}\n`;
-      cvPrompt += "يجب أن يكون التنسيق متناسقًا (ترويسة، خطوط مميزة، أقسام مرتبة) ودعم اللغة العربية.";
+      let cvPrompt = '';
+      let coverLetterPrompt = '';
+
+      if (language === 'ar') {
+        cvPrompt = `قم بإنشاء سيرة ذاتية احترافية باللغة العربية بناءً على المعلومات التالية، باستخدام قالب ${template}:\n`;
+        cvPrompt += `الاسم: ${name}\nالبريد الإلكتروني: ${email}\nرقم الهاتف: ${phone}\nLinkedIn: ${linkedin}\n`;
+        cvPrompt += `الهدف المهني: ${objective}\nالخبرة المهنية: ${experience}\nالتعليم: ${education}\n`;
+        cvPrompt += `المهارات: ${skills}\nالمشاريع: ${projects}\n`;
+        cvPrompt += "يجب أن يكون التنسيق متناسقًا (ترويسة، خطوط مميزة، أقسام مرتبة).";
+
+        coverLetterPrompt = `قم بإنشاء خطاب تقديم رسمي باللغة العربية للوظيفة ${jobTitle} في شركة ${companyName} بناءً على المعلومات التالية:\n`;
+        coverLetterPrompt += `المهارات ذات الصلة: ${relevantSkills}\nسبب الاهتمام بالشركة: ${interestReason}\n`;
+        coverLetterPrompt += "يجب أن يشمل الخطاب تحية مخصصة، مقدمة توضح شغف المستخدم بالوظيفة، تسليط الضوء على المهارات والخبرات ذات الصلة، وفقرة ختامية تحث على التواصل مع شكر مخصص.";
+      } else if (language === 'en') {
+        cvPrompt = `Create a professional resume in English based on the following information, using the ${template} template:\n`;
+        cvPrompt += `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nLinkedIn: ${linkedin}\n`;
+        cvPrompt += `Objective: ${objective}\nExperience: ${experience}\nEducation: ${education}\n`;
+        cvPrompt += `Skills: ${skills}\nProjects: ${projects}\n`;
+        cvPrompt += "The format should be consistent (header, distinct fonts, organized sections).";
+
+        coverLetterPrompt = `Create a formal cover letter in English for the position of ${jobTitle} at ${companyName} based on the following information:\n`;
+        coverLetterPrompt += `Relevant Skills: ${relevantSkills}\nReason for Interest in the Company: ${interestReason}\n`;
+        coverLetterPrompt += "The letter should include a personalized salutation, an introduction outlining the user's passion for the position, highlighting relevant skills and experiences, and a concluding paragraph urging contact with a personalized thank you.";
+      }
 
       const generatedCV = await geminiRequest(cvPrompt);
-
-      let coverLetterPrompt = `قم بإنشاء خطاب تقديم رسمي للوظيفة ${jobTitle} في شركة ${companyName} بناءً على المعلومات التالية:\n`;
-      coverLetterPrompt += `المهارات ذات الصلة: ${relevantSkills}\nسبب الاهتمام بالشركة: ${interestReason}\n`;
-      coverLetterPrompt += "يجب أن يشمل الخطاب تحية مخصصة، مقدمة توضح شغف المستخدم بالوظيفة، تسليط الضوء على المهارات والخبرات ذات الصلة، وفقرة ختامية تحث على التواصل مع شكر مخصص، ودعم اللغة العربية.";
-
       const generatedCoverLetter = await geminiRequest(coverLetterPrompt);
 
-      const improvedCV = await geminiRequest(`حسن النص التالي واجعله أكثر جاذبية باستخدام لغة احترافية: ${generatedCV}`);
-      const improvedCoverLetter = await geminiRequest(`حسن النص التالي واجعله أكثر جاذبية باستخدام لغة احترافية: ${generatedCoverLetter}`);
+      const cvImprovementPrompt = language === 'ar' ? `حسن النص التالي واجعله أكثر جاذبية باستخدام لغة احترافية: ${generatedCV}` : `Improve the following text and make it more engaging using professional language: ${generatedCV}`;
+      const coverLetterImprovementPrompt = language === 'ar' ? `حسن النص التالي واجعله أكثر جاذبية باستخدام لغة احترافية: ${generatedCoverLetter}` : `Improve the following text and make it more engaging using professional language: ${generatedCoverLetter}`;
 
-      outputDiv.innerHTML = `<strong>السيرة الذاتية:</strong><pre style="direction: rtl; text-align: right;">${improvedCV}</pre><br>`;
-      outputDiv.innerHTML += `<strong>خطاب التقديم:</strong><pre style="direction: rtl; text-align: right;">${improvedCoverLetter}</pre>`;
+      const improvedCV = await geminiRequest(cvImprovementPrompt);
+      const improvedCoverLetter = await geminiRequest(coverLetterImprovementPrompt);
+
+      outputDiv.innerHTML = `<strong>${language === 'ar' ? 'السيرة الذاتية' : 'Resume'}:</strong><pre style="direction: ${language === 'ar' ? 'rtl' : 'ltr'}; text-align: ${language === 'ar' ? 'right' : 'left'};">${improvedCV}</pre><br>`;
+      outputDiv.innerHTML += `<strong>${language === 'ar' ? 'خطاب التقديم' : 'Cover Letter'}:</strong><pre style="direction: ${language === 'ar' ? 'rtl' : 'ltr'}; text-align: ${language === 'ar' ? 'right' : 'left'};">${improvedCoverLetter}</pre>`;
 
       // Store generated content for download
       outputDiv.dataset.cvContent = improvedCV;
       outputDiv.dataset.coverLetterContent = improvedCoverLetter;
 
-      document.getElementById('download-enhanced-resume-pdf').style.display = 'inline-block';
-      document.getElementById('download-enhanced-cover-letter-pdf').style.display = 'inline-block';
+      document.getElementById('download-resume').style.display = 'inline-block';
+      document.getElementById('download-cover-letter').style.display = 'inline-block';
 
     } catch (error) {
-      outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء السيرة الذاتية وخطاب التقديم:</strong><br> ${error.message}`;
+      outputDiv.innerHTML = `<strong>${language === 'ar' ? 'حدث خطأ أثناء إنشاء السيرة الذاتية وخطاب التقديم' : 'Error generating resume and cover letter'}:</strong><br> ${error.message}`;
     }
-  };
+   };
 
-  window.downloadEnhancedResumePDF = function() {
+  window.downloadResumePDF = function() {
     const { jsPDF } = window.jspdf;
+    const language = document.getElementById('language-select').value;
     const pdf = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
-    pdf.setFont('Amiri-Regular', 'normal'); // Or any Arabic font
-    pdf.text(document.getElementById('enhanced-resume-output').dataset.cvContent, 10, 10, { align: 'right' });
+    pdf.setFont(language === 'ar' ? 'Amiri-Regular' : 'Helvetica', 'normal');
+    pdf.text(document.getElementById('resume-output').dataset.cvContent, 10, 10, { align: language === 'ar' ? 'right' : 'left' });
     pdf.save("resume.pdf");
   };
 
-  window.downloadEnhancedCoverLetterPDF = function() {
+  window.downloadCoverLetterPDF = function() {
     const { jsPDF } = window.jspdf;
+    const language = document.getElementById('language-select').value;
     const pdf = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
-    pdf.setFont('Amiri-Regular', 'normal'); // Or any Arabic font
-    pdf.text(document.getElementById('enhanced-resume-output').dataset.coverLetterContent, 10, 10, { align: 'right' });
+    pdf.setFont(language === 'ar' ? 'Amiri-Regular' : 'Helvetica', 'normal');
+    pdf.text(document.getElementById('resume-output').dataset.coverLetterContent, 10, 10, { align: language === 'ar' ? 'right' : 'left' });
     pdf.save("cover_letter.pdf");
   };
 
@@ -110,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.getElementById('generateChart').addEventListener('click', () => {
     const chartType = document.getElementById('chartType').value;
-    const labels = document.getElementById('chartLabels').value.split(',');
+    const labels = document.getElementById('chartLabels').value.split(',').map(label => label.trim());
     const data = document.getElementById('chartData').value.split(',').map(Number);
 
     if (labels.length === 0 || data.length === 0 || labels.length !== data.length) {
@@ -169,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
     pdf.save("chart.pdf");
   });
 
-  // --- Other Tool Functions (Keep these, update selectors if needed) ---
+  // --- Other Tool Functions ---
   window.analyzeInventory = async function() {
     const input = document.getElementById('inventory-input').value.trim();
     const outputDiv = document.getElementById('inventory-output');
@@ -212,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
       outputDiv.textContent = 'الرجاء إدخال بيانات الفاتورة.';
       return;
     }
-    outputDiv.textContent = 'جاري إنشاء الفاتورة...';
+    outputDiv.textContent = 'jاري إنشاء الفاتورة...';
 
     try {
       const prompt = `قم بإنشاء فاتورة بناءً على البيانات التالية: ${input}`;
@@ -285,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const result = await geminiRequest(prompt);
       outputDiv.innerHTML = `<strong>توصيات التعلم:</strong><br>${result}`;
     } catch (error) {
-      outputDiv.innerHTML = `<strong>حدث خطأ أثناء توليد توصيات التعلم:</strong><br> ${error.message}`;
+       outputDiv.innerHTML = `<strong>حدث خطأ أثناء توليد توصيات التعلم:</strong><br> ${error.message}`;
     }
   };
   window.analyzeHomework = async function() {
@@ -382,8 +425,8 @@ document.addEventListener('DOMContentLoaded', function() {
     outputDiv.textContent = 'جاري إنشاء الصورة...';
 
     try {
-      const prompt = `قم بإنشاء صورة بناءً على الوصف التالي: ${input}`;
-      const result = await geminiRequest(prompt);
+      const prompt = `قم بإنشاء صورة بناءً على الوصف التالي: ${input}`; // Consider actual image generation API
+      const result = await geminiRequest(prompt); // Placeholder
       outputDiv.innerHTML = `<strong>وصف الصورة:</strong><br>${result}`;
     } catch (error) {
       outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الصورة:</strong><br> ${error.message}`;
@@ -449,7 +492,7 @@ document.addEventListener('DOMContentLoaded', function() {
     try {
       const prompt = `قم بتحليل النص الأدبي التالي لتحديد السمات الأدبية: ${input}`;
       const result = await geminiRequest(prompt);
-      outputDiv.innerHTML = `<strong>تحليل النص الأدبي:</strong><br>${result}`;
+       outputDiv.innerHTML = `<strong>تحليل النص الأدبي:</strong><br>${result}`;
     } catch (error) {
       outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل النص الأدبي:</strong><br> ${error.message}`;
     }
@@ -479,8 +522,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     outputDiv.textContent = 'جاري تحليل البيانات الجغرافية...';
     try {
-      const prompt = `قم بتحليل البيانات الجغرافية التالية وإظهار النتائج على خريطة تفاعلية: ${input}`;
-      const result = await geminiRequest(prompt);
+      const prompt = `قم بتحليل البيانات الجغرافية التالية وإظهار النتائج على خريطة تفاعلية: ${input}`; // Consider actual map integration
+      const result = await geminiRequest(prompt); // Placeholder
       outputDiv.innerHTML = `<strong>تحليل البيانات الجغرافية:</strong><br>${result}`;
     } catch (error) {
       outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل البيانات الجغرافية:</strong><br> ${error.message}`;
@@ -533,7 +576,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch (error) {
       outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الرسالة الإخبارية:</strong><br> ${error.message}`;
     }
-  };
+   };
   window.analyzePersonalFinance = async function() {
     const input = document.getElementById('finance-input').value.trim();
     const outputDiv = document.getElementById('finance-output');
@@ -604,7 +647,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     try {
       let prompt = `أنشئ كود HTML ل${websiteType} يتضمن `;
-      if (components.length > 0) {
+      if (components.length> 0) {
         prompt += components.join(', ') + ' كمكونات أساسية. ';
       }
       prompt += `استخدم الألوان ${colors} والخطوط ${fonts}. المحتوى هو: ${content}. `;
@@ -628,7 +671,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <head>
                         <meta charset="UTF-8">
                         <title>تواصل معنا</title>
-                        <!-- إضافة CSS مدمج لتخصيص التصميم                         <style>
+                        <!-- إضافة CSS مدمج لتخصيص التصميم -->
+                        <style>
                             body { font-family: Arial, sans-serif; }
                             .container { width: 80%; margin: auto; text-align: center; }
                             input[type="text"], textarea { width: 100%; padding: 10px; margin: 5px 0; }
