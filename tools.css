@@ -23,11 +23,11 @@ body {
     border-radius: 15px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     transform-style: preserve-3d;
-    transition: box-shadow 0.5s ease; /* Removed transform transition */
+    transition: box-shadow 0.5s ease;
 }
 
 .container:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25); /* Improved box-shadow on hover */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
 h1 {
@@ -88,12 +88,12 @@ nav {
     overflow: hidden;
 }
 .navbar a.active{
-      background-color: #2c3e50;
+    background-color: #2c3e50;
 }
 .navbar a:hover {
     background-color: #2c3e50;
     color: #ddd;
-    transform: translateY(-2px); /* Slight lift on hover */
+    transform: translateY(-2px);
 }
 
 .navbar a::before {
@@ -109,13 +109,13 @@ nav {
     transition: transform 0.3s ease;
 }
 .navbar a:hover::before {
-     transform: scaleX(1);
-     transform-origin: bottom right;
+    transform: scaleX(1);
+    transform-origin: bottom right;
 }
 
 .navbar a:active {
-   background-color: rgba(44, 62, 80, 0.3); /* Slightly darker background on click */
-    transform: translateY(0px); /* Cancel lift effect on click */
+    background-color: rgba(44, 62, 80, 0.3);
+    transform: translateY(0px);
 }
 
 /* Sections */
@@ -146,17 +146,17 @@ section:last-of-type {
     text-align: center;
     display: flex;
     flex-direction: column;
-     transition: box-shadow 0.3s ease; /* Removed transform transition */
+    transition: box-shadow 0.3s ease;
 }
 
 .tool-card:hover {
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 .card-header{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
 
 }
 .card-header h3{
@@ -175,7 +175,7 @@ section:last-of-type {
     margin-bottom: 20px;
     flex-grow: 1;
     color: #555;
-     line-height: 1.7;
+    line-height: 1.7;
 }
 
 .tool-card .tool-content {
@@ -206,7 +206,7 @@ section:last-of-type {
     resize: vertical;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
     transition: border-color 0.3s ease;
-    text-align: right; /* Ensure the content is aligned to the right */
+    text-align: right;
     direction: rtl;
     font-family: 'Cairo', sans-serif;
 }
@@ -215,8 +215,8 @@ section:last-of-type {
 .tool-card select:focus,
 .tool-card input[type="text"]:focus,
 .tool-card input[type="color"]:focus {
-     outline: none;
-       border-color: #3498db;
+    outline: none;
+    border-color: #3498db;
 
 }
 
@@ -225,27 +225,97 @@ section:last-of-type {
     margin-left: 5px;
 }
 
-/* HTML Generator Tool Specific Styles */
-#html-generator-tool .tool-content label {
+/* Enhanced Resume Tool Styles */
+#enhanced-resume-tool .tool-content label {
     text-align: right;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     display: block;
+    font-weight: bold;
+    color: #555;
 }
 
-#html-generator-tool .tool-content input[type="text"],
-#html-generator-tool .tool-content textarea,
-#html-generator-tool .tool-content select {
+#enhanced-resume-tool .tool-content input[type="text"],
+#enhanced-resume-tool .tool-content textarea,
+#enhanced-resume-tool .tool-content select {
     width: calc(100% - 24px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-family: 'Cairo', sans-serif;
+    text-align: right;
+    direction: rtl;
 }
 
-#html-generator-tool .tool-content input[type="radio"] + label {
-    display: inline-block;
-    margin-right: 10px;
+#enhanced-resume-tool .tool-content textarea {
+    resize: vertical;
 }
 
-#html-generator-tool .tool-content #inline-css-code,
-#html-generator-tool .tool-content #external-css-file {
+#enhanced-resume-tool .tool-content button {
+    padding: 10px 20px;
     margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+}
+
+#enhanced-resume-tool .tool-content button:hover {
+    background-color: #218838;
+}
+
+/* Interactive Chart Tool Styles */
+#interactive-chart-tool form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#interactive-chart-tool label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+#interactive-chart-tool select,
+#interactive-chart-tool input[type="text"] {
+    width: calc(60% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-family: 'Cairo', sans-serif;
+    text-align: right;
+    direction: rtl;
+}
+
+#interactive-chart-tool button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#interactive-chart-tool button:hover {
+    background-color: #0056b3;
+}
+
+#interactive-chart-tool .chart-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#interactive-chart-tool canvas {
+    width: 100% !important;
+    height: auto !important;
 }
 
 .try-button {
@@ -259,12 +329,12 @@ section:last-of-type {
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin-bottom: 15px;
     cursor: pointer;
-      font-size: 1em;
+    font-size: 1em;
 }
 
 .try-button:hover {
     background-color: #2980b9;
-     transform: translateY(-3px);
+    transform: translateY(-3px);
 }
 
 .output-text {
@@ -276,10 +346,10 @@ section:last-of-type {
     text-align: right;
     line-height: 1.7;
     white-space: pre-wrap;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-    overflow-x: auto; /* Added for long code */
-    direction: ltr; /* Ensure code is displayed left-to-right */
-    font-family: 'Courier New', monospace; /* Monospace font for code */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    overflow-x: auto;
+    direction: ltr;
+    font-family: 'Courier New', monospace;
     font-size: 0.9em;
 }
 
@@ -291,46 +361,46 @@ footer {
     justify-content: space-around;
     align-items: center;
     margin-top: 50px;
-     border-top: 1px solid rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(0,0,0,0.2);
 }
 
 .social-media {
     text-align: center;
 }
 .social-media h3{
-  font-size: 1.3em;
-  color:#333
+    font-size: 1.3em;
+    color:#333
 }
 .social-media a {
     display: inline-block;
     margin: 0 10px;
     color: #333;
-     font-size: 24px;
-      transition: transform 0.3s ease;
+    font-size: 24px;
+    transition: transform 0.3s ease;
 }
 .social-media a:hover {
     transform: translateY(-5px);
-  color: #007bff;
+    color: #007bff;
 }
 
 .contact-info h3 {
-  font-size: 1.3em;
-  color: #333;
-  margin-bottom: 10px;
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .contact-info p{
-  display: flex;
+    display: flex;
     align-items: center;
     margin-bottom: 8px;
-      color:#666;
+    color:#666;
 }
 .contact-info i{
     margin-left: 10px;
 }
 .contact-info a{
-  color:#666;
-  text-decoration: none;
+    color:#666;
+    text-decoration: none;
 }
 
 /* Responsive Design */
@@ -342,20 +412,20 @@ footer {
     .tool-card {
         width: 100%;
     }
-     .tools-grid {
+    .tools-grid {
         grid-template-columns: 1fr;
     }
-   footer {
+    footer {
         flex-direction: column;
     }
     footer .social-media,
-     footer .contact-info{
-         margin-bottom: 10px;
-      }
+    footer .contact-info{
+        margin-bottom: 10px;
+    }
     footer .contact-info p {
-       justify-content: center;
+        justify-content: center;
     }
     footer .social-media  {
-    margin-top: 10px;
-   }
+        margin-top: 10px;
+    }
 }
