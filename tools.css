@@ -46,6 +46,13 @@ h2 {
     font-size: 2.2em;
     text-align: center;
 }
+
+p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
 /* Navigation Bar */
 nav {
     background: #34495e;
@@ -111,6 +118,19 @@ nav {
     transform: translateY(0px); /* Cancel lift effect on click */
 }
 
+/* Sections */
+section {
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+section:last-of-type {
+    margin-bottom: 0;
+}
+
 /* Tools Grid */
 .tools-grid {
     display: grid;
@@ -164,9 +184,19 @@ nav {
     flex-direction: column;
 }
 
+.tool-card label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: right;
+    color: #333;
+    font-weight: bold;
+}
+
 .tool-card textarea,
- .tool-card select {
-    width: 90%;
+.tool-card select,
+.tool-card input[type="text"],
+.tool-card input[type="color"] {
+    width: calc(100% - 24px);
     margin: 0 auto;
     padding: 12px;
     border: 1px solid #ddd;
@@ -175,15 +205,49 @@ nav {
     margin-bottom: 15px;
     resize: vertical;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-     transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease;
     text-align: right; /* Ensure the content is aligned to the right */
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
 }
-   .tool-card textarea:focus,
-    .tool-card select:focus {
+
+.tool-card textarea:focus,
+.tool-card select:focus,
+.tool-card input[type="text"]:focus,
+.tool-card input[type="color"]:focus {
      outline: none;
        border-color: #3498db;
 
 }
+
+.tool-card input[type="checkbox"],
+.tool-card input[type="radio"] {
+    margin-left: 5px;
+}
+
+/* HTML Generator Tool Specific Styles */
+#html-generator-tool .tool-content label {
+    text-align: right;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#html-generator-tool .tool-content input[type="text"],
+#html-generator-tool .tool-content textarea,
+#html-generator-tool .tool-content select {
+    width: calc(100% - 24px);
+}
+
+#html-generator-tool .tool-content input[type="radio"] + label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#html-generator-tool .tool-content #inline-css-code,
+#html-generator-tool .tool-content #external-css-file {
+    margin-top: 10px;
+}
+
 .try-button {
     display: inline-block;
     padding: 12px 25px;
@@ -213,7 +277,10 @@ nav {
     line-height: 1.7;
     white-space: pre-wrap;
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-
+    overflow-x: auto; /* Added for long code */
+    direction: ltr; /* Ensure code is displayed left-to-right */
+    font-family: 'Courier New', monospace; /* Monospace font for code */
+    font-size: 0.9em;
 }
 
 /* Footer Styles */
