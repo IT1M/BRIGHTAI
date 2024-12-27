@@ -289,4 +289,191 @@ window.predictSuccess = async function() {
              outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الاختبار:</strong><br> ${error.message}`;
           }
     };
+    window.generatePresentation = async function() {
+      const input = document.getElementById('presentation-input').value.trim();
+        const outputDiv = document.getElementById('presentation-output');
+          if (!input) {
+                outputDiv.textContent = 'الرجاء إدخال موضوع العرض التقديمي.';
+                 return;
+          }
+        outputDiv.textContent = 'جاري إنشاء العرض التقديمي...';
+      try {
+              const prompt = `قم بإنشاء عرض تقديمي احترافي بناءً على الموضوع التالي: ${input}`;
+                const result = await geminiRequest(prompt);
+              outputDiv.innerHTML = `<strong>العرض التقديمي:</strong><br>${result}`;
+           }
+      catch(error){
+                outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء العرض التقديمي:</strong><br> ${error.message}`;
+            }
+    };
+  window.analyzeSentiment = async function() {
+        const input = document.getElementById('sentiment-input').value.trim();
+          const outputDiv = document.getElementById('sentiment-output');
+      if (!input) {
+            outputDiv.textContent = 'الرجاء إدخال النص المراد تحليله.';
+              return;
+        }
+      outputDiv.textContent = 'جاري تحليل المشاعر...';
+       try {
+            const prompt = `قم بتحليل المشاعر في النص التالي: ${input}`;
+            const result = await geminiRequest(prompt);
+           outputDiv.innerHTML = `<strong>تحليل المشاعر:</strong><br>${result}`;
+        }
+        catch(error){
+            outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل المشاعر:</strong><br> ${error.message}`;
+         }
+    };
+  window.analyzeLiteraryText = async function() {
+      const input = document.getElementById('literary-input').value.trim();
+        const outputDiv = document.getElementById('literary-output');
+       if (!input) {
+           outputDiv.textContent = 'الرجاء إدخال النص الأدبي.';
+           return;
+         }
+      outputDiv.textContent = 'جاري تحليل النص الأدبي...';
+     try {
+          const prompt = `قم بتحليل النص الأدبي التالي لتحديد السمات الأدبية: ${input}`;
+         const result = await geminiRequest(prompt);
+          outputDiv.innerHTML = `<strong>تحليل النص الأدبي:</strong><br>${result}`;
+       }
+     catch(error){
+           outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل النص الأدبي:</strong><br> ${error.message}`;
+        }
+  };
+   window.generateMarketingPlan = async function() {
+       const input = document.getElementById('marketing-input').value.trim();
+         const outputDiv = document.getElementById('marketing-output');
+    if (!input) {
+         outputDiv.textContent = 'الرجاء إدخال بيانات المنتج والسوق.';
+         return;
+       }
+       outputDiv.textContent = 'جاري إنشاء الخطة التسويقية...';
+     try {
+             const prompt = `قم بإنشاء خطة تسويقية بناءً على البيانات التالية: ${input}`;
+           const result = await geminiRequest(prompt);
+          outputDiv.innerHTML = `<strong>الخطة التسويقية:</strong><br>${result}`;
+       }
+     catch(error){
+            outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الخطة التسويقية:</strong><br> ${error.message}`;
+         }
+   };
+   window.analyzeGeographicData = async function() {
+      const input = document.getElementById('geographic-input').value.trim();
+        const outputDiv = document.getElementById('geographic-output');
+       if (!input) {
+            outputDiv.textContent = 'الرجاء إدخال البيانات الجغرافية.';
+            return;
+        }
+        outputDiv.textContent = 'جاري تحليل البيانات الجغرافية...';
+    try {
+            const prompt = `قم بتحليل البيانات الجغرافية التالية وإظهار النتائج على خريطة تفاعلية: ${input}`;
+            const result = await geminiRequest(prompt);
+              outputDiv.innerHTML = `<strong>تحليل البيانات الجغرافية:</strong><br>${result}`;
+        }
+    catch(error){
+              outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل البيانات الجغرافية:</strong><br> ${error.message}`;
+        }
+  };
+   window.generateInteractiveStory = async function() {
+      const input = document.getElementById('story-input').value.trim();
+        const outputDiv = document.getElementById('story-output');
+      if (!input) {
+          outputDiv.textContent = 'الرجاء إدخال نص القصة.';
+            return;
+      }
+        outputDiv.textContent = 'جاري إنشاء القصة التفاعلية...';
+    try {
+          const prompt = `قم بإنشاء قصة تفاعلية بناءً على النص التالي: ${input}`;
+        const result = await geminiRequest(prompt);
+           outputDiv.innerHTML = `<strong>القصة التفاعلية:</strong><br>${result}`;
+        }
+    catch(error){
+          outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء القصة التفاعلية:</strong><br> ${error.message}`;
+        }
+  };
+   window.analyzeHealthData = async function() {
+      const input = document.getElementById('health-input').value.trim();
+       const outputDiv = document.getElementById('health-output');
+      if (!input) {
+           outputDiv.textContent = 'الرجاء إدخال البيانات الصحية.';
+         return;
+       }
+      outputDiv.textContent = 'جاري تحليل البيانات الصحية...';
+  try {
+          const prompt = `قم بتحليل البيانات الصحية التالية وتقديم توصيات: ${input}`;
+        const result = await geminiRequest(prompt);
+          outputDiv.innerHTML = `<strong>تحليل البيانات الصحية:</strong><br>${result}`;
+      }
+      catch(error){
+          outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل البيانات الصحية:</strong><br> ${error.message}`;
+       }
+ };
+  window.generateNewsletter = async function() {
+      const input = document.getElementById('newsletter-input').value.trim();
+       const outputDiv = document.getElementById('newsletter-output');
+     if (!input) {
+          outputDiv.textContent = 'الرجاء إدخال نص الرسالة الإخبارية.';
+         return;
+       }
+      outputDiv.textContent = 'جاري إنشاء الرسالة الإخبارية...';
+    try {
+           const prompt = `قم بإنشاء رسالة إخبارية احترافية بناءً على النص التالي: ${input}`;
+         const result = await geminiRequest(prompt);
+          outputDiv.innerHTML = `<strong>الرسالة الإخبارية:</strong><br>${result}`;
+      }
+     catch(error){
+            outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الرسالة الإخبارية:</strong><br> ${error.message}`;
+      }
+ };
+ window.analyzePersonalFinance = async function() {
+      const input = document.getElementById('finance-input').value.trim();
+       const outputDiv = document.getElementById('finance-output');
+     if (!input) {
+          outputDiv.textContent = 'الرجاء إدخال البيانات المالية.';
+         return;
+       }
+    outputDiv.textContent = 'جاري تحليل البيانات المالية...';
+     try {
+           const prompt = `قم بتحليل البيانات المالية الشخصية التالية وتقديم توصيات: ${input}`;
+          const result = await geminiRequest(prompt);
+             outputDiv.innerHTML = `<strong>تحليل البيانات المالية:</strong><br>${result}`;
+      }
+     catch(error){
+           outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل البيانات المالية:</strong><br> ${error.message}`;
+         }
+ };
+ window.generateLegalDocument = async function() {
+     const input = document.getElementById('legal-input').value.trim();
+      const outputDiv = document.getElementById('legal-output');
+     if (!input) {
+          outputDiv.textContent = 'الرجاء إدخال تفاصيل الوثيقة القانونية.';
+          return;
+      }
+       outputDiv.textContent = 'جاري إنشاء الوثيقة القانونية...';
+     try {
+           const prompt = `قم بإنشاء وثيقة قانونية بناءً على التفاصيل التالية: ${input}`;
+           const result = await geminiRequest(prompt);
+              outputDiv.innerHTML = `<strong>الوثيقة القانونية:</strong><br>${result}`;
+       }
+      catch(error){
+             outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الوثيقة القانونية:</strong><br> ${error.message}`;
+       }
+ };
+  window.analyzeSocialMedia = async function() {
+        const input = document.getElementById('social-input').value.trim();
+          const outputDiv = document.getElementById('social-output');
+       if (!input) {
+            outputDiv.textContent = 'الرجاء إدخال بيانات وسائل التواصل الاجتماعي.';
+              return;
+         }
+       outputDiv.textContent = 'جاري تحليل البيانات الاجتماعية...';
+   try {
+             const prompt = `قم بتحليل بيانات وسائل التواصل الاجتماعي التالية: ${input}`;
+             const result = await geminiRequest(prompt);
+           outputDiv.innerHTML = `<strong>تحليل البيانات الاجتماعية:</strong><br>${result}`;
+       }
+   catch(error){
+          outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل البيانات الاجتماعية:</strong><br> ${error.message}`;
+      }
+  };
 });
