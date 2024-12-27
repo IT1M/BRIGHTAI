@@ -1,651 +1,692 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZKTP4496K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+document.addEventListener('DOMContentLoaded', function() {
 
-  gtag('config', 'G-SZKTP4496K');
-</script>
- <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZKTP4496K"></script>
- <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
+  const apiKey = 'AIzaSyCMrm1LjmlJObZsVCQEuy_wTkh9ZEEc8aQ'; // Replace with your actual API key
 
-   gtag('config', 'G-SZKTP4496K');
- </script>
-<script async
-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-54680676
-20830797"
-crossorigin="anonymous"></script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أدوات الذكاء الاصطناعي للتعليم والأعمال</title>
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-integrity="sha512-9usAa10IRO0HhonpyAIVpjry|PvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4A
-uTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="tools.css">
-</head>
-<body>
-<div class="container">
-<h1>أدوات الذكاء الاصطناعي المتكاملة</h1>
-<nav>
-<ul class="navbar">
-<li><a href="index.html">الرئيسية</a></li>
-<li><a href="consultation.html">استشارات</a></li>
-<li><a href="smart-automation.html">الأتمتة الذكية</a></li>
-<li><a href="data-analysis.html">تحليل البيانات</a></li>
-<li><a href="blog.html">مدونة</a></li>
-    <li><a href="our-products.html">منتجاتنا</a></li>
-    <li><a href="services.html">الخدمات</a></li>
-<li><a href="tools.html" class="active">الادوات</a></li>
-</ul>
-</nav>
-<section>
-    <h2> خدماتنا </h2>
-    <p style="text-align: center; color: #555; margin-bottom: 30px;">
-        نقدم مجموعة متكاملة من الخدمات المدعومة بالذكاء الاصطناعي لمساعدتك في تحقيق أهدافك التعليمية والتجارية.
-    </p>
-    <div class="tools-grid">
-        <div class="tool-card">
-            <div class="card-header">
-             <i class="fas fa-graduation-cap icon"></i>
-             <h3>حلول تعليمية مخصصة</h3>
-            </div>
-            <p>نقدم حلولاً تعليمية ذكية ومخصصة لتحسين تجربة التعلم.</p>
-        </div>
-         <div class="tool-card">
-             <div class="card-header">
-             <i class="fas fa-cogs icon"></i>
-             <h3>أتمتة العمليات التجارية</h3>
-            </div>
-            <p>نساعد الشركات على أتمتة عملياتها وزيادة كفاءتها.</p>
-        </div>
-           <div class="tool-card">
-                <div class="card-header">
-                 <i class="fas fa-chart-bar icon"></i>
-                   <h3>تحليل البيانات المتقدم</h3>
-            </div>
-               <p>نقدم خدمات تحليل البيانات المتقدمة لتحقيق رؤى قيمة.</p>
-        </div>
-           <div class="tool-card">
-                <div class="card-header">
-                <i class="fas fa-search icon"></i>
-                <h3>بحث وتطوير الذكاء الاصطناعي</h3>
-                </div>
-               <p>نعمل على البحث والتطوير في أحدث تقنيات الذكاء الاصطناعي.</p>
-        </div>
-    </div>
-</section>
-<section>
-    <h2> احدث الادوات </h2>
-    <div class="tools-grid">
-        <div class="tool-card" id="resume-tool">
-             <div class="card-header">
-               <i class="fas fa-file-alt icon"></i>
-        <h3>مولد السيرة الذاتية وخطاب التقديم</h3>
-             </div>
-        <p>يقوم المستخدمون بإدخال معلوماتهم، وتقوم الأداة بإنشاء سير ذاتية وخطابات تقديم مُحسَّنة.</p>
-        <div class="tool-content">
-             <label for="template-select">قالب السيرة الذاتية:</label>
-             <select id="template-select">
-                <option value="modern">حديث</option>
-                 <option value="classic">تقليدي</option>
-                  <option value="creative">إبداعي</option>
-            </select>
-            <br><br>
-            <label for="name">الاسم:</label>
-            <input type="text" id="name" placeholder="اسمك الكامل"><br><br>
-            <label for="title">المسمى الوظيفي:</label>
-            <input type="text" id="title" placeholder="مطور برمجيات، مدير تسويق، الخ"><br><br>
-            <label for="email">البريد الإلكتروني:</label>
-            <input type="email" id="email" placeholder="youremail@example.com"><br><br>
-            <label for="phone">رقم الهاتف:</label>
-            <input type="tel" id="phone" placeholder="+1234567890"><br><br>
-            <label for="linkedin">LinkedIn:</label>
-            <input type="text" id="linkedin" placeholder="رابط ملفك الشخصي على LinkedIn"><br><br>
+  async function geminiRequest(prompt) {
+    const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"; // Replace with actual Gemini API endpoint
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          'x-goog-api-key': apiKey,
+        },
+        body: JSON.stringify({
+          contents: [{
+            parts: [{ text: prompt }],
+          }]
+        }),
+      });
 
-            <h4>الهدف المهني</h4>
-            <textarea id="objective" placeholder="ملخص عن أهدافك المهنية"></textarea><br><br>
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(`HTTP error! status: ${response.status}, details: ${JSON.stringify(error)}`);
+      }
 
-            <h4>الخبرة المهنية</h4>
-            <div id="experience-fields">
-                <div class="experience-entry">
-                    <input type="text" class="company" placeholder="اسم الشركة">
-                    <input type="text" class="position" placeholder="المسمى الوظيفي">
-                    <input type="text" class="date" placeholder="تاريخ البدء - تاريخ الانتهاء">
-                    <textarea class="responsibilities" placeholder="المهام والمسؤوليات"></textarea>
-                    <button type="button" class="remove-experience">إزالة</button>
-                </div>
-            </div>
-            <button type="button" id="add-experience">إضافة خبرة</button><br><br>
+      const data = await response.json();
+      if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts.length > 0 && data.candidates[0].content.parts[0].text) {
+        return data.candidates[0].content.parts[0].text;
+      } else {
+        throw new Error("Invalid response from Gemini API: No text found in response");
+      }
+    } catch (error) {
+      console.error("Error calling Gemini API:", error);
+      throw error;
+    }
+  }
 
-            <h4>التعليم</h4>
-            <div id="education-fields">
-                <div class="education-entry">
-                    <input type="text" class="degree" placeholder="الشهادة">
-                    <input type="text" class="university" placeholder="اسم الجامعة">
-                    <input type="text" class="graduation-date" placeholder="سنة التخرج">
-                    <button type="button" class="remove-education">إزالة</button>
-                </div>
-            </div>
-            <button type="button" id="add-education">إضافة تعليم</button><br><br>
+  // --- Resume and Cover Letter Generator ---
+  window.generateEnhancedResume = async function() {
+    const template = document.getElementById('enhanced-template-select').value;
+    const name = document.getElementById('resume-name').value;
+    const address = document.getElementById('resume-address').value;
+    const email = document.getElementById('resume-email').value;
+    const phone = document.getElementById('resume-phone').value;
+    const objective = document.getElementById('resume-objective').value;
+    const experience = document.getElementById('resume-experience').value;
+    const education = document.getElementById('resume-education').value;
+    const skills = document.getElementById('resume-skills').value;
+    const projects = document.getElementById('resume-projects').value;
 
-            <h4>المهارات</h4>
-            <textarea id="skills" placeholder="اذكر مهاراتك (افصل بينها بفواصل)"></textarea><br><br>
+    const jobTitle = document.getElementById('cover-job-title').value;
+    const companyName = document.getElementById('cover-company-name').value;
+    const relevantSkills = document.getElementById('cover-relevant-skills').value;
+    const interestReason = document.getElementById('cover-interest-reason').value;
 
-            <h4>المشاريع</h4>
-            <div id="projects-fields">
-                <div class="project-entry">
-                    <input type="text" class="project-name" placeholder="اسم المشروع">
-                    <textarea class="project-description" placeholder="وصف المشروع"></textarea>
-                    <textarea class="project-tools" placeholder="الأدوات المستخدمة"></textarea>
-                    <button type="button" class="remove-project">إزالة</button>
-                </div>
-            </div>
-            <button type="button" id="add-project">إضافة مشروع</button><br><br>
+    const outputDiv = document.getElementById('enhanced-resume-output');
+    outputDiv.textContent = 'جاري إنشاء السيرة الذاتية وخطاب التقديم...';
 
-            <h4>خطاب التقديم</h4>
-            <label for="job-title">الوظيفة المستهدفة:</label>
-            <input type="text" id="job-title" placeholder="الوظيفة التي تتقدم لها"><br><br>
-            <label for="company-name">اسم الشركة:</label>
-            <input type="text" id="company-name" placeholder="اسم الشركة التي تتقدم إليها"><br><br>
-            <label for="relevant-skills">المهارات ذات الصلة:</label>
-            <textarea id="relevant-skills" placeholder="اذكر المهارات ذات الصلة بالوظيفة"></textarea><br><br>
-            <label for="interest-reason">سبب اهتمامك بالشركة:</label>
-            <textarea id="interest-reason" placeholder="لماذا أنت مهتم بالعمل في هذه الشركة؟"></textarea><br><br>
+    try {
+      let cvPrompt = `قم بإنشاء سيرة ذاتية احترافية بناءً على المعلومات التالية، باستخدام قالب ${template}:\n`;
+      cvPrompt += `الاسم: ${name}\nالعنوان: ${address}\nالبريد الإلكتروني: ${email}\nرقم الهاتف: ${phone}\n`;
+      cvPrompt += `الهدف المهني: ${objective}\nالخبرة المهنية: ${experience}\nالتعليم: ${education}\n`;
+      cvPrompt += `المهارات: ${skills}\nالمشاريع: ${projects}\n`;
+      cvPrompt += "يجب أن يكون التنسيق متناسقًا (ترويسة، خطوط مميزة، أقسام مرتبة) ودعم اللغة العربية.";
 
-            <button class="try-button" onclick="generateResume()">إنشاء</button>
-            <div id="resume-output" class="output-text" style="height: auto;"></div>
-            <button id="download-resume" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
-                background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل السيرة الذاتية (PDF)</button>
-            <button id="download-cover-letter" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
-                background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل خطاب التقديم (PDF)</button>
-        </div>
-    </div>
-        <div class="tool-card" id="html-generator-tool">
-            <div class="card-header">
-                <i class="fas fa-code icon"></i>
-                <h3> أداة توليد أكواد HTML </h3>
-            </div>
-            <p> قم بإنشاء أكواد HTML مخصصة لمواقع الويب بسهولة. </p>
-            <div class="tool-content">
-                <label for="website-type">نوع الموقع:</label>
-                <select id="website-type">
-                    <option value="homepage">صفحة رئيسية</option>
-                    <option value="contact">صفحة تواصل</option>
-                    <option value="services">صفحة خدمات</option>
-                    <option value="blog">مدونة</option>
-                </select>
-                <br><br>
-                <label>المكونات الأساسية:</label><br>
-                <input type="checkbox" id="header" name="components" value="header"> <label for="header">رأس الصفحة</label><br>
-                <input type="checkbox" id="navigation" name="components" value="navigation"> <label for="navigation">قائمة تنقل</label><br>
-                <input type="checkbox" id="images" name="components" value="images"> <label for="images">صور</label><br>
-                <input type="checkbox" id="buttons" name="components" value="buttons"> <label for="buttons">أزرار</label><br>
-                <input type="checkbox" id="forms" name="components" value="forms"> <label for="forms">نماذج</label><br>
-                <br>
-                <label for="colors">الألوان:</label>
-                <input type="color" id="colors" value="#ffffff"><br><br>
-                <label for="fonts">الخطوط:</label>
-                <input type="text" id="fonts" placeholder="مثال: Arial, sans-serif"><br><br>
-                <label for="content">النصوص والمحتويات:</label>
-                <textarea id="content" placeholder="أدخل النصوص والمحتويات هنا"></textarea><br><br>
-                <label>إضافة CSS:</label><br>
-                <input type="radio" id="inline-css" name="css_option" value="inline"> <label for="inline-css">CSS مدمج</label>
-                <textarea id="inline-css-code" placeholder="أدخل كود CSS المدمج" style="display: none;"></textarea><br>
-                <input type="radio" id="external-css" name="css_option" value="external"> <label for="external-css">ملف CSS خارجي</label>
-                <input type="text" id="external-css-file" placeholder="أدخل رابط ملف CSS الخارجي" style="display: none;"><br><br>
-                <button class="try-button" onclick="generateHtmlCode()">إنشاء</button>
-                <div id="html-output" class="output-text" style="height: auto;"></div>
-                <button id="download-html" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
-                background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل الكود</button>
-            </div>
-        </div>
-    </div>
-</section>
-<section>
-<h2> أدوات تعليمية </h2>
-<div class="tools-grid">
-  <div class="tool-card" id="learning-tool">
-      <div class="card-header">
-        <i class="fas fa-chalkboard-teacher icon"></i>
-        <h3> منصات تعليمية ذكية </h3>
-        </div>
-      <p>أدوات تساعد الطلاب على التعلم من خلال تحليل مستواهم التعليمي وتقديم دروس أو اختبارات مخصصة لهم.</p>
-      <div class="tool-content">
-          <textarea id="learning-input" placeholder="أدخل موضوع الدراسة"></textarea>
-          <button class="try-button" onclick="generateLearningPlan()">توصيات تعلم</button>
-          <div id="learning-output" class="output-text"></div>
-      </div>
-  </div>
-  <div class="tool-card" id="homework-tool">
-    <div class="card-header">
-      <i class="fa fa-file-alt icon"></i>
-      <h3> تحليل الواجبات المنزلية </h3>
-        </div>
-      <p> تساعد الطلاب أو المعلمين على تقييم الواجبات باستخدام الذكاء الاصطناعي </p>
-      <div class="tool-content">
-          <textarea id="homework-input" placeholder="أدخل الواجب"></textarea>
-          <button class="try-button" onclick="analyzeHomework()">تحليل الواجب</button>
-          <div id="homework-output" class="output-text"></div>
-      </div>
-  </div>
-  <div class="tool-card">
-    <section style="padding: 0px; background-color: transparent; border: none;
-    border-radius: 0px; margin: 0px;">
-    <h3 style="text-align: center;font-size: 1.8em; margin-bottom: 15px;">إنشاء رسوم بيانية تفاعلية</h3>
-    <form id="chartForm" style="text-align: center; margin-bottom: 10px;">
-    <label for="chartType"> اختر نوع الرسم البياني :</label>
-    <select id="chartType">
-    <option value="bar">شريطي</option>
-    <option value="line">خطّي</option>
-    <option value="pie">دائري</option>
-    </select>
-    <br><br>
-    <label for="chartLabels">أدخل العناوين (مفصولة بفواصل):</label><br>
-    <input type="text" id="chartLabels" placeholder="مثال: يناير, فبراير, مارس" style="width: 60%;
-    padding: 5px; margin-bottom: 10px;">
-    <br>
-    <label for="chartData">أدخل القيم (مفصولة بفواصل) :</label><br>
-    <input type="text" id="chartData" placeholder="30 ,20 ,10 :مثال" style="width: 60%; padding: 5px;
-    margin-bottom: 10px;">
-    <br>
-    <button type="button" id="generateChart" style="padding: 10px 20px; font-size: 16px;
-    background-color: #007bff; color: white; border: none; border-radius: 5px;">إنشاء الرسم
-    البياني </button>
-    </form>
-    <div class="chart-container" style="text-align: center;">
-    <canvas id="myChart" width="400" height="200"></canvas>
-    </div>
-    <button id="exportPDF" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
-    background-color: #007bff; color: white; border: none; border-radius: 5px;">تصدير كملف
-    PDF</button>
-    </section>
-</div>
-  <div class="tool-card" id="tutor-tool">
-      <div class="card-header">
-          <i class="fa fa-robot icon"></i>
-         <h3>مساعد تعليمي بالذكاء الاصطناعي </h3>
-      </div>
-      <p> يقدم الشروحات والدروس عن بعد في مواضيع مختلفة (مثل الرياضيات، العلوم، إلخ)</p>
-      <div class="tool-content">
-          <textarea id="tutor-input" placeholder="أدخل سؤالك"></textarea>
-          <button class="try-button" onclick="askTutor()">اسأل المساعد</button>
-          <div id="tutor-output" class="output-text"></div>
-      </div>
-  </div>
-    <div class="tool-card" id="content-tool">
-        <div class="card-header">
-             <i class="fa fa-file-alt icon"></i>
-             <h3> مولد محتوى عربي </h3>
-         </div>
-        <p> أداة لتوليد محتوى عربي باستخدام قوالب متعددة </p>
-        <div class="tool-content">
-            <select id="content-template">
-                <option value="blog">تدوينة</option>
-                <option value="article">مقالة</option>
-                <option value="social"> منشور اجتماعي</option>
-            </select>
-            <textarea id="content-input" placeholder="أدخل الموضوع"></textarea>
-            <button class="try-button" onclick="generateContent()">إنشاء محتوى</button>
-            <p id="content-output" class="output-text"></p>
-        </div>
-    </div>
-      <div class="tool-card" id="summarizer-tool">
-        <div class="card-header">
-             <i class="fa fa-list-alt icon"></i>
-          <h3> أداة تلخيص النصوص </h3>
-        </div>
-        <p> . أداة تلخيص النصوص مع خيارات للطول </p>
-        <div class="tool-content">
-        <textarea id="summarizer-input" placeholder="أدخل النص للتخليص"></textarea>
-        <select id="summarizer-length">
-            <option value="short">قصير</option>
-            <option value="medium">متوسط </option>
-             <option value="long">طويل</option>
-            </select>
-           <button class="try-button" onclick="summarizeText()">تلخيص النص </button>
-          <p id="summarizer-output" class="output-text"></p>
-      </div>
-</div>
-  <div class="tool-card" id="grammar-tool">
-      <div class="card-header">
-          <i class="fas fa-spell-check icon"></i>
-          <h3> مدقق القواعد اللغوية </h3>
-          </div>
-      <p> .مدقق قواعد اللغة العربية مع تصحيحات في الوقت الفعلي</p>
-      <div class="tool-content">
-          <textarea id="grammar-input" placeholder="أدخل النص للفحص"></textarea>
-          <button class="try-button" onclick="checkGrammar()">فحص القواعد</button>
-          <p id="grammar-output" class="output-text"></p>
-      </div>
-  </div>
-    <div class="tool-card" id="image-tool">
-        <div class="card-header">
-            <i class="fas fa-image icon"></i>
-        <h3> أداة إنشاء الصور </h3>
-       </div>
-         <p> . تساعد في إنشاء صور تعبيرية ورسومات توضيحية </p>
-        <div class="tool-content">
-            <textarea id="image-input" placeholder="أدخل وصف للصورة"></textarea>
-            <button class="try-button" onclick="generateImage()">إنشاء صورة</button>
-            <div id="image-output" class="output-text"></div>
-        </div>
-    </div>
-    <div class="tool-card" id="quiz-tool">
-        <div class="card-header">
-            <i class="fas fa-question-circle icon"></i>
-             <h3> أداة إنشاء اختبارات مخصصة </h3>
-         </div>
-        <p> تنشئ اختبارات مخصصة للطلاب بناءً على المادة المدخلة</p>
-        <div class="tool-content">
-            <textarea id="quiz-input" placeholder="أدخل المادة التعليمية"></textarea>
-            <button class="try-button" onclick="generateQuiz()">إنشاء اختبار</button>
-            <div id="quiz-output" class="output-text"></div>
-        </div>
-    </div>
-</div>
-</section>
-<section>
-<h2>أدوات الأعمال </h2>
-<div class="tools-grid">
-<div class="tool-card" id="inventory-tool">
-    <div class="card-header">
-    <i class="fa fa-warehouse icon"></i>
-     <h3> أداة إدارة المخزون بالذكاء الاصطناعي </h3>
-       </div>
-    <p> تساعد المتاجر على تحليل البيانات وتوقع الطلبات المستقبلية لتجنب نقص أو زيادة المخزون</p>
-    <div class="tool-content">
-        <textarea id="inventory-input" placeholder="أدخل بيانات المخزون (المنتج, الكمية)"></textarea>
-        <button class="try-button" onclick="analyzeInventory()">تحليل المخزون</button>
-        <div id="inventory-output" class="output-text"></div>
-    </div>
-</div>
-  <div class="tool-card" id="sales-tool">
-    <div class="card-header">
-      <i class="fa fa-chart-line icon"></i>
-       <h3> أداة تحليل بيانات المبيعات </h3>
-      </div>
-      <p> تُظهر الاتجاهات، نقاط الضعف، وتوصيات لتحسين أداء الشركات</p>
-      <div class="tool-content">
-          <textarea id="sales-input" placeholder="أدخل بيانات المبيعات (المنتج, الكمية, السعر)"></textarea>
-          <button class="try-button" onclick="analyzeSales()">تحليل المبيعات</button>
-          <div id="sales-output" class="output-text"></div>
-      </div>
-  </div>
-  <div class="tool-card" id="invoice-tool">
-     <div class="card-header">
-       <i class="fa fa-file-invoice icon"></i>
-        <h3> أتمتة إصدار الفواتير وإدارة الحسابات </h3>
-        </div>
-      <p>خاصة للشركات الصغيرة والمتوسطة. أدوات تساعد الطلاب على التعلم من خلال تحليل مستواهم التعليمي </p>
-      <div class="tool-content">
-          <textarea id="invoice-input" placeholder="أدخل بيانات الفاتورة (المنتج, السعر, الكمية)"></textarea>
-          <button class="try-button" onclick="generateInvoice()">إنشاء الفاتورة</button>
-          <div id="invoice-output" class="output-text"></div>
-      </div>
-  </div>
-  <div class="tool-card" id="financial-tool">
-    <div class="card-header">
-        <i class="fa fa-chart-area icon"></i>
-         <h3> أداة توقع النجاح المالي </h3>
-       </div>
-       <p> تساعد في توقع أداء المشاريع والاستثمارات بناءً على البيانات المدخلة</p>
-      <div class="tool-content">
-          <textarea id="financial-input" placeholder="أدخل بيانات مالية (الإيرادات, المصاريف)"></textarea>
-          <button class="try-button" onclick="predictSuccess()">توقع النجاح المالي</button>
-          <div id="financial-output" class="output-text"></div>
-      </div>
-  </div>
-  <div class="tool-card" id="roi-tool">
-     <div class="card-header">
-       <i class="fa fa-calculator icon"></i>
-         <h3> حاسبة عائد الاستثمار </h3>
-        </div>
-      <p> تساعد في حساب العائد المتوقع على الاستثمارات المختلفة </p>
-      <div class="tool-content">
-          <textarea id="roi-input" placeholder="أدخل بيانات الاستثمار (التكلفة، العائد المتوقع)"></textarea>
-          <button class="try-button" onclick="calculateROI()">حساب عائد الاستثمار</button>
-          <div id="roi-output" class="output-text"></div>
-      </div>
-  </div>
-  <div class="tool-card" id="employee-tool">
-       <div class="card-header">
-           <i class="fas fa-users icon"></i>
-         <h3>مساعد ذكي لتحليل بيانات الموظفين </h3>
-            </div>
-      <p> يوفر رؤى حول الأداء والتطور الوظيفي </p>
-      <div class="tool-content">
-          <textarea id="employee-input" placeholder="أدخل بيانات الموظفين (الاسم, الأداء, التقييم)"></textarea>
-          <button class="try-button" onclick="analyzeEmployeeData()">تحليل الأداء</button>
-          <div id="employee-output" class="output-text"></div>
-      </div>
-  </div>
-  <div class="tool-card" id="presentation-tool">
-      <div class="card-header">
-        <i class="fas fa-file-powerpoint icon"></i>
-         <h3>أداة إنشاء العروض التقديمية</h3>
-          </div>
-        <p>تساعد في إنشاء عروض تقديمية احترافية بناءً على النص المدخل.</p>
-        <div class="tool-content">
-            <textarea id="presentation-input" placeholder="أدخل موضوع العرض التقديمي"></textarea>
-            <button class="try-button" onclick="generatePresentation()">إنشاء العرض</button>
-            <div id="presentation-output" class="output-text"></div>
-        </div>
-    </div>
-    <div class="tool-card" id="sentiment-tool">
-       <div class="card-header">
-           <i class="fas fa-comment-dots icon"></i>
-        <h3>أداة تحليل المشاعر</h3>
-            </div>
-        <p>تقوم بتحليل النص لتحديد المشاعر الإيجابية أو السلبية أو المحايدة.</p>
-        <div class="tool-content">
-            <textarea id="sentiment-input" placeholder="أدخل النص المراد تحليله"></textarea>
-            <button class="try-button" onclick="analyzeSentiment()">تحليل المشاعر</button>
-            <div id="sentiment-output" class="output-text"></div>
-        </div>
-    </div>
-     <div class="tool-card" id="literary-tool">
-       <div class="card-header">
-            <i class="fas fa-book-reader icon"></i>
-            <h3>أداة تحليل النصوص الأدبية</h3>
-             </div>
-         <p>تقوم بتحليل النصوص الأدبية لتحديد السمات الأدبية مثل الاستعارات والتشبيهات.</p>
-        <div class="tool-content">
-            <textarea id="literary-input" placeholder="أدخل النص الأدبي"></textarea>
-             <button class="try-button" onclick="analyzeLiteraryText()">تحليل النص</button>
-            <div id="literary-output" class="output-text"></div>
-        </div>
-    </div>
-  <div class="tool-card" id="marketing-tool">
-        <div class="card-header">
-            <i class="fas fa-bullhorn icon"></i>
-        <h3>أداة إنشاء الخطط التسويقية</h3>
-         </div>
-        <p>تساعد في إنشاء خطط تسويقية بناءً على البيانات المدخلة.</p>
-        <div class="tool-content">
-            <textarea id="marketing-input" placeholder="أدخل بيانات المنتج والسوق"></textarea>
-              <button class="try-button" onclick="generateMarketingPlan()">إنشاء الخطة</button>
-            <div id="marketing-output" class="output-text"></div>
-        </div>
-    </div>
- <div class="tool-card" id="geographic-tool">
-       <div class="card-header">
-           <i class="fas fa-map-marked-alt icon"></i>
-          <h3>أداة تحليل البيانات الجغرافية</h3>
-           </div>
-       <p>تقوم بتحليل البيانات الجغرافية وإظهار النتائج على خرائط تفاعلية.</p>
-        <div class="tool-content">
-           <textarea id="geographic-input" placeholder="أدخل البيانات الجغرافية"></textarea>
-             <button class="try-button" onclick="analyzeGeographicData()">تحليل البيانات</button>
-            <div id="geographic-output" class="output-text"></div>
-        </div>
-    </div>
- <div class="tool-card" id="story-tool">
-       <div class="card-header">
-           <i class="fas fa-book icon"></i>
-            <h3>أداة إنشاء القصص التفاعلية</h3>
-          </div>
-        <p>تساعد في إنشاء قصص تفاعلية بناءً على النص المدخل.</p>
-       <div class="tool-content">
-            <textarea id="story-input" placeholder="أدخل نص القصة"></textarea>
-               <button class="try-button" onclick="generateInteractiveStory()">إنشاء القصة</button>
-           <div id="story-output" class="output-text"></div>
-        </div>
-    </div>
-    <div class="tool-card" id="health-tool">
-       <div class="card-header">
-            <i class="fas fa-heartbeat icon"></i>
-          <h3>أداة تحليل البيانات الصحية</h3>
-          </div>
-         <p>تقوم بتحليل البيانات الصحية وتقديم توصيات بناءً على النتائج.</p>
-        <div class="tool-content">
-             <textarea id="health-input" placeholder="أدخل البيانات الصحية (الوزن، الطول، النشاط)"></textarea>
-              <button class="try-button" onclick="analyzeHealthData()">تحليل البيانات</button>
-           <div id="health-output" class="output-text"></div>
-        </div>
-    </div>
-    <div class="tool-card" id="newsletter-tool">
-       <div class="card-header">
-           <i class="fas fa-envelope-open-text icon"></i>
-        <h3>أداة إنشاء الرسائل الإخبارية</h3>
-         </div>
-      <p>تساعد في إنشاء رسائل إخبارية احترافية بناءً على النص المدخل.</p>
-         <div class="tool-content">
-            <textarea id="newsletter-input" placeholder="أدخل نص الرسالة الإخبارية"></textarea>
-               <button class="try-button" onclick="generateNewsletter()">إنشاء الرسالة</button>
-             <div id="newsletter-output" class="output-text"></div>
-        </div>
-    </div>
-   <div class="tool-card" id="finance-tool">
-       <div class="card-header">
-            <i class="fas fa-piggy-bank icon"></i>
-         <h3>أداة تحليل البيانات المالية الشخصية</h3>
-            </div>
-       <p>تقوم بتحليل البيانات المالية الشخصية وتقديم توصيات لتحسين الإدارة المالية.</p>
-         <div class="tool-content">
-          <textarea id="finance-input" placeholder="أدخل البيانات المالية (الدخل، المصروفات)"></textarea>
-              <button class="try-button" onclick="analyzePersonalFinance()">تحليل البيانات المالية</button>
-            <div id="finance-output" class="output-text"></div>
-        </div>
-    </div>
-  <div class="tool-card" id="legal-tool">
-      <div class="card-header">
-        <i class="fas fa-gavel icon"></i>
-      <h3>أداة إنشاء الوثائق القانونية</h3>
-          </div>
-     <p>تساعد في إنشاء وثائق قانونية بناءً على النص المدخل.</p>
-      <div class="tool-content">
-            <textarea id="legal-input" placeholder="أدخل تفاصيل الوثيقة القانونية"></textarea>
-              <button class="try-button" onclick="generateLegalDocument()">إنشاء الوثيقة</button>
-             <div id="legal-output" class="output-text"></div>
-        </div>
-    </div>
-    <div class="tool-card" id="social-tool">
-       <div class="card-header">
-         <i class="fas fa-share-alt icon"></i>
-          <h3>أداة تحليل البيانات الاجتماعية</h3>
-           </div>
-         <p>تقوم بتحليل البيانات الاجتماعية من وسائل التواصل الاجتماعي وإظهار النتائج.</p>
-        <div class="tool-content">
-            <textarea id="social-input" placeholder="أدخل بيانات وسائل التواصل الاجتماعي"></textarea>
-            <button class="try-button" onclick="analyzeSocialMedia()">تحليل البيانات الاجتماعية</button>
-             <div id="social-output" class="output        </div>
-             </div>
-         </div>
-         </section>
-         
-         </div>
-         <footer>
-         <div class="social-media">
-         <h3> تابعنا على </h3>
-         <a href="https://x.com/BrightAIII" target="_blank" title="X"> <i class="fab fa-twitter"></i>
-         </a>
-         <a href="https://www.youtube.com/@TeechLab" target="_blank" title="Youtube"><i
-         class="fab fa-youtube"></i></a>
-         <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab
-         fa-instagram"></i></a>
-         </div>
-         <div class="contact-info">
-         <h3> تواصل معنا </h3>
-         <p><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com </p>
-         <p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i
-         class="fab fa-whatsapp"></i> </a></p>
-         </div>
-         </footer>
-         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-         <script>
-           let chart;
-         
-           document.getElementById('generateChart').addEventListener('click', () => {
-               const chartType = document.getElementById('chartType').value;
-               const labels = document.getElementById('chartLabels').value.split(',');
-               const data = document.getElementById('chartData').value.split(',').map(Number);
-         
-               if (labels.length === 0 || data.length === 0 || labels.length !== data.length) {
-                   alert('يرجى إدخال عناوين وقيم صحيحة');
-                   return;
-               }
-         
-               const ctx = document.getElementById('myChart').getContext('2d');
-         
-               if (chart) {
-                   chart.destroy();
-               }
-         
-               chart = new Chart(ctx, {
-                 type: chartType,
-                 data: {
-                     labels: labels,
-                     datasets: [{
-                         label: 'بيانات المستخدم',
-                         data: data,
-                         backgroundColor: chartType === 'pie' ? [
-                             'rgba(255, 99, 132, 0.6)',
-                             'rgba(54, 162, 235, 0.6)',
-                             'rgba(255, 206, 86, 0.6)',
-                             'rgba(75, 192, 192, 0.6)',
-                             'rgba(153, 102, 255, 0.6)',
-                             'rgba(255, 159, 64, 0.6)'
-                         ]: 'rgba(75, 192, 192, 0.2)',
-                         borderColor: 'rgba(75, 192, 192, 1)',
-                         borderWidth: 1
-                     }]
-                 },
-                 options: {
-                     responsive: true,
-                     plugins: {
-                         legend: {
-                             position: 'top',
-                         }
-                     }
-                 }
-               });
-           });
-         
-             document.getElementById('exportPDF').addEventListener('click', () => {
-                 const { jsPDF } = window.jspdf;
-                 const pdf = new jsPDF();
-         
-                 if (!chart) {
-                 alert('يرجى إنشاء رسم بياني أولاً');
-                 return;
-               }
-         
-                 const chartImage = chart.toBase64Image();
-                 pdf.text("PDF الرسم البياني", 10, 10);
-                 pdf.addImage(chartImage, 'PNG', 10, 20, 180, 100);
-                 pdf.save("chart.pdf");
-             });
-         </script>
-         <script src="tools.js"></script>
-         </body>
-         </html>
+      const generatedCV = await geminiRequest(cvPrompt);
+
+      let coverLetterPrompt = `قم بإنشاء خطاب تقديم رسمي للوظيفة ${jobTitle} في شركة ${companyName} بناءً على المعلومات التالية:\n`;
+      coverLetterPrompt += `المهارات ذات الصلة: ${relevantSkills}\nسبب الاهتمام بالشركة: ${interestReason}\n`;
+      coverLetterPrompt += "يجب أن يشمل الخطاب تحية مخصصة، مقدمة توضح شغف المستخدم بالوظيفة، تسليط الضوء على المهارات والخبرات ذات الصلة، وفقرة ختامية تحث على التواصل مع شكر مخصص، ودعم اللغة العربية.";
+
+      const generatedCoverLetter = await geminiRequest(coverLetterPrompt);
+
+      const improvedCV = await geminiRequest(`حسن النص التالي واجعله أكثر جاذبية باستخدام لغة احترافية: ${generatedCV}`);
+      const improvedCoverLetter = await geminiRequest(`حسن النص التالي واجعله أكثر جاذبية باستخدام لغة احترافية: ${generatedCoverLetter}`);
+
+      outputDiv.innerHTML = `<strong>السيرة الذاتية:</strong><pre style="direction: rtl; text-align: right;">${improvedCV}</pre><br>`;
+      outputDiv.innerHTML += `<strong>خطاب التقديم:</strong><pre style="direction: rtl; text-align: right;">${improvedCoverLetter}</pre>`;
+
+      // Store generated content for download
+      outputDiv.dataset.cvContent = improvedCV;
+      outputDiv.dataset.coverLetterContent = improvedCoverLetter;
+
+      document.getElementById('download-enhanced-resume-pdf').style.display = 'inline-block';
+      document.getElementById('download-enhanced-cover-letter-pdf').style.display = 'inline-block';
+
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء السيرة الذاتية وخطاب التقديم:</strong><br> ${error.message}`;
+    }
+  };
+
+  window.downloadEnhancedResumePDF = function() {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
+    pdf.setFont('Amiri-Regular', 'normal'); // Or any Arabic font
+    pdf.text(document.getElementById('enhanced-resume-output').dataset.cvContent, 10, 10, { align: 'right' });
+    pdf.save("resume.pdf");
+  };
+
+  window.downloadEnhancedCoverLetterPDF = function() {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
+    pdf.setFont('Amiri-Regular', 'normal'); // Or any Arabic font
+    pdf.text(document.getElementById('enhanced-resume-output').dataset.coverLetterContent, 10, 10, { align: 'right' });
+    pdf.save("cover_letter.pdf");
+  };
+
+  // --- Interactive Chart ---
+  let chart;
+
+  document.getElementById('generateChart').addEventListener('click', () => {
+    const chartType = document.getElementById('chartType').value;
+    const labels = document.getElementById('chartLabels').value.split(',');
+    const data = document.getElementById('chartData').value.split(',').map(Number);
+
+    if (labels.length === 0 || data.length === 0 || labels.length !== data.length) {
+      alert('يرجى إدخال عناوين وقيم صحيحة');
+      return;
+    }
+
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    if (chart) {
+      chart.destroy();
+    }
+
+    chart = new Chart(ctx, {
+      type: chartType,
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'بيانات المستخدم',
+          data: data,
+          backgroundColor: chartType === 'pie' ? [
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)'
+          ] : 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          }
+        }
+      }
+    });
+  });
+
+  document.getElementById('exportPDF').addEventListener('click', () => {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+
+    if (!chart) {
+      alert('يرجى إنشاء رسم بياني أولاً');
+      return;
+    }
+
+    const chartImage = chart.toBase64Image();
+    pdf.text("PDF الرسم البياني", 10, 10);
+    pdf.addImage(chartImage, 'PNG', 10, 20, 180, 100);
+    pdf.save("chart.pdf");
+  });
+
+  // --- Other Tool Functions (Keep these, update selectors if needed) ---
+  window.analyzeInventory = async function() {
+    const input = document.getElementById('inventory-input').value.trim();
+    const outputDiv = document.getElementById('inventory-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال بيانات المخزون.';
+      return;
+    }
+    outputDiv.textContent = 'جاري تحليل بيانات المخزون...';
+    try {
+      const prompt = `قم بتحليل بيانات المخزون التالية وتقديم توصيات: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>تحليل المخزون:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل المخزون:</strong><br> ${error.message}`;
+    }
+  };
+
+  window.analyzeSales = async function() {
+    const input = document.getElementById('sales-input').value.trim();
+    const outputDiv = document.getElementById('sales-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال بيانات المبيعات.';
+      return;
+    }
+    outputDiv.textContent = 'جاري تحليل بيانات المبيعات...';
+
+    try {
+      const prompt = `قم بتحليل بيانات المبيعات التالية وتقديم توصيات: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>تحليل المبيعات:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل المبيعات:</strong><br> ${error.message}`;
+    }
+  };
+
+  window.generateInvoice = async function() {
+    const input = document.getElementById('invoice-input').value.trim();
+    const outputDiv = document.getElementById('invoice-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال بيانات الفاتورة.';
+      return;
+    }
+    outputDiv.textContent = 'جاري إنشاء الفاتورة...';
+
+    try {
+      const prompt = `قم بإنشاء فاتورة بناءً على البيانات التالية: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>الفاتورة:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الفاتورة:</strong><br> ${error.message}`;
+    }
+  };
+  window.predictSuccess = async function() {
+    const input = document.getElementById('financial-input').value.trim();
+    const outputDiv = document.getElementById('financial-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال بيانات مالية.';
+      return;
+    }
+    outputDiv.textContent = 'جاري توقع النجاح المالي...';
+    try {
+      const prompt = `قم بتحليل البيانات المالية التالية وتقديم توقع للنجاح المالي: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>توقع النجاح المالي:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء توقع النجاح المالي:</strong><br> ${error.message}`;
+    }
+  };
+
+  window.calculateROI = async function() {
+    const input = document.getElementById('roi-input').value.trim();
+    const outputDiv = document.getElementById('roi-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال بيانات الاستثمار.';
+      return;
+    }
+    outputDiv.textContent = 'جاري حساب عائد الاستثمار...';
+
+    try {
+      const prompt = `قم بحساب عائد الاستثمار بناءً على البيانات التالية: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>عائد الاستثمار:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء حساب عائد الاستثمار:</strong><br> ${error.message}`;
+    }
+  };
+  window.analyzeEmployeeData = async function() {
+    const input = document.getElementById('employee-input').value.trim();
+    const outputDiv = document.getElementById('employee-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال بيانات الموظفين.';
+      return;
+    }
+    outputDiv.textContent = 'جاري تحليل بيانات الموظفين...';
+    try {
+      const prompt = `قم بتحليل بيانات الموظفين التالية وتقديم رؤى حول الأداء والتطور الوظيفي: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>تحليل بيانات الموظفين:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل بيانات الموظفين:</strong><br> ${error.message}`;
+    }
+  };
+  window.generateLearningPlan = async function() {
+    const input = document.getElementById('learning-input').value.trim();
+    const outputDiv = document.getElementById('learning-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال موضوع الدراسة.';
+      return;
+    }
+    outputDiv.textContent = 'جاري توليد توصيات التعلم...';
+    try {
+      const prompt = `قم بتوليد خطة تعلم مخصصة للموضوع التالي: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>توصيات التعلم:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء توليد توصيات التعلم:</strong><br> ${error.message}`;
+    }
+  };
+  window.analyzeHomework = async function() {
+    const input = document.getElementById('homework-input').value.trim();
+    const outputDiv = document.getElementById('homework-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال الواجب.';
+      return;
+    }
+    outputDiv.textContent = 'جاري تحليل الواجب...';
+    try {
+      const prompt = `قم بتحليل الواجب التالي وتقديم ملاحظات: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>تحليل الواجب:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل الواجب:</strong><br> ${error.message}`;
+    }
+  };
+
+  window.askTutor = async function() {
+    const input = document.getElementById('tutor-input').value.trim();
+    const outputDiv = document.getElementById('tutor-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال سؤالك.';
+      return;
+    }
+    outputDiv.textContent = 'جاري البحث عن إجابة...';
+    try {
+      const prompt = `أجب على السؤال التالي: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>الإجابة:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء البحث عن الإجابة:</strong><br> ${error.message}`;
+    }
+  };
+  window.generateContent = async function() {
+    const input = document.getElementById('content-input').value.trim();
+    const template = document.getElementById('content-template').value
+    const outputDiv = document.getElementById('content-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال موضوع المحتوى.';
+      return;
+    }
+    outputDiv.textContent = 'جاري توليد المحتوى...';
+    try {
+      const prompt = `قم بتوليد  ${template}  عربي حول الموضوع التالي: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>المحتوى:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء توليد المحتوى:</strong><br> ${error.message}`;
+    }
+  };
+  window.summarizeText = async function() {
+    const input = document.getElementById('summarizer-input').value.trim();
+    const outputDiv = document.getElementById('summarizer-output');
+    const length = document.getElementById('summarizer-length').value;
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال النص المراد تلخيصه.';
+      return;
+    }
+    outputDiv.textContent = 'جاري تلخيص النص...';
+    try {
+      const prompt = `قم بتلخيص النص التالي بشكل ${length}: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>ملخص النص:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء تلخيص النص:</strong><br> ${error.message}`;
+    }
+  };
+  window.checkGrammar = async function() {
+    const input = document.getElementById('grammar-input').value.trim();
+    const outputDiv = document.getElementById('grammar-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال النص المراد تدقيقه.';
+      return;
+    }
+    outputDiv.textContent = 'جاري تدقيق النص...';
+
+    try {
+      const prompt = `قم بتدقيق النص التالي لغويًا وقواعديًا: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>النص المدقق:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء تدقيق النص:</strong><br> ${error.message}`;
+    }
+  };
+  window.generateImage = async function() {
+    const input = document.getElementById('image-input').value.trim();
+    const outputDiv = document.getElementById('image-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال وصف للصورة.';
+      return;
+    }
+    outputDiv.textContent = 'جاري إنشاء الصورة...';
+
+    try {
+      const prompt = `قم بإنشاء صورة بناءً على الوصف التالي: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>وصف الصورة:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الصورة:</strong><br> ${error.message}`;
+    }
+  };
+
+  window.generateQuiz = async function() {
+    const input = document.getElementById('quiz-input').value.trim();
+    const outputDiv = document.getElementById('quiz-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال المادة التعليمية.';
+      return;
+    }
+    outputDiv.textContent = 'جاري إنشاء الاختبار...';
+    try {
+      const prompt = `قم بإنشاء اختبار مخصص بناءً على المادة التعليمية التالية: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>الاختبار:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الاختبار:</strong><br> ${error.message}`;
+    }
+  };
+  window.generatePresentation = async function() {
+    const input = document.getElementById('presentation-input').value.trim();
+    const outputDiv = document.getElementById('presentation-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال موضوع العرض التقديمي.';
+      return;
+    }
+    outputDiv.textContent = 'جاري إنشاء العرض التقديمي...';
+    try {
+      const prompt = `قم بإنشاء عرض تقديمي احترافي بناءً على الموضوع التالي: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>العرض التقديمي:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء العرض التقديمي:</strong><br> ${error.message}`;
+    }
+  };
+  window.analyzeSentiment = async function() {
+    const input = document.getElementById('sentiment-input').value.trim();
+    const outputDiv = document.getElementById('sentiment-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال النص المراد تحليله.';
+      return;
+    }
+    outputDiv.textContent = 'جاري تحليل المشاعر...';
+    try {
+      const prompt = `قم بتحليل المشاعر في النص التالي: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>تحليل المشاعر:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل المشاعر:</strong><br> ${error.message}`;
+    }
+  };
+  window.analyzeLiteraryText = async function() {
+    const input = document.getElementById('literary-input').value.trim();
+    const outputDiv = document.getElementById('literary-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال النص الأدبي.';
+      return;
+    }
+    outputDiv.textContent = 'جاري تحليل النص الأدبي...';
+    try {
+      const prompt = `قم بتحليل النص الأدبي التالي لتحديد السمات الأدبية: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>تحليل النص الأدبي:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل النص الأدبي:</strong><br> ${error.message}`;
+    }
+  };
+  window.generateMarketingPlan = async function() {
+    const input = document.getElementById('marketing-input').value.trim();
+    const outputDiv = document.getElementById('marketing-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال بيانات المنتج والسوق.';
+      return;
+    }
+    outputDiv.textContent = 'جاري إنشاء الخطة التسويقية...';
+    try {
+      const prompt = `قم بإنشاء خطة تسويقية بناءً على البيانات التالية: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>الخطة التسويقية:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الخطة التسويقية:</strong><br> ${error.message}`;
+    }
+  };
+  window.analyzeGeographicData = async function() {
+    const input = document.getElementById('geographic-input').value.trim();
+    const outputDiv = document.getElementById('geographic-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال البيانات الجغرافية.';
+      return;
+    }
+    outputDiv.textContent = 'جاري تحليل البيانات الجغرافية...';
+    try {
+      const prompt = `قم بتحليل البيانات الجغرافية التالية وإظهار النتائج على خريطة تفاعلية: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>تحليل البيانات الجغرافية:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل البيانات الجغرافية:</strong><br> ${error.message}`;
+    }
+  };
+  window.generateInteractiveStory = async function() {
+    const input = document.getElementById('story-input').value.trim();
+    const outputDiv = document.getElementById('story-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال نص القصة.';
+      return;
+    }
+    outputDiv.textContent = 'جاري إنشاء القصة التفاعلية...';
+    try {
+      const prompt = `قم بإنشاء قصة تفاعلية بناءً على النص التالي: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>القصة التفاعلية:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء القصة التفاعلية:</strong><br> ${error.message}`;
+    }
+  };
+  window.analyzeHealthData = async function() {
+    const input = document.getElementById('health-input').value.trim();
+    const outputDiv = document.getElementById('health-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال البيانات الصحية.';
+      return;
+    }
+    outputDiv.textContent = 'جاري تحليل البيانات الصحية...';
+    try {
+      const prompt = `قم بتحليل البيانات الصحية التالية وتقديم توصيات: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>تحليل البيانات الصحية:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل البيانات الصحية:</strong><br> ${error.message}`;
+    }
+  };
+  window.generateNewsletter = async function() {
+    const input = document.getElementById('newsletter-input').value.trim();
+    const outputDiv = document.getElementById('newsletter-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال نص الرسالة الإخبارية.';
+      return;
+    }
+    outputDiv.textContent = 'جاري إنشاء الرسالة الإخبارية...';
+    try {
+      const prompt = `قم بإنشاء رسالة إخبارية احترافية بناءً على النص التالي: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>الرسالة الإخبارية:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الرسالة الإخبارية:</strong><br> ${error.message}`;
+    }
+  };
+  window.analyzePersonalFinance = async function() {
+    const input = document.getElementById('finance-input').value.trim();
+    const outputDiv = document.getElementById('finance-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال البيانات المالية.';
+      return;
+    }
+    outputDiv.textContent = 'جاري تحليل البيانات المالية...';
+    try {
+      const prompt = `قم بتحليل البيانات المالية الشخصية التالية وتقديم توصيات: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>تحليل البيانات المالية:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل البيانات المالية:</strong><br> ${error.message}`;
+    }
+  };
+  window.generateLegalDocument = async function() {
+    const input = document.getElementById('legal-input').value.trim();
+    const outputDiv = document.getElementById('legal-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال تفاصيل الوثيقة القانونية.';
+      return;
+    }
+    outputDiv.textContent = 'جاري إنشاء الوثيقة القانونية...';
+    try {
+      const prompt = `قم بإنشاء وثيقة قانونية بناءً على التفاصيل التالية: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>الوثيقة القانونية:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء الوثيقة القانونية:</strong><br> ${error.message}`;
+    }
+  };
+  window.analyzeSocialMedia = async function() {
+    const input = document.getElementById('social-input').value.trim();
+    const outputDiv = document.getElementById('social-output');
+    if (!input) {
+      outputDiv.textContent = 'الرجاء إدخال بيانات وسائل التواصل الاجتماعي.';
+      return;
+    }
+    outputDiv.textContent = 'جاري تحليل البيانات الاجتماعية...';
+    try {
+      const prompt = `قم بتحليل بيانات وسائل التواصل الاجتماعي التالية: ${input}`;
+      const result = await geminiRequest(prompt);
+      outputDiv.innerHTML = `<strong>تحليل البيانات الاجتماعية:</strong><br>${result}`;
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء تحليل البيانات الاجتماعية:</strong><br> ${error.message}`;
+    }
+  };
+
+  window.generateHtmlCode = async function() {
+    const websiteType = document.getElementById('website-type').value;
+    const components = Array.from(document.querySelectorAll('input[name="components"]:checked')).map(c => c.value);
+    const colors = document.getElementById('colors').value;
+    const fonts = document.getElementById('fonts').value;
+    const content = document.getElementById('content').value;
+    const cssOption = document.querySelector('input[name="css_option"]:checked')?.value;
+    const inlineCssCode = document.getElementById('inline-css-code').value;
+    const externalCssFile = document.getElementById('external-css-file').value;
+    const outputDiv = document.getElementById('html-output');
+    const downloadButton = document.getElementById('download-html');
+
+    if (!websiteType || components.length === 0 || !content) {
+      outputDiv.textContent = 'الرجاء إدخال جميع المواصفات المطلوبة.';
+      return;
+    }
+
+    outputDiv.textContent = 'جاري إنشاء كود HTML...';
+
+    try {
+      let prompt = `أنشئ كود HTML ل${websiteType} يتضمن `;
+      if (components.length > 0) {
+        prompt += components.join(', ') + ' كمكونات أساسية. ';
+      }
+      prompt += `استخدم الألوان ${colors} والخطوط ${fonts}. المحتوى هو: ${content}. `;
+
+      if (cssOption === 'inline' && inlineCssCode) {
+        prompt += `أضف CSS مدمج: ${inlineCssCode}. `;
+      } else if (cssOption === 'external' && externalCssFile) {
+        prompt += `استخدم ملف CSS خارجي من الرابط: ${externalCssFile}. `;
+      }
+
+      prompt += "أضف تعليقات داخل الكود لشرح كل قسم، ودعم اللغة العربية.";
+
+      const generatedHTML = await geminiRequest(prompt);
+
+      // Example for contact page with simple form and link back to homepage
+      if (websiteType === 'contact') {
+        const exampleHTML = `
+                    <!-- بداية صفحة التواصل -->
+                    <!DOCTYPE html>
+                    <html lang="ar" dir="rtl">
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>تواصل معنا</title>
+                        <!-- إضافة CSS مدمج لتخصيص التصميم                         <style>
+                            body { font-family: Arial, sans-serif; }
+                            .container { width: 80%; margin: auto; text-align: center; }
+                            input[type="text"], textarea { width: 100%; padding: 10px; margin: 5px 0; }
+                            button { padding: 10px 20px; background-color: #007bff; color: white; border: none; }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="container">
+                            <h1>تواصل معنا</h1>
+                            <!-- نموذج الاتصال -->
+                            <form>
+                                <input type="text" placeholder="اسمك"><br>
+                                <input type="text" placeholder="بريدك الإلكتروني"><br>
+                                <textarea placeholder="رسالتك"></textarea><br>
+                                <button type="submit">إرسال</button>
+                            </form>
+                            <!-- رابط للعودة للصفحة الرئيسية -->
+                            <p><a href="index.html">العودة إلى الصفحة الرئيسية</a></p>
+                        </div>
+                    </body>
+                    </html>
+                    <!-- نهاية صفحة التواصل -->
+                `;
+        outputDiv.textContent = exampleHTML;
+        downloadButton.style.display = 'inline-block';
+      } else {
+        outputDiv.textContent = generatedHTML;
+        downloadButton.style.display = 'inline-block';
+      }
+
+    } catch (error) {
+      outputDiv.innerHTML = `<strong>حدث خطأ أثناء إنشاء كود HTML:</strong><br> ${error.message}`;
+    }
+  };
+
+  document.querySelectorAll('input[name="css_option"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+      if (this.value === 'inline') {
+        document.getElementById('inline-css-code').style.display = 'block';
+        document.getElementById('external-css-file').style.display = 'none';
+      } else if (this.value === 'external') {
+        document.getElementById('inline-css-code').style.display = 'none';
+        document.getElementById('external-css-file').style.display = 'block';
+      }
+    });
+  });
+
+  document.getElementById('download-html').addEventListener('click', function() {
+    const content = document.getElementById('html-output').textContent;
+    const filename = 'generated_code.html';
+    const blob = new Blob([content], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+});
