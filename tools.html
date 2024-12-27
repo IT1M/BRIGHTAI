@@ -16,7 +16,7 @@
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
- 
+
    gtag('config', 'G-SZKTP4496K');
  </script>
 <script async
@@ -110,6 +110,50 @@ PDF</button>
                 <h3>بحث وتطوير الذكاء الاصطناعي</h3>
                 </div>
                <p>نعمل على البحث والتطوير في أحدث تقنيات الذكاء الاصطناعي.</p>
+        </div>
+    </div>
+</section>
+<section>
+    <h2> احدث الادوات </h2>
+    <div class="tools-grid">
+        <div class="tool-card" id="html-generator-tool">
+            <div class="card-header">
+                <i class="fas fa-code icon"></i>
+                <h3> أداة توليد أكواد HTML </h3>
+            </div>
+            <p> قم بإنشاء أكواد HTML مخصصة لمواقع الويب بسهولة. </p>
+            <div class="tool-content">
+                <label for="website-type">نوع الموقع:</label>
+                <select id="website-type">
+                    <option value="homepage">صفحة رئيسية</option>
+                    <option value="contact">صفحة تواصل</option>
+                    <option value="services">صفحة خدمات</option>
+                    <option value="blog">مدونة</option>
+                </select>
+                <br><br>
+                <label>المكونات الأساسية:</label><br>
+                <input type="checkbox" id="header" name="components" value="header"> <label for="header">رأس الصفحة</label><br>
+                <input type="checkbox" id="navigation" name="components" value="navigation"> <label for="navigation">قائمة تنقل</label><br>
+                <input type="checkbox" id="images" name="components" value="images"> <label for="images">صور</label><br>
+                <input type="checkbox" id="buttons" name="components" value="buttons"> <label for="buttons">أزرار</label><br>
+                <input type="checkbox" id="forms" name="components" value="forms"> <label for="forms">نماذج</label><br>
+                <br>
+                <label for="colors">الألوان:</label>
+                <input type="color" id="colors" value="#ffffff"><br><br>
+                <label for="fonts">الخطوط:</label>
+                <input type="text" id="fonts" placeholder="مثال: Arial, sans-serif"><br><br>
+                <label for="content">النصوص والمحتويات:</label>
+                <textarea id="content" placeholder="أدخل النصوص والمحتويات هنا"></textarea><br><br>
+                <label>إضافة CSS:</label><br>
+                <input type="radio" id="inline-css" name="css_option" value="inline"> <label for="inline-css">CSS مدمج</label>
+                <textarea id="inline-css-code" placeholder="أدخل كود CSS المدمج" style="display: none;"></textarea><br>
+                <input type="radio" id="external-css" name="css_option" value="external"> <label for="external-css">ملف CSS خارجي</label>
+                <input type="text" id="external-css-file" placeholder="أدخل رابط ملف CSS الخارجي" style="display: none;"><br><br>
+                <button class="try-button" onclick="generateHtmlCode()">إنشاء</button>
+                <div id="html-output" class="output-text" style="height: auto;"></div>
+                <button id="download-html" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
+                background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل الكود</button>
+            </div>
         </div>
     </div>
 </section>
@@ -489,7 +533,7 @@ class="fab fa-whatsapp"></i> </a></p>
       if (chart) {
           chart.destroy();
       }
-    
+
       chart = new Chart(ctx, {
         type: chartType,
         data: {
@@ -519,18 +563,18 @@ class="fab fa-whatsapp"></i> </a></p>
         }
       });
   });
-    
+
     document.getElementById('exportPDF').addEventListener('click', () => {
         const { jsPDF } = window.jspdf;
         const pdf = new jsPDF();
-      
+
         if (!chart) {
         alert('يرجى إنشاء رسم بياني أولاً');
         return;
       }
-      
+
         const chartImage = chart.toBase64Image();
-        pdf.text("PDF الرسم البياني", 10, 10); 
+        pdf.text("PDF الرسم البياني", 10, 10);
         pdf.addImage(chartImage, 'PNG', 10, 20, 180, 100);
         pdf.save("chart.pdf");
     });
