@@ -28,6 +28,7 @@
           integrity="sha512-9usAa10IRO0HhonpyAIVpjry|PvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="tools.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
 </head>
 <body>
 <div class="container">
@@ -83,93 +84,122 @@
     <section id="latest-tools">
         <h2> احدث الادوات </h2>
         <div class="tools-grid">
-            <div class="tool-card" id="resume-tool">
-                <div class="card-header">
-                    <i class="fas fa-file-alt icon"></i>
-                    <h3>مولد السيرة الذاتية وخطاب التقديم</h3>
-                </div>
-                <p>يقوم المستخدمون بإدخال معلوماتهم، وتقوم الأداة بإنشاء سير ذاتية وخطابات تقديم مُحسَّنة.</p>
-                <div class="tool-content">
-                    <label for="template-select">قالب السيرة الذاتية:</label>
-                    <select id="template-select">
-                        <option value="modern">حديث</option>
-                        <option value="classic">تقليدي</option>
-                        <option value="creative">إبداعي</option>
-                    </select>
+          <div class="tool-card" id="resume-tool">
+               <div class="card-header">
+                     <i class="fas fa-file-alt icon"></i>
+                       <h3>مولد السيرة الذاتية وخطاب التقديم</h3>
+                       </div>
+                    <p>يقوم المستخدمون بإدخال معلوماتهم، وتقوم الأداة بإنشاء سير ذاتية وخطابات تقديم مُحسَّنة.</p>
+                    <div class="tool-content">
+                         <label for="template-select">قالب السيرة الذاتية:</label>
+                        <select id="template-select">
+                             <option value="modern">حديث</option>
+                           <option value="classic">تقليدي</option>
+                         <option value="creative">إبداعي</option>
+                     </select>
                     <br><br>
-                    <label for="language-select">لغة السيرة الذاتية:</label>
-                    <select id="language-select">
-                        <option value="ar">العربية</option>
-                        <option value="en">الإنجليزية</option>
-                  </select>
-                    <br><br>
-                    <label for="name">الاسم:</label>
-                    <input type="text" id="name" placeholder="اسمك الكامل"><br><br>
-                    <label for="title">المسمى الوظيفي:</label>
-                    <input type="text" id="title" placeholder="مطور برمجيات، مدير تسويق، الخ"><br><br>
-                    <label for="email">البريد الإلكتروني:</label>
-                    <input type="email" id="email" placeholder="youremail@example.com"><br><br>
-                    <label for="phone">رقم الهاتف:</label>
-                    <input type="tel" id="phone" placeholder="+1234567890"><br><br>
-                    <label for="linkedin">LinkedIn:</label>
-                    <input type="text" id="linkedin" placeholder="رابط ملفك الشخصي على LinkedIn"><br><br>
+                        <label for="language-select">لغة السيرة الذاتية:</label>
+                        <select id="language-select">
+                         <option value="ar">العربية</option>
+                          <option value="en">الإنجليزية</option>
+                         </select>
+                            <br><br>
+                            <label for="name">الاسم:</label>
+                            <input type="text" id="name" placeholder="اسمك الكامل"><br><br>
+                            <label for="title">المسمى الوظيفي:</label>
+                            <input type="text" id="title" placeholder="مطور برمجيات، مدير تسويق، الخ"><br><br>
+                            <label for="email">البريد الإلكتروني:</label>
+                             <input type="email" id="email" placeholder="youremail@example.com"><br><br>
+                             <label for="phone">رقم الهاتف:</label>
+                            <input type="tel" id="phone" placeholder="+1234567890"><br><br>
+                            <label for="linkedin">LinkedIn:</label>
+                            <input type="text" id="linkedin" placeholder="رابط ملفك الشخصي على LinkedIn"><br><br>
 
-                    <h4>الهدف المهني</h4>
-                    <textarea id="objective" placeholder="ملخص عن أهدافك المهنية"></textarea><br><br>
+                            <h4>الهدف المهني</h4>
+                            <textarea id="objective" placeholder="ملخص عن أهدافك المهنية"></textarea><br><br>
 
-                    <h4>الخبرة المهنية</h4>
-                    <div id="experience-fields">
-                        <div class="experience-entry">
-                            <input type="text" class="company" placeholder="اسم الشركة">
-                            <input type="text" class="position" placeholder="المسمى الوظيفي">
-                            <input type="text" class="date" placeholder="تاريخ البدء - تاريخ الانتهاء">
-                            <textarea class="responsibilities" placeholder="المهام والمسؤوليات"></textarea>
-                            <button type="button" class="remove-experience">إزالة</button>
-                        </div>
-                    </div>
-                    <button type="button" id="add-experience">إضافة خبرة</button><br><br>
+                         <h4>الخبرة المهنية</h4>
+                            <div id="experience-fields">
+                                <div class="experience-entry">
+                                    <input type="text" class="company" placeholder="اسم الشركة">
+                                    <input type="text" class="position" placeholder="المسمى الوظيفي">
+                                     <input type="text" class="date" placeholder="تاريخ البدء - تاريخ الانتهاء">
+                                    <textarea class="responsibilities" placeholder="المهام والمسؤوليات"></textarea>
+                                   <button type="button" class="remove-experience">إزالة</button>
+                                </div>
+                             </div>
+                                 <button type="button" id="add-experience">إضافة خبرة</button><br><br>
 
-                    <h4>التعليم</h4>
-                    <div id="education-fields">
-                        <div class="education-entry">
-                            <input type="text" class="degree" placeholder="الشهادة">
-                            <input type="text" class="university" placeholder="اسم الجامعة">
-                            <input type="text" class="graduation-date" placeholder="سنة التخرج">
-                            <button type="button" class="remove-education">إزالة</button>
-                        </div>
-                    </div>
-                    <button type="button" id="add-education">إضافة تعليم</button><br><br>
+                            <h4>التعليم</h4>
+                            <div id="education-fields">
+                                <div class="education-entry">
+                                    <input type="text" class="degree" placeholder="الشهادة">
+                                    <input type="text" class="university" placeholder="اسم الجامعة">
+                                    <input type="text" class="graduation-date" placeholder="سنة التخرج">
+                                 <button type="button" class="remove-education">إزالة</button>
+                            </div>
+                         </div>
+                         <button type="button" id="add-education">إضافة تعليم</button><br><br>
 
-                    <h4>المهارات</h4>
-                    <textarea id="skills" placeholder="اذكر مهاراتك (افصل بينها بفواصل)"></textarea><br><br>
+                        <h4>المهارات</h4>
+                            <textarea id="skills" placeholder="اذكر مهاراتك (افصل بينها بفواصل)"></textarea><br><br>
 
-                    <h4>المشاريع</h4>
-                    <div id="projects-fields">
-                        <div class="project-entry">
-                            <input type="text" class="project-name" placeholder="اسم المشروع">
-                            <textarea class="project-description" placeholder="وصف المشروع"></textarea>
-                            <textarea class="project-tools" placeholder="الأدوات المستخدمة"></textarea>
-                            <button type="button" class="remove-project">إزالة</button>
-                        </div>
-                    </div>
-                    <button type="button" id="add-project">إضافة مشروع</button><br><br>
+                        <h4>المشاريع</h4>
+                        <div id="projects-fields">
+                             <div class="project-entry">
+                                 <input type="text" class="project-name" placeholder="اسم المشروع">
+                                  <textarea class="project-description" placeholder="وصف المشروع"></textarea>
+                                  <textarea class="project-tools" placeholder="الأدوات المستخدمة"></textarea>
+                                    <button type="button" class="remove-project">إزالة</button>
+                                 </div>
+                             </div>
+                         <button type="button" id="add-project">إضافة مشروع</button><br><br>
 
-                    <h4>خطاب التقديم</h4>
-                    <label for="job-title">الوظيفة المستهدفة:</label>
-                    <input type="text" id="job-title" placeholder="الوظيفة التي تتقدم لها"><br><br>
-                    <label for="company-name">اسم الشركة:</label>
-                    <input type="text" id="company-name" placeholder="اسم الشركة التي تتقدم إليها"><br><br>
-                    <label for="relevant-skills">المهارات ذات الصلة:</label>
-                    <textarea id="relevant-skills" placeholder="اذكر المهارات ذات الصلة بالوظيفة"></textarea><br><br>
-                    <label for="interest-reason">سبب اهتمامك بالشركة:</label>
-                    <textarea id="interest-reason" placeholder="لماذا أنت مهتم بالعمل في هذه الشركة؟"></textarea><br><br>
+                      <h4>خطاب التقديم</h4>
+                            <label for="job-title">الوظيفة المستهدفة:</label>
+                          <input type="text" id="job-title" placeholder="الوظيفة التي تتقدم لها"><br><br>
+                          <label for="company-name">اسم الشركة:</label>
+                             <input type="text" id="company-name" placeholder="اسم الشركة التي تتقدم إليها"><br><br>
+                          <label for="relevant-skills">المهارات ذات الصلة:</label>
+                            <textarea id="relevant-skills" placeholder="اذكر المهارات ذات الصلة بالوظيفة"></textarea><br><br>
+                             <label for="interest-reason">سبب اهتمامك بالشركة:</label>
+                          <textarea id="interest-reason" placeholder="لماذا أنت مهتم بالعمل في هذه الشركة؟"></textarea><br><br>
 
-                    <button class="try-button" onclick="generateResume()">إنشاء</button>
-                    <div id="resume-output" class="output-text" style="height: auto;"></div>
+                            <button class="try-button" onclick="generateResume()">إنشاء</button>
+                                   <div id="resume-output" class="output-text" style="height: auto;"></div>
                     <button id="download-resume" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
-                        background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل السيرة الذاتية (PDF)</button>
-                    <button id="download-cover-letter" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
-                        background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل خطاب التقديم (PDF)</button>
+                    background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل السيرة الذاتية (PDF)</button>
+                            <button id="download-cover-letter" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
+                     background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل خطاب التقديم (PDF)</button>
+                       </div>
+            </div>
+            <div class="tool-card" id="saudi-jobs-tool">
+                <div class="card-header">
+                    <i class="fas fa-search icon"></i>
+                    <h3>أداة البحث عن وظائف في السعودية</h3>
+                </div>
+                <p>ابحث عن الوظائف المتاحة في السعودية وحسن سيرتك الذاتية.</p>
+                 <div class="tool-content">
+                     <label for="job-location">المدينة:</label>
+                    <select id="job-location">
+                        <option value="" disabled selected>اختر المدينة</option>
+                        <option value="riyadh">الرياض</option>
+                        <option value="jeddah">جدة</option>
+                       <option value="dammam">الدمام</option>
+                        <option value="khobar">الخبر</option>
+                         <option value="mecca">مكة</option>
+                      <option value="medina">المدينة</option>
+                     </select><br><br>
+                    <label for="job-field">المجال الوظيفي:</label>
+                   <input type="text" id="job-field" placeholder="أدخل المجال الوظيفي"><br><br>
+                  <label for="job-skills">المهارات:</label>
+                <textarea id="job-skills" placeholder="اذكر مهاراتك (افصل بينها بفواصل)"></textarea><br><br>
+                 <label for="resume-upload">رفع السيرة الذاتية:</label>
+                  <input type="file" id="resume-upload"><br><br>
+                    <button class="try-button" onclick="searchSaudiJobs()">البحث عن وظائف</button>
+                    <div id="saudi-jobs-output" class="output-text" style="height: auto;"></div>
+                     <button id="download-search-results" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
+                         background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل النتائج (PDF)</button>
                 </div>
             </div>
             <div class="tool-card" id="html-generator-tool">
@@ -218,13 +248,13 @@
                     </fieldset>
                     <button class="try-button" onclick="generateHtmlCode()">إنشاء</button>
                     <div id="html-output" class="output-text" style="height: auto;"></div>
-                    <button id="download-html" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
+                  <button id="download-html" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
                         background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل الكود</button>
                 </div>
             </div>
         </div>
     </section>
-    <section id="educational-tools">
+      <section id="educational-tools">
         <h2> أدوات تعليمية </h2>
         <div class="tools-grid">
             <div class="tool-card" id="learning-tool">
@@ -297,7 +327,7 @@
                 </div>
                 <p> أداة لتوليد محتوى عربي باستخدام قوالب متعددة </p>
                 <div class="tool-content">
-                    <label for="content-template">نوع المحتوى:</label>
+                     <label for="content-template">نوع المحتوى:</label>
                     <select id="content-template">
                         <option value="blog">تدوينة</option>
                         <option value="article">مقالة</option>
@@ -316,12 +346,12 @@
                 <p> . أداة تلخيص النصوص مع خيارات للطول </p>
                 <div class="tool-content">
                     <textarea id="summarizer-input" placeholder="أدخل النص للتخليص"></textarea>
-                    <label for="summarizer-length">طول الملخص:</label>
-                    <select id="summarizer-length">
-                        <option value="short">قصير</option>
-                        <option value="medium">متوسط </option>
-                        <option value="long">طويل</option>
-                    </select>
+                   <label for="summarizer-length">طول الملخص:</label>
+                     <select id="summarizer-length">
+                         <option value="short">قصير</option>
+                         <option value="medium">متوسط </option>
+                         <option value="long">طويل</option>
+                     </select>
                     <button class="try-button" onclick="summarizeText()">تلخيص النص </button>
                     <p id="summarizer-output" class="output-text"></p>
                 </div>
@@ -494,7 +524,7 @@
                 </div>
                 <p>تقوم بتحليل البيانات الجغرافية وإظهار النتائج على خرائط تفاعلية.</p>
                 <div class="tool-content">
-                    <textarea id="geographic-input" placeholder="أدخل البيانات الجغرافية"></textarea>
+                    <textarea id="geographic-input"placeholder="أدخل البيانات الجغرافية"></textarea>
                     <button class="try-button" onclick="analyzeGeographicData()">تحليل البيانات</button>
                     <div id="geographic-output" class="output-text"></div>
                 </div>
@@ -547,115 +577,117 @@
                     <div id="finance-output" class="output-text"></div>
                 </div>
             </div>
-          <div class="tool-card" id="legal-tool">
-              <div class="card-header">
-                <i class="fas fa-gavel icon"></i>
-              <h3>أداة إنشاء الوثائق القانونية</h3>
-                  </div>
-             <p>تساعد في إنشاء وثائق قانونية بناءً على النص المدخل.</p>
-              <div class="tool-content">
+            <div class="tool-card" id="legal-tool">
+                <div class="card-header">
+                    <i class="fas fa-gavel icon"></i>
+                    <h3>أداة إنشاء الوثائق القانونية</h3>
+                </div>
+                <p>تساعد في إنشاء وثائق قانونية بناءً على النص المدخل.</p>
+                <div class="tool-content">
                     <textarea id="legal-input" placeholder="أدخل تفاصيل الوثيقة القانونية"></textarea>
-                      <button class="try-button" onclick="generateLegalDocument()">إنشاء الوثيقة</button>
-                     <div id="legal-output" class="output-text"></div>
+                    <button class="try-button" onclick="generateLegalDocument()">إنشاء الوثيقة</button>
+                    <div id="legal-output" class="output-text"></div>
                 </div>
             </div>
             <div class="tool-card" id="social-tool">
-               <div class="card-header">
-                 <i class="fas fa-share-alt icon"></i>
-                  <h3>أداة تحليل البيانات الاجتماعية</h3>
-                   </div>
-                 <p>تقوم بتحليل البيانات الاجتماعية من وسائل التواصل الاجتماعي وإظهار النتائج.</p>
+                <div class="card-header">
+                    <i class="fas fa-share-alt icon"></i>
+                    <h3>أداة تحليل البيانات الاجتماعية</h3>
+                </div>
+                <p>تقوم بتحليل البيانات الاجتماعية من وسائل التواصل الاجتماعي وإظهار النتائج.</p>
                 <div class="tool-content">
                     <textarea id="social-input" placeholder="أدخل بيانات وسائل التواصل الاجتماعي"></textarea>
                     <button class="try-button" onclick="analyzeSocialMedia()">تحليل البيانات الاجتماعية</button>
-                     <div id="social-output" class="output-text"></div>
-                     </div>
-                 </div>
-                 </section>
+                    <div id="social-output" class="output-text"></div>
                 </div>
-                <footer>
-                <div class="social-media">
-                <h3> تابعنا على </h3>
-                <a href="https://x.com/BrightAIII" target="_blank" title="X"> <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.youtube.com/@TeechLab" target="_blank" title="Youtube"><i
-                class="fab fa-youtube"></i></a>
-                <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab
+            </div>
+         </div>
+        </section>
+    </div>
+    <footer>
+        <div class="social-media">
+            <h3> تابعنا على </h3>
+            <a href="https://x.com/BrightAIII" target="_blank" title="X"> <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/@TeechLab" target="_blank" title="Youtube"><i
+                    class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab
                 fa-instagram"></i></a>
-                </div>
-                <div class="contact-info">
-                <h3> تواصل معنا </h3>
-                <p><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com </p>
-                <p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i
-                class="fab fa-whatsapp"></i> </a></p>
-                </div>
-                </footer>
-                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-                <script>
-                  let chart;
+        </div>
+        <div class="contact-info">
+            <h3> تواصل معنا </h3>
+            <p><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com </p>
+            <p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i
+                    class="fab fa-whatsapp"></i> </a></p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      let chart;
 
-                  document.getElementById('generateChart').addEventListener('click', () => {
-                      const chartType = document.getElementById('chartType').value;
-                      const labels = document.getElementById('chartLabels').value.split(',');
-                      const data = document.getElementById('chartData').value.split(',').map(Number);
+      document.getElementById('generateChart').addEventListener('click', () => {
+          const chartType = document.getElementById('chartType').value;
+          const labels = document.getElementById('chartLabels').value.split(',').map(label => label.trim());
+          const data = document.getElementById('chartData').value.split(',').map(Number);
 
-                      if (labels.length === 0 || data.length === 0 || labels.length !== data.length) {
-                          alert('يرجى إدخال عناوين وقيم صحيحة');
-                          return;
+          if (labels.length === 0 || data.length === 0 || labels.length !== data.length) {
+              alert('يرجى إدخال عناوين وقيم صحيحة');
+              return;
+          }
+
+          const ctx = document.getElementById('myChart').getContext('2d');
+
+          if (chart) {
+              chart.destroy();
+          }
+
+          chart = new Chart(ctx, {
+              type: chartType,
+              data: {
+                  labels: labels,
+                  datasets: [{
+                      label: 'بيانات المستخدم',
+                      data: data,
+                      backgroundColor: chartType === 'pie' ? [
+                          'rgba(255, 99, 132, 0.6)',
+                          'rgba(54, 162, 235, 0.6)',
+                          'rgba(255, 206, 86, 0.6)',
+                          'rgba(75, 192, 192, 0.6)',
+                          'rgba(153, 102, 255, 0.6)',
+                          'rgba(255, 159, 64, 0.6)'
+                      ] : 'rgba(75, 192, 192, 0.2)',
+                      borderColor: 'rgba(75, 192, 192, 1)',
+                      borderWidth: 1
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  plugins: {
+                      legend: {
+                          position: 'top',
                       }
+                  }
+              }
+          });
+      });
 
-                      const ctx = document.getElementById('myChart').getContext('2d');
+        document.getElementById('exportPDF').addEventListener('click', () => {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF();
 
-                      if (chart) {
-                          chart.destroy();
-                      }
+            if (!chart) {
+                alert('يرجى إنشاء رسم بياني أولاً');
+                return;
+            }
 
-                      chart = new Chart(ctx, {
-                        type: chartType,
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                label: 'بيانات المستخدم',
-                                data: data,
-                                backgroundColor: chartType === 'pie' ? [
-                                    'rgba(255, 99, 132, 0.6)',
-                                    'rgba(54, 162, 235, 0.6)',
-                                    'rgba(255, 206, 86, 0.6)',
-                                    'rgba(75, 192, 192, 0.6)',
-                                    'rgba(153, 102, 255, 0.6)',
-                                    'rgba(255, 159, 64, 0.6)'
-                                ]: 'rgba(75, 192, 192, 0.2)',
-                                borderColor: 'rgba(75, 192, 192, 1)',
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            plugins: {
-                                legend: {
-                                    position: 'top',
-                                }
-                            }
-                        }
-                      });
-                  });
-
-                    document.getElementById('exportPDF').addEventListener('click', () => {
-                        const { jsPDF } = window.jspdf;
-                        const pdf = new jsPDF();
-
-                        if (!chart) {
-                        alert('يرجى إنشاء رسم بياني أولاً');
-                        return;
-                      }
-
-                        const chartImage = chart.toBase64Image();
-                        pdf.text("PDF الرسم البياني", 10, 10);
-                        pdf.addImage(chartImage, 'PNG', 10, 20, 180, 100);
-                        pdf.save("chart.pdf");
-                    });
-                </script>
-                <script src="tools.js"></script>
-                </body>
-                </html>
+            const chartImage = chart.toBase64Image();
+            pdf.text("PDF الرسم البياني", 10, 10);
+            pdf.addImage(chartImage, 'PNG', 10, 20, 180, 100);
+            pdf.save("chart.pdf");
+        });
+    </script>
+    <script src="tools.js"></script>
+    </body>
+    </html>
