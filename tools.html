@@ -89,7 +89,7 @@
                      <i class="fas fa-file-alt icon"></i>
                        <h3>مولد السيرة الذاتية وخطاب التقديم</h3>
                        </div>
-                    <p>يقوم المستخدمون بإدخال معلوماتهم، وتقوم الأداة بإنشاء سير ذاتية وخطابات تقديم متوافقة مع نظام ATS , تستطيع تحميل الملف PDF مباشرة اذا كانت باللغة الاإنجليزية ، العربية فقط قم بنسخ المخرجات وانشئ ملفك الخاص بنفسك بسبب عدم دعم اللغة العربية من  شركة الإستضافة</p>
+                    <p>يقوم المستخدمون بإدخال معلوماتهم، وتقوم الأداة بإنشاء سير ذاتية وخطابات تقديم مُحسَّنة تستطيع تحميل ملف PDF مباشرة باللغة الانجليزية اما باللغة العربية انسخ المخرجات وقم بانشاء ملفك الخاص.</p>
                     <div class="tool-content">
                          <label for="template-select">قالب السيرة الذاتية:</label>
                         <select id="template-select">
@@ -116,7 +116,7 @@
                             <input type="text" id="linkedin" placeholder="رابط ملفك الشخصي على LinkedIn"><br><br>
 
                             <h4>الهدف المهني</h4>
-                            <textarea id="objective" placeholder="ملخص عن أهدافك المهنية"></textarea><br><br>
+                            <textarea id="objective" placeholder="ملخص عن أهدافك المهنية">هذا نص باللغة العربية لاختبار التنسيق</textarea><br><br>
 
                          <h4>الخبرة المهنية</h4>
                             <div id="experience-fields">
@@ -202,492 +202,486 @@
                          background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل النتائج (PDF)</button>
                 </div>
             </div>
-            <div class="tool-card" id="html-generator-tool">
-                <div class="card-header">
-                    <i class="fas fa-code icon"></i>
-                    <h3> أداة توليد أكواد HTML </h3>
-                </div>
-                <p> قم بإنشاء أكواد HTML مخصصة لمواقع الويب بسهولة. </p>
-                <div class="tool-content">
-                    <label for="website-type">نوع الموقع:</label>
-                    <select id="website-type">
-                        <option value="homepage">صفحة رئيسية</option>
-                        <option value="contact">صفحة تواصل</option>
-                        <option value="services">صفحة خدمات</option>
-                        <option value="blog">مدونة</option>
+            <div class="tool-content">
+                <label for="website-type">نوع الموقع:</label>
+                <select id="website-type">
+                    <option value="homepage">صفحة رئيسية</option>
+                    <option value="contact">صفحة تواصل</option>
+                    <option value="services">صفحة خدمات</option>
+                    <option value="blog">مدونة</option>
+                </select>
+                <br><br>
+                <fieldset>
+                    <legend>المكونات الأساسية:</legend>
+                    <input type="checkbox" id="header" name="components" value="header">
+                    <label for="header">رأس الصفحة</label><br>
+                    <input type="checkbox" id="navigation" name="components" value="navigation">
+                    <label for="navigation">قائمة تنقل</label><br>
+                    <input type="checkbox" id="images" name="components" value="images">
+                    <label for="images">صور</label><br>
+                    <input type="checkbox" id="buttons" name="components" value="buttons">
+                    <label for="buttons">أزرار</label><br>
+                    <input type="checkbox" id="forms" name="components" value="forms">
+                    <label for="forms">نماذج</label><br>
+                </fieldset>
+                <br>
+                <label for="colors">الألوان:</label>
+                <input type="color" id="colors" value="#ffffff"><br><br>
+                <label for="fonts">الخطوط:</label>
+                <input type="text" id="fonts" placeholder="مثال: Arial, sans-serif"><br><br>
+                <label for="content">النصوص والمحتويات:</label>
+                <textarea id="content" placeholder="أدخل النصوص والمحتويات هنا"></textarea><br><br>
+                <fieldset>
+                    <legend>إضافة CSS:</legend>
+                    <input type="radio" id="inline-css" name="css_option" value="inline">
+                    <label for="inline-css">CSS مدمج</label>
+                    <textarea id="inline-css-code" placeholder="أدخل كود CSS المدمج" style="display: none;"></textarea><br>
+                    <input type="radio" id="external-css" name="css_option" value="external">
+                    <label for="external-css">ملف CSS خارجي</label>
+                    <input type="text" id="external-css-file" placeholder="أدخل رابط ملف CSS الخارجي" style="display: none;"><br><br>
+                </fieldset>
+                <button class="try-button" onclick="generateHtmlCode()">إنشاء</button>
+                <div id="html-output" class="output-text" style="height: auto;"></div>
+              <button id="download-html" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
+                    background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل الكود</button>
+            </div>
+        </div>
+    </div>
+</section>
+  <section id="educational-tools">
+    <h2> أدوات تعليمية </h2>
+    <div class="tools-grid">
+        <div class="tool-card" id="learning-tool">
+            <div class="card-header">
+                <i class="fas fa-chalkboard-teacher icon"></i>
+                <h3> منصات تعليمية ذكية </h3>
+            </div>
+            <p>أدوات تساعد الطلاب على التعلم من خلال تحليل مستواهم التعليمي وتقديم دروس أو اختبارات مخصصة لهم.</p>
+            <div class="tool-content">
+                <textarea id="learning-input" placeholder="أدخل موضوع الدراسة"></textarea>
+                <button class="try-button" onclick="generateLearningPlan()">توصيات تعلم</button>
+                <div id="learning-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="homework-tool">
+            <div class="card-header">
+                <i class="fa fa-file-alt icon"></i>
+                <h3> تحليل الواجبات المنزلية </h3>
+            </div>
+            <p> تساعد الطلاب أو المعلمين على تقييم الواجبات باستخدام الذكاء الاصطناعي </p>
+            <div class="tool-content">
+                <textarea id="homework-input" placeholder="أدخل الواجب"></textarea>
+                <button class="try-button" onclick="analyzeHomework()">تحليل الواجب</button>
+                <div id="homework-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="interactive-chart-tool">
+            <section style="padding: 0px; background-color: transparent; border: none; border-radius: 0px; margin: 0px;">
+                <h3 style="text-align: center;font-size: 1.8em; margin-bottom: 15px;">إنشاء رسوم بيانية تفاعلية</h3>
+                <form id="chartForm" style="text-align: center; margin-bottom: 10px;">
+                    <label for="chartType"> اختر نوع الرسم البياني :</label>
+                    <select id="chartType">
+                        <option value="bar">شريطي</option>
+                        <option value="line">خطّي</option>
+                        <option value="pie">دائري</option>
                     </select>
                     <br><br>
-                    <fieldset>
-                        <legend>المكونات الأساسية:</legend>
-                        <input type="checkbox" id="header" name="components" value="header">
-                        <label for="header">رأس الصفحة</label><br>
-                        <input type="checkbox" id="navigation" name="components" value="navigation">
-                        <label for="navigation">قائمة تنقل</label><br>
-                        <input type="checkbox" id="images" name="components" value="images">
-                        <label for="images">صور</label><br>
-                        <input type="checkbox" id="buttons" name="components" value="buttons">
-                        <label for="buttons">أزرار</label><br>
-                        <input type="checkbox" id="forms" name="components" value="forms">
-                        <label for="forms">نماذج</label><br>
-                    </fieldset>
+                    <label for="chartLabels">أدخل العناوين (مفصولة بفواصل):</label><br>
+                    <input type="text" id="chartLabels" placeholder="مثال: يناير, فبراير, مارس" style="width: 60%; padding: 5px; margin-bottom: 10px;">
                     <br>
-                    <label for="colors">الألوان:</label>
-                    <input type="color" id="colors" value="#ffffff"><br><br>
-                    <label for="fonts">الخطوط:</label>
-                    <input type="text" id="fonts" placeholder="مثال: Arial, sans-serif"><br><br>
-                    <label for="content">النصوص والمحتويات:</label>
-                    <textarea id="content" placeholder="أدخل النصوص والمحتويات هنا"></textarea><br><br>
-                    <fieldset>
-                        <legend>إضافة CSS:</legend>
-                        <input type="radio" id="inline-css" name="css_option" value="inline">
-                        <label for="inline-css">CSS مدمج</label>
-                        <textarea id="inline-css-code" placeholder="أدخل كود CSS المدمج" style="display: none;"></textarea><br>
-                        <input type="radio" id="external-css" name="css_option" value="external">
-                        <label for="external-css">ملف CSS خارجي</label>
-                        <input type="text" id="external-css-file" placeholder="أدخل رابط ملف CSS الخارجي" style="display: none;"><br><br>
-                    </fieldset>
-                    <button class="try-button" onclick="generateHtmlCode()">إنشاء</button>
-                    <div id="html-output" class="output-text" style="height: auto;"></div>
-                  <button id="download-html" style="margin-top: 10px; padding: 10px 20px; font-size: 16px;
-                        background-color: #28a745; color: white; border: none; border-radius: 5px; display: none;">تحميل الكود</button>
+                    <label for="chartData">أدخل القيم (مفصولة بفواصل) :</label><br>
+                    <input type="text" id="chartData" placeholder="30 ,20 ,10 :مثال" style="width: 60%; padding: 5px; margin-bottom: 10px;">
+                    <br>
+                    <button type="button" id="generateChart" style="padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px;">إنشاء الرسم
+                        البياني </button>
+                </form>
+                <div class="chart-container" style="text-align: center;">
+                    <canvas id="myChart" width="400" height="200"></canvas>
                 </div>
+                <button id="exportPDF" style="margin-top: 10px; padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px;">تصدير كملف
+                    PDF</button>
+            </section>
+        </div>
+        <div class="tool-card" id="tutor-tool">
+            <div class="card-header">
+                <i class="fa fa-robot icon"></i>
+                <h3>مساعد تعليمي بالذكاء الاصطناعي </h3>
+            </div>
+            <p> يقدم الشروحات والدروس عن بعد في مواضيع مختلفة (مثل الرياضيات، العلوم، إلخ)</p>
+            <div class="tool-content">
+                <textarea id="tutor-input" placeholder="أدخل سؤالك"></textarea>
+                <button class="try-button" onclick="askTutor()">اسأل المساعد</button>
+                <div id="tutor-output" class="output-text"></div>
             </div>
         </div>
-    </section>
-      <section id="educational-tools">
-        <h2> أدوات تعليمية </h2>
-        <div class="tools-grid">
-            <div class="tool-card" id="learning-tool">
-                <div class="card-header">
-                    <i class="fas fa-chalkboard-teacher icon"></i>
-                    <h3> منصات تعليمية ذكية </h3>
-                </div>
-                <p>أدوات تساعد الطلاب على التعلم من خلال تحليل مستواهم التعليمي وتقديم دروس أو اختبارات مخصصة لهم.</p>
-                <div class="tool-content">
-                    <textarea id="learning-input" placeholder="أدخل موضوع الدراسة"></textarea>
-                    <button class="try-button" onclick="generateLearningPlan()">توصيات تعلم</button>
-                    <div id="learning-output" class="output-text"></div>
-                </div>
+        <div class="tool-card" id="content-tool">
+            <div class="card-header">
+                <i class="fa fa-file-alt icon"></i>
+                <h3> مولد محتوى عربي </h3>
             </div>
-            <div class="tool-card" id="homework-tool">
-                <div class="card-header">
-                    <i class="fa fa-file-alt icon"></i>
-                    <h3> تحليل الواجبات المنزلية </h3>
-                </div>
-                <p> تساعد الطلاب أو المعلمين على تقييم الواجبات باستخدام الذكاء الاصطناعي </p>
-                <div class="tool-content">
-                    <textarea id="homework-input" placeholder="أدخل الواجب"></textarea>
-                    <button class="try-button" onclick="analyzeHomework()">تحليل الواجب</button>
-                    <div id="homework-output" class="output-text"></div>
-                </div>
-            </div>
-            <div class="tool-card" id="interactive-chart-tool">
-                <section style="padding: 0px; background-color: transparent; border: none; border-radius: 0px; margin: 0px;">
-                    <h3 style="text-align: center;font-size: 1.8em; margin-bottom: 15px;">إنشاء رسوم بيانية تفاعلية</h3>
-                    <form id="chartForm" style="text-align: center; margin-bottom: 10px;">
-                        <label for="chartType"> اختر نوع الرسم البياني :</label>
-                        <select id="chartType">
-                            <option value="bar">شريطي</option>
-                            <option value="line">خطّي</option>
-                            <option value="pie">دائري</option>
-                        </select>
-                        <br><br>
-                        <label for="chartLabels">أدخل العناوين (مفصولة بفواصل):</label><br>
-                        <input type="text" id="chartLabels" placeholder="مثال: يناير, فبراير, مارس" style="width: 60%; padding: 5px; margin-bottom: 10px;">
-                        <br>
-                        <label for="chartData">أدخل القيم (مفصولة بفواصل) :</label><br>
-                        <input type="text" id="chartData" placeholder="30 ,20 ,10 :مثال" style="width: 60%; padding: 5px; margin-bottom: 10px;">
-                        <br>
-                        <button type="button" id="generateChart" style="padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px;">إنشاء الرسم
-                            البياني </button>
-                    </form>
-                    <div class="chart-container" style="text-align: center;">
-                        <canvas id="myChart" width="400" height="200"></canvas>
-                    </div>
-                    <button id="exportPDF" style="margin-top: 10px; padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px;">تصدير كملف
-                        PDF</button>
-                </section>
-            </div>
-            <div class="tool-card" id="tutor-tool">
-                <div class="card-header">
-                    <i class="fa fa-robot icon"></i>
-                    <h3>مساعد تعليمي بالذكاء الاصطناعي </h3>
-                </div>
-                <p> يقدم الشروحات والدروس عن بعد في مواضيع مختلفة (مثل الرياضيات، العلوم، إلخ)</p>
-                <div class="tool-content">
-                    <textarea id="tutor-input" placeholder="أدخل سؤالك"></textarea>
-                    <button class="try-button" onclick="askTutor()">اسأل المساعد</button>
-                    <div id="tutor-output" class="output-text"></div>
-                </div>
-            </div>
-            <div class="tool-card" id="content-tool">
-                <div class="card-header">
-                    <i class="fa fa-file-alt icon"></i>
-                    <h3> مولد محتوى عربي </h3>
-                </div>
-                <p> أداة لتوليد محتوى عربي باستخدام قوالب متعددة </p>
-                <div class="tool-content">
-                     <label for="content-template">نوع المحتوى:</label>
-                    <select id="content-template">
-                        <option value="blog">تدوينة</option>
-                        <option value="article">مقالة</option>
-                        <option value="social"> منشور اجتماعي</option>
-                    </select>
-                    <textarea id="content-input" placeholder="أدخل الموضوع"></textarea>
-                    <button class="try-button" onclick="generateContent()">إنشاء محتوى</button>
-                    <p id="content-output" class="output-text"></p>
-                </div>
-            </div>
-            <div class="tool-card" id="summarizer-tool">
-                <div class="card-header">
-                    <i class="fa fa-list-alt icon"></i>
-                    <h3> أداة تلخيص النصوص </h3>
-                </div>
-                <p> . أداة تلخيص النصوص مع خيارات للطول </p>
-                <div class="tool-content">
-                    <textarea id="summarizer-input" placeholder="أدخل النص للتخليص"></textarea>
-                   <label for="summarizer-length">طول الملخص:</label>
-                     <select id="summarizer-length">
-                         <option value="short">قصير</option>
-                         <option value="medium">متوسط </option>
-                         <option value="long">طويل</option>
-                     </select>
-                    <button class="try-button" onclick="summarizeText()">تلخيص النص </button>
-                    <p id="summarizer-output" class="output-text"></p>
-                </div>
-            </div>
-            <div class="tool-card" id="grammar-tool">
-                <div class="card-header">
-                    <i class="fas fa-spell-check icon"></i>
-                    <h3> مدقق القواعد اللغوية </h3>
-                </div>
-                <p> .مدقق قواعد اللغة العربية مع تصحيحات في الوقت الفعلي</p>
-                <div class="tool-content">
-                    <textarea id="grammar-input" placeholder="أدخل النص للفحص"></textarea>
-                    <button class="try-button" onclick="checkGrammar()">فحص القواعد</button>
-                    <p id="grammar-output" class="output-text"></p>
-                </div>
-            </div>
-            <div class="tool-card" id="image-tool">
-                <div class="card-header">
-                    <i class="fas fa-image icon"></i>
-                    <h3> أداة إنشاء الصور </h3>
-                </div>
-                <p> . تساعد في إنشاء صور تعبيرية ورسومات توضيحية </p>
-                <div class="tool-content">
-                    <textarea id="image-input" placeholder="أدخل وصف للصورة"></textarea>
-                    <button class="try-button" onclick="generateImage()">إنشاء صورة</button>
-                    <div id="image-output" class="output-text"></div>
-                </div>
-            </div>
-            <div class="tool-card" id="quiz-tool">
-                <div class="card-header">
-                    <i class="fas fa-question-circle icon"></i>
-                    <h3> أداة إنشاء اختبارات مخصصة </h3>
-                </div>
-                <p> تنشئ اختبارات مخصصة للطلاب بناءً على المادة المدخلة</p>
-                <div class="tool-content">
-                    <textarea id="quiz-input" placeholder="أدخل المادة التعليمية"></textarea>
-                    <button class="try-button" onclick="generateQuiz()">إنشاء اختبار</button>
-                    <div id="quiz-output" class="output-text"></div>
-                </div>
+            <p> أداة لتوليد محتوى عربي باستخدام قوالب متعددة </p>
+            <div class="tool-content">
+                 <label for="content-template">نوع المحتوى:</label>
+                <select id="content-template">
+                    <option value="blog">تدوينة</option>
+                    <option value="article">مقالة</option>
+                    <option value="social"> منشور اجتماعي</option>
+                </select>
+                <textarea id="content-input" placeholder="أدخل الموضوع"></textarea>
+                <button class="try-button" onclick="generateContent()">إنشاء محتوى</button>
+                <p id="content-output" class="output-text"></p>
             </div>
         </div>
-    </section>
-    <section id="business-tools">
-        <h2>أدوات الأعمال </h2>
-        <div class="tools-grid">
-            <div class="tool-card" id="inventory-tool">
-                <div class="card-header">
-                    <i class="fa fa-warehouse icon"></i>
-                    <h3> أداة إدارة المخزون بالذكاء الاصطناعي </h3>
-                </div>
-                <p> تساعد المتاجر على تحليل البيانات وتوقع الطلبات المستقبلية لتجنب نقص أو زيادة المخزون</p>
-                <div class="tool-content">
-                    <textarea id="inventory-input" placeholder="أدخل بيانات المخزون (المنتج, الكمية)"></textarea>
-                    <button class="try-button" onclick="analyzeInventory()">تحليل المخزون</button>
-                    <div id="inventory-output" class="output-text"></div>
-                </div>
+        <div class="tool-card" id="summarizer-tool">
+            <div class="card-header">
+                <i class="fa fa-list-alt icon"></i>
+                <h3> أداة تلخيص النصوص </h3>
             </div>
-            <div class="tool-card" id="sales-tool">
-                <div class="card-header">
-                    <i class="fa fa-chart-line icon"></i>
-                    <h3> أداة تحليل بيانات المبيعات </h3>
-                </div>
-                <p> تُظهر الاتجاهات، نقاط الضعف، وتوصيات لتحسين أداء الشركات</p>
-                <div class="tool-content">
-                    <textarea id="sales-input" placeholder="أدخل بيانات المبيعات (المنتج, الكمية, السعر)"></textarea>
-                    <button class="try-button" onclick="analyzeSales()">تحليل المبيعات</button>
-                    <div id="sales-output" class="output-text"></div>
-                </div>
+            <p> . أداة تلخيص النصوص مع خيارات للطول </p>
+            <div class="tool-content">
+                <textarea id="summarizer-input" placeholder="أدخل النص للتخليص"></textarea>
+               <label for="summarizer-length">طول الملخص:</label>
+                 <select id="summarizer-length">
+                     <option value="short">قصير</option>
+                     <option value="medium">متوسط </option>
+                     <option value="long">طويل</option>
+                 </select>
+                <button class="try-button" onclick="summarizeText()">تلخيص النص </button>
+                <p id="summarizer-output" class="output-text"></p>
             </div>
-            <div class="tool-card" id="invoice-tool">
-                <div class="card-header">
-                    <i class="fa fa-file-invoice icon"></i>
-                    <h3> أتمتة إصدار الفواتير وإدارة الحسابات </h3>
-                </div>
-                <p>خاصة للشركات الصغيرة والمتوسطة. أدوات تساعد الطلاب على التعلم من خلال تحليل مستواهم التعليمي </p>
-                <div class="tool-content">
-                    <textarea id="invoice-input" placeholder="أدخل بيانات الفاتورة (المنتج, السعر, الكمية)"></textarea>
-                    <button class="try-button" onclick="generateInvoice()">إنشاء الفاتورة</button>
-                    <div id="invoice-output" class="output-text"></div>
-                </div>
+        </div>
+        <div class="tool-card" id="grammar-tool">
+            <div class="card-header">
+                <i class="fas fa-spell-check icon"></i>
+                <h3> مدقق القواعد اللغوية </h3>
             </div>
-            <div class="tool-card" id="financial-tool">
-                <div class="card-header">
-                    <i class="fa fa-chart-area icon"></i>
-                    <h3> أداة توقع النجاح المالي </h3>
-                </div>
-                <p> تساعد في توقع أداء المشاريع والاستثمارات بناءً على البيانات المدخلة</p>
-                <div class="tool-content">
-                    <textarea id="financial-input" placeholder="أدخل بيانات مالية (الإيرادات, المصاريف)"></textarea>
-                    <button class="try-button" onclick="predictSuccess()">توقع النجاح المالي</button>
-                    <div id="financial-output" class="output-text"></div>
-                </div>
+            <p> .مدقق قواعد اللغة العربية مع تصحيحات في الوقت الفعلي</p>
+            <div class="tool-content">
+                <textarea id="grammar-input" placeholder="أدخل النص للفحص"></textarea>
+                <button class="try-button" onclick="checkGrammar()">فحص القواعد</button>
+                <p id="grammar-output" class="output-text"></p>
             </div>
-            <div class="tool-card" id="roi-tool">
-                <div class="card-header">
-                    <i class="fa fa-calculator icon"></i>
-                    <h3> حاسبة عائد الاستثمار </h3>
-                </div>
-                <p> تساعد في حساب العائد المتوقع على الاستثمارات المختلفة </p>
-                <div class="tool-content">
-                    <textarea id="roi-input" placeholder="أدخل بيانات الاستثمار (التكلفة، العائد المتوقع)"></textarea>
-                    <button class="try-button" onclick="calculateROI()">حساب عائد الاستثمار</button>
-                    <div id="roi-output" class="output-text"></div>
-                </div>
+        </div>
+        <div class="tool-card" id="image-tool">
+            <div class="card-header">
+                <i class="fas fa-image icon"></i>
+                <h3> أداة إنشاء الصور </h3>
             </div>
-            <div class="tool-card" id="employee-tool">
-                <div class="card-header">
-                    <i class="fas fa-users icon"></i>
-                    <h3>مساعد ذكي لتحليل بيانات الموظفين </h3>
-                </div>
-                <p> يوفر رؤى حول الأداء والتطور الوظيفي </p>
-                <div class="tool-content">
-                    <textarea id="employee-input" placeholder="أدخل بيانات الموظفين (الاسم, الأداء, التقييم)"></textarea>
-                    <button class="try-button" onclick="analyzeEmployeeData()">تحليل الأداء</button>
-                    <div id="employee-output" class="output-text"></div>
-                </div>
+            <p> . تساعد في إنشاء صور تعبيرية ورسومات توضيحية </p>
+            <div class="tool-content">
+                <textarea id="image-input" placeholder="أدخل وصف للصورة"></textarea>
+                <button class="try-button" onclick="generateImage()">إنشاء صورة</button>
+                <div id="image-output" class="output-text"></div>
             </div>
-            <div class="tool-card" id="presentation-tool">
-                <div class="card-header">
-                    <i class="fas fa-file-powerpoint icon"></i>
-                    <h3>أداة إنشاء العروض التقديمية</h3>
-                </div>
-                <p>تساعد في إنشاء عروض تقديمية احترافية بناءً على النص المدخل.</p>
-                <div class="tool-content">
-                    <textarea id="presentation-input" placeholder="أدخل موضوع العرض التقديمي"></textarea>
-                    <button class="try-button" onclick="generatePresentation()">إنشاء العرض</button>
-                    <div id="presentation-output" class="output-text"></div>
-                </div>
+        </div>
+        <div class="tool-card" id="quiz-tool">
+            <div class="card-header">
+                <i class="fas fa-question-circle icon"></i>
+                <h3> أداة إنشاء اختبارات مخصصة </h3>
             </div>
-            <div class="tool-card" id="sentiment-tool">
-                <div class="card-header">
-                    <i class="fas fa-comment-dots icon"></i>
-                    <h3>أداة تحليل المشاعر</h3>
-                </div>
-                <p>تقوم بتحليل النص لتحديد المشاعر الإيجابية أو السلبية أو المحايدة.</p>
-                <div class="tool-content">
-                    <textarea id="sentiment-input" placeholder="أدخل النص المراد تحليله"></textarea>
-                    <button class="try-button" onclick="analyzeSentiment()">تحليل المشاعر</button>
-                    <div id="sentiment-output" class="output-text"></div>
-                </div>
+            <p> تنشئ اختبارات مخصصة للطلاب بناءً على المادة المدخلة</p>
+            <div class="tool-content">
+                <textarea id="quiz-input" placeholder="أدخل المادة التعليمية"></textarea>
+                <button class="try-button" onclick="generateQuiz()">إنشاء اختبار</button>
+                <div id="quiz-output" class="output-text"></div>
             </div>
-            <div class="tool-card" id="literary-tool">
-                <div class="card-header">
-                    <i class="fas fa-book-reader icon"></i>
-                    <h3>أداة تحليل النصوص الأدبية</h3>
-                </div>
-                <p>تقوم بتحليل النصوص الأدبية لتحديد السمات الأدبية مثل الاستعارات والتشبيهات.</p>
-                <div class="tool-content">
-                    <textarea id="literary-input" placeholder="أدخل النص الأدبي"></textarea>
-                    <button class="try-button" onclick="analyzeLiteraryText()">تحليل النص</button>
-                    <div id="literary-output" class="output-text"></div>
-                </div>
-            </div>
-            <div class="tool-card" id="marketing-tool">
-                <div class="card-header">
-                    <i class="fas fa-bullhorn icon"></i>
-                    <h3>أداة إنشاء الخطط التسويقية</h3>
-                </div>
-                <p>تساعد في إنشاء خطط تسويقية بناءً على البيانات المدخلة.</p>
-                <div class="tool-content">
-                    <textarea id="marketing-input" placeholder="أدخل بيانات المنتج والسوق"></textarea>
-                    <button class="try-button" onclick="generateMarketingPlan()">إنشاء الخطة</button>
-                    <div id="marketing-output" class="output-text"></div>
-                </div>
-            </div>
-            <div class="tool-card" id="geographic-tool">
-                <div class="card-header">
-                    <i class="fas fa-map-marked-alt icon"></i>
-                    <h3>أداة تحليل البيانات الجغرافية</h3>
-                </div>
-                <p>تقوم بتحليل البيانات الجغرافية وإظهار النتائج على خرائط تفاعلية.</p>
-                <div class="tool-content">
-                    <textarea id="geographic-input"placeholder="أدخل البيانات الجغرافية"></textarea>
-                    <button class="try-button" onclick="analyzeGeographicData()">تحليل البيانات</button>
-                    <div id="geographic-output" class="output-text"></div>
-                </div>
-            </div>
-            <div class="tool-card" id="story-tool">
-                <div class="card-header">
-                    <i class="fas fa-book icon"></i>
-                    <h3>أداة إنشاء القصص التفاعلية</h3>
-                </div>
-                <p>تساعد في إنشاء قصص تفاعلية بناءً على النص المدخل.</p>
-                <div class="tool-content">
-                    <textarea id="story-input" placeholder="أدخل نص القصة"></textarea>
-                    <button class="try-button" onclick="generateInteractiveStory()">إنشاء القصة</button>
-                    <div id="story-output" class="output-text"></div>
-                </div>
-            </div>
-            <div class="tool-card" id="health-tool">
-                <div class="card-header">
-                    <i class="fas fa-heartbeat icon"></i>
-                    <h3>أداة تحليل البيانات الصحية</h3>
-                </div>
-                <p>تقوم بتحليل البيانات الصحية وتقديم توصيات بناءً على النتائج.</p>
-                <div class="tool-content">
-                    <textarea id="health-input" placeholder="أدخل البيانات الصحية (الوزن، الطول، النشاط)"></textarea>
-                    <button class="try-button" onclick="analyzeHealthData()">تحليل البيانات</button>
-                    <div id="health-output" class="output-text"></div>
-                </div>
-            </div>
-            <div class="tool-card" id="newsletter-tool">
-                <div class="card-header">
-                    <i class="fas fa-envelope-open-text icon"></i>
-                    <h3>أداة إنشاء الرسائل الإخبارية</h3>
-                </div>
-                <p>تساعد في إنشاء رسائل إخبارية احترافية بناءً على النص المدخل.</p>
-                <div class="tool-content">
-                    <textarea id="newsletter-input" placeholder="أدخل نص الرسالة الإخبارية"></textarea>
-                    <button class="try-button" onclick="generateNewsletter()">إنشاء الرسالة</button>
-                    <div id="newsletter-output" class="output-text"></div>
-                </div>
-            </div>
-            <div class="tool-card" id="finance-tool">
-                <div class="card-header">
-                    <i class="fas fa-piggy-bank icon"></i>
-                    <h3>أداة تحليل البيانات المالية الشخصية</h3>
-                </div>
-                <p>تقوم بتحليل البيانات المالية الشخصية وتقديم توصيات لتحسين الإدارة المالية.</p>
-                <div class="tool-content">
-                    <textarea id="finance-input" placeholder="أدخل البيانات المالية (الدخل، المصروفات)"></textarea>
-                    <button class="try-button" onclick="analyzePersonalFinance()">تحليل البيانات المالية</button>
-                    <div id="finance-output" class="output-text"></div>
-                </div>
-            </div>
-            <div class="tool-card" id="legal-tool">
-                <div class="card-header">
-                    <i class="fas fa-gavel icon"></i>
-                    <h3>أداة إنشاء الوثائق القانونية</h3>
-                </div>
-                <p>تساعد في إنشاء وثائق قانونية بناءً على النص المدخل.</p>
-                <div class="tool-content">
-                    <textarea id="legal-input" placeholder="أدخل تفاصيل الوثيقة القانونية"></textarea>
-                    <button class="try-button" onclick="generateLegalDocument()">إنشاء الوثيقة</button>
-                    <div id="legal-output" class="output-text"></div>
-                </div>
-            </div>
-            <div class="tool-card" id="social-tool">
-                <div class="card-header">
-                    <i class="fas fa-share-alt icon"></i>
-                    <h3>أداة تحليل البيانات الاجتماعية</h3>
-                </div>
-                <p>تقوم بتحليل البيانات الاجتماعية من وسائل التواصل الاجتماعي وإظهار النتائج.</p>
-                <div class="tool-content">
-                    <textarea id="social-input" placeholder="أدخل بيانات وسائل التواصل الاجتماعي"></textarea>
-                    <button class="try-button" onclick="analyzeSocialMedia()">تحليل البيانات الاجتماعية</button>
-                    <div id="social-output" class="output-text"></div>
-                </div>
-            </div>
-         </div>
-        </section>
+        </div>
     </div>
-    <footer>
-        <div class="social-media">
-            <h3> تابعنا على </h3>
-            <a href="https://x.com/BrightAIII" target="_blank" title="X"> <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://www.youtube.com/@TeechLab" target="_blank" title="Youtube"><i
-                    class="fab fa-youtube"></i></a>
-            <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab
-                fa-instagram"></i></a>
+</section>
+<section id="business-tools">
+    <h2>أدوات الأعمال </h2>
+    <div class="tools-grid">
+        <div class="tool-card" id="inventory-tool">
+            <div class="card-header">
+                <i class="fa fa-warehouse icon"></i>
+                <h3> أداة إدارة المخزون بالذكاء الاصطناعي </h3>
+            </div>
+            <p> تساعد المتاجر على تحليل البيانات وتوقع الطلبات المستقبلية لتجنب نقص أو زيادة المخزون</p>
+            <div class="tool-content">
+                <textarea id="inventory-input" placeholder="أدخل بيانات المخزون (المنتج, الكمية)"></textarea>
+                <button class="try-button" onclick="analyzeInventory()">تحليل المخزون</button>
+                <div id="inventory-output" class="output-text"></div>
+            </div>
         </div>
-        <div class="contact-info">
-            <h3> تواصل معنا </h3>
-            <p><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com </p>
-            <p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i
-                    class="fab fa-whatsapp"></i> </a></p>
+        <div class="tool-card" id="sales-tool">
+            <div class="card-header">
+                <i class="fa fa-chart-line icon"></i>
+                <h3> أداة تحليل بيانات المبيعات </h3>
+            </div>
+            <p> تُظهر الاتجاهات، نقاط الضعف، وتوصيات لتحسين أداء الشركات</p>
+            <div class="tool-content">
+                <textarea id="sales-input" placeholder="أدخل بيانات المبيعات (المنتج, الكمية, السعر)"></textarea>
+                <button class="try-button" onclick="analyzeSales()">تحليل المبيعات</button>
+                <div id="sales-output" class="output-text"></div>
+            </div>
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>
-      let chart;
+        <div class="tool-card" id="invoice-tool">
+            <div class="card-header">
+                <i class="fa fa-file-invoice icon"></i>
+                <h3> أتمتة إصدار الفواتير وإدارة الحسابات </h3>
+            </div>
+            <p>خاصة للشركات الصغيرة والمتوسطة. أدوات تساعد الطلاب على التعلم من خلال تحليل مستواهم التعليمي </p>
+            <div class="tool-content">
+                <textarea id="invoice-input" placeholder="أدخل بيانات الفاتورة (المنتج, السعر, الكمية)"></textarea>
+                <button class="try-button" onclick="generateInvoice()">إنشاء الفاتورة</button>
+                <div id="invoice-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="financial-tool">
+            <div class="card-header">
+                <i class="fa fa-chart-area icon"></i>
+                <h3> أداة توقع النجاح المالي </h3>
+            </div>
+            <p> تساعد في توقع أداء المشاريع والاستثمارات بناءً على البيانات المدخلة</p>
+            <div class="tool-content">
+                <textarea id="financial-input" placeholder="أدخل بيانات مالية (الإيرادات, المصاريف)"></textarea>
+                <button class="try-button" onclick="predictSuccess()">توقع النجاح المالي</button>
+                <div id="financial-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="roi-tool">
+            <div class="card-header">
+                <i class="fa fa-calculator icon"></i>
+                <h3> حاسبة عائد الاستثمار </h3>
+            </div>
+            <p> تساعد في حساب العائد المتوقع على الاستثمارات المختلفة </p>
+            <div class="tool-content">
+                <textarea id="roi-input" placeholder="أدخل بيانات الاستثمار (التكلفة، العائد المتوقع)"></textarea>
+                <button class="try-button" onclick="calculateROI()">حساب عائد الاستثمار</button>
+                <div id="roi-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="employee-tool">
+            <div class="card-header">
+                <i class="fas fa-users icon"></i>
+                <h3>مساعد ذكي لتحليل بيانات الموظفين </h3>
+            </div>
+            <p> يوفر رؤى حول الأداء والتطور الوظيفي </p>
+            <div class="tool-content">
+                <textarea id="employee-input" placeholder="أدخل بيانات الموظفين (الاسم, الأداء, التقييم)"></textarea>
+                <button class="try-button" onclick="analyzeEmployeeData()">تحليل الأداء</button>
+                <div id="employee-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="presentation-tool">
+            <div class="card-header">
+                <i class="fas fa-file-powerpoint icon"></i>
+                <h3>أداة إنشاء العروض التقديمية</h3>
+            </div>
+            <p>تساعد في إنشاء عروض تقديمية احترافية بناءً على النص المدخل.</p>
+            <div class="tool-content">
+                <textarea id="presentation-input" placeholder="أدخل موضوع العرض التقديمي"></textarea>
+                <button class="try-button" onclick="generatePresentation()">إنشاء العرض</button>
+                <div id="presentation-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="sentiment-tool">
+            <div class="card-header">
+                <i class="fas fa-comment-dots icon"></i>
+                <h3>أداة تحليل المشاعر</h3>
+            </div>
+            <p>تقوم بتحليل النص لتحديد المشاعر الإيجابية أو السلبية أو المحايدة.</p>
+            <div class="tool-content">
+                <textarea id="sentiment-input" placeholder="أدخل النص المراد تحليله"></textarea>
+                <button class="try-button" onclick="analyzeSentiment()">تحليل المشاعر</button>
+                <div id="sentiment-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="literary-tool">
+            <div class="card-header">
+                <i class="fas fa-book-reader icon"></i>
+                <h3>أداة تحليل النصوص الأدبية</h3>
+            </div>
+            <p>تقوم بتحليل النصوص الأدبية لتحديد السمات الأدبية مثل الاستعارات والتشبيهات.</p>
+            <div class="tool-content">
+                <textarea id="literary-input" placeholder="أدخل النص الأدبي"></textarea>
+                <button class="try-button" onclick="analyzeLiteraryText()">تحليل النص</button>
+                <div id="literary-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="marketing-tool">
+            <div class="card-header">
+                <i class="fas fa-bullhorn icon"></i>
+                <h3>أداة إنشاء الخطط التسويقية</h3>
+            </div>
+            <p>تساعد في إنشاء خطط تسويقية بناءً على البيانات المدخلة.</p>
+            <div class="tool-content">
+                <textarea id="marketing-input" placeholder="أدخل بيانات المنتج والسوق"></textarea>
+                <button class="try-button" onclick="generateMarketingPlan()">إنشاء الخطة</button>
+                <div id="marketing-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="geographic-tool">
+            <div class="card-header">
+                <i class="fas fa-map-marked-alt icon"></i>
+                <h3>أداة تحليل البيانات الجغرافية</h3>
+            </div>
+            <p>تقوم بتحليل البيانات الجغرافية وإظهار النتائج على خرائط تفاعلية.</p>
+            <div class="tool-content">
+                <textarea id="geographic-input"placeholder="أدخل البيانات الجغرافية"></textarea>
+                <button class="try-button" onclick="analyzeGeographicData()">تحليل البيانات</button>
+                <div id="geographic-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="story-tool">
+            <div class="card-header">
+                <i class="fas fa-book icon"></i>
+                <h3>أداة إنشاء القصص التفاعلية</h3>
+            </div>
+            <p>تساعد في إنشاء قصص تفاعلية بناءً على النص المدخل.</p>
+            <div class="tool-content">
+                <textarea id="story-input" placeholder="أدخل نص القصة"></textarea>
+                <button class="try-button" onclick="generateInteractiveStory()">إنشاء القصة</button>
+                <div id="story-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="health-tool">
+            <div class="card-header">
+                <i class="fas fa-heartbeat icon"></i>
+                <h3>أداة تحليل البيانات الصحية</h3>
+            </div>
+            <p>تقوم بتحليل البيانات الصحية وتقديم توصيات بناءً على النتائج.</p>
+            <div class="tool-content">
+                <textarea id="health-input" placeholder="أدخل البيانات الصحية (الوزن، الطول، النشاط)"></textarea>
+                <button class="try-button" onclick="analyzeHealthData()">تحليل البيانات</button>
+                <div id="health-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="newsletter-tool">
+            <div class="card-header">
+                <i class="fas fa-envelope-open-text icon"></i>
+                <h3>أداة إنشاء الرسائل الإخبارية</h3>
+            </div>
+            <p>تساعد في إنشاء رسائل إخبارية احترافية بناءً على النص المدخل.</p>
+            <div class="tool-content">
+                <textarea id="newsletter-input" placeholder="أدخل نص الرسالة الإخبارية"></textarea>
+                <button class="try-button" onclick="generateNewsletter()">إنشاء الرسالة</button>
+                <div id="newsletter-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="finance-tool">
+            <div class="card-header">
+                <i class="fas fa-piggy-bank icon"></i>
+                <h3>أداة تحليل البيانات المالية الشخصية</h3>
+            </div>
+            <p>تقوم بتحليل البيانات المالية الشخصية وتقديم توصيات لتحسين الإدارة المالية.</p>
+            <div class="tool-content">
+                <textarea id="finance-input" placeholder="أدخل البيانات المالية (الدخل، المصروفات)"></textarea>
+                <button class="try-button" onclick="analyzePersonalFinance()">تحليل البيانات المالية</button>
+                <div id="finance-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="legal-tool">
+            <div class="card-header">
+                <i class="fas fa-gavel icon"></i>
+                <h3>أداة إنشاء الوثائق القانونية</h3>
+            </div>
+            <p>تساعد في إنشاء وثائق قانونية بناءً على النص المدخل.</p>
+            <div class="tool-content">
+                <textarea id="legal-input" placeholder="أدخل تفاصيل الوثيقة القانونية"></textarea>
+                <button class="try-button" onclick="generateLegalDocument()">إنشاء الوثيقة</button>
+                <div id="legal-output" class="output-text"></div>
+            </div>
+        </div>
+        <div class="tool-card" id="social-tool">
+            <div class="card-header">
+                <i class="fas fa-share-alt icon"></i>
+                <h3>أداة تحليل البيانات الاجتماعية</h3>
+            </div>
+            <p>تقوم بتحليل البيانات الاجتماعية من وسائل التواصل الاجتماعي وإظهار النتائج.</p>
+            <div class="tool-content">
+                <textarea id="social-input" placeholder="أدخل بيانات وسائل التواصل الاجتماعي"></textarea>
+                <button class="try-button" onclick="analyzeSocialMedia()">تحليل البيانات الاجتماعية</button>
+                <div id="social-output" class="output-text"></div>
+            </div>
+        </div>
+     </div>
+    </section>
+</div>
+<footer>
+    <div class="social-media">
+        <h3> تابعنا على </h3>
+        <a href="https://x.com/BrightAIII" target="_blank" title="X"> <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.youtube.com/@TeechLab" target="_blank" title="Youtube"><i
+                class="fab fa-youtube"></i></a>
+        <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab
+            fa-instagram"></i></a>
+    </div>
+    <div class="contact-info">
+        <h3> تواصل معنا </h3>
+        <p><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com </p>
+        <p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i
+                class="fab fa-whatsapp"></i> </a></p>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+  let chart;
 
-      document.getElementById('generateChart').addEventListener('click', () => {
-          const chartType = document.getElementById('chartType').value;
-          const labels = document.getElementById('chartLabels').value.split(',').map(label => label.trim());
-          const data = document.getElementById('chartData').value.split(',').map(Number);
+  document.getElementById('generateChart').addEventListener('click', () => {
+      const chartType = document.getElementById('chartType').value;
+      const labels = document.getElementById('chartLabels').value.split(',').map(label => label.trim());
+      const data = document.getElementById('chartData').value.split(',').map(Number);
 
-          if (labels.length === 0 || data.length === 0 || labels.length !== data.length) {
-              alert('يرجى إدخال عناوين وقيم صحيحة');
-              return;
-          }
+      if (labels.length === 0 || data.length === 0 || labels.length !== data.length) {
+          alert('يرجى إدخال عناوين وقيم صحيحة');
+          return;
+      }
 
-          const ctx = document.getElementById('myChart').getContext('2d');
+      const ctx = document.getElementById('myChart').getContext('2d');
 
-          if (chart) {
-              chart.destroy();
-          }
+      if (chart) {
+          chart.destroy();
+      }
 
-          chart = new Chart(ctx, {
-              type: chartType,
-              data: {
-                  labels: labels,
-                  datasets: [{
-                      label: 'بيانات المستخدم',
-                      data: data,
-                      backgroundColor: chartType === 'pie' ? [
-                          'rgba(255, 99, 132, 0.6)',
-                          'rgba(54, 162, 235, 0.6)',
-                          'rgba(255, 206, 86, 0.6)',
-                          'rgba(75, 192, 192, 0.6)',
-                          'rgba(153, 102, 255, 0.6)',
-                          'rgba(255, 159, 64, 0.6)'
-                      ] : 'rgba(75, 192, 192, 0.2)',
-                      borderColor: 'rgba(75, 192, 192, 1)',
-                      borderWidth: 1
-                  }]
-              },
-              options: {
-                  responsive: true,
-                  plugins: {
-                      legend: {
-                          position: 'top',
-                      }
+      chart = new Chart(ctx, {
+          type: chartType,
+          data: {
+              labels: labels,
+              datasets: [{
+                  label: 'بيانات المستخدم',
+                  data: data,
+                  backgroundColor: chartType === 'pie' ? [
+                      'rgba(255, 99, 132, 0.6)',
+                      'rgba(54, 162, 235, 0.6)',
+                      'rgba(255, 206, 86, 0.6)',
+                      'rgba(75, 192, 192, 0.6)',
+                      'rgba(153, 102, 255, 0.6)',
+                      'rgba(255, 159, 64, 0.6)'
+                  ] : 'rgba(75, 192, 192, 0.2)',
+                  borderColor: 'rgba(75, 192, 192, 1)',
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              responsive: true,
+              plugins: {
+                  legend: {
+                      position: 'top',
                   }
               }
-          });
+          }
       });
+  });
 
-        document.getElementById('exportPDF').addEventListener('click', () => {
-            const { jsPDF } = window.jspdf;
-            const pdf = new jsPDF();
+    document.getElementById('exportPDF').addEventListener('click', () => {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF();
 
-            if (!chart) {
-                alert('يرجى إنشاء رسم بياني أولاً');
-                return;
-            }
+        if (!chart) {
+            alert('يرجى إنشاء رسم بياني أولاً');
+            return;
+        }
 
-            const chartImage = chart.toBase64Image();
-            pdf.text("PDF الرسم البياني", 10, 10);
-            pdf.addImage(chartImage, 'PNG', 10, 20, 180, 100);
-            pdf.save("chart.pdf");
-        });
-    </script>
-    <script src="tools.js"></script>
-    </body>
-    </html>
+        const chartImage = chart.toBase64Image();
+        pdf.text("PDF الرسم البياني", 10, 10);
+        pdf.addImage(chartImage, 'PNG', 10, 20, 180, 100);
+        pdf.save("chart.pdf");
+    });
+</script>
+<script src="tools.js"></script>
+</body>
+</html>
