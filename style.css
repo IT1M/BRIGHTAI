@@ -31,9 +31,9 @@ body {
 
 /* الهيدر */
 header {
-    background-color: var(--light-gray);
+    background-color: #f0f0f0; /* Subtle background color */
     padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box-shadow */
     position: relative;
     z-index: 2;
 }
@@ -49,18 +49,19 @@ header {
 .navbar li a {
     text-decoration: none;
     color: var(--dark-gray);
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.2rem; /* Increased padding */
     border-radius: 5px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    position: relative; /* Required for the underline effect */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
+    position: relative;
     overflow: hidden;
     display: inline-block;
-
+    font-size: 1.1rem; /* Increased font size */
 }
 
 .navbar li a:hover {
     color: var(--primary-color);
     background-color: rgba(0, 123, 255, 0.1);
+    transform: translateY(-2px); /* Added slight lift on hover */
 }
 .navbar li a::before {
     content: "";
@@ -70,19 +71,34 @@ header {
     width: 100%;
     height: 2px;
     background-color: var(--primary-color);
-    transform: scaleX(0); /* Start with no underline */
-    transform-origin: bottom right; /* Start from right */
-    transition: transform 0.3s ease; /* Transition for the underline animation */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
 }
 
 .navbar li a:hover::before {
-    transform: scaleX(1); /* Expand the underline */
-    transform-origin: bottom left; /* End on left */
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 .navbar li a:active {
-    background-color: rgba(0, 123, 255, 0.2); /* Slightly darker background on click */
-    transform: translateY(0px); /* Cancel lift effect on click */
+    background-color: rgba(0, 123, 255, 0.2);
+    transform: translateY(0px);
 }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center links horizontally */
+        gap: 0; /* Remove gap between links */
+    }
+
+    .navbar li a {
+        padding: 0.5rem 1rem; /* Reduce padding */
+        text-align: center; /* Center text */
+    }
+}
+
 /* القسم البطل */
 .hero {
      padding: 5rem 0;
