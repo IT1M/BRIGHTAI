@@ -172,8 +172,12 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
       transition: transform 0.5s ease, box-shadow 0.5s ease;
-
     position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-5px) translateZ(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .service-card:hover {
@@ -990,13 +994,14 @@ h1 {
         flex-direction: column;
     }
     
-    .service-item {
-        min-width: 100%;
-    }
-
-    .services-section {
-        padding: 40px 0;
-    }
+.service-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 }
 /* الأنماط السابقة تبقى كما هي */
 
@@ -1718,4 +1723,73 @@ h1 {
 
 .consultation-form button i {
     margin-left: 0.5rem;
+}
+
+.services {
+    padding: 4rem 0;
+    position: relative;
+    perspective: 800px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* زيادة الحد الأدنى للعرض */
+    gap: 2rem;
+}
+
+
+.service-card {
+    background: white;
+    padding: 2rem; /* زيادة التباعد الداخلي */
+    border-radius: 10px; /* زيادة انحناء الحواف */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* زيادة الظل */
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    position: relative;
+    display: flex; /* استخدام flexbox */
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+    justify-content: space-between; /* توزيع العناصر عمودياً */
+    overflow: hidden; /* منع أي تجاوز */
+
+}
+
+.service-card:hover {
+    transform: translateY(-5px) translateZ(10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card .icon { /* تعديل حجم الأيقونة */
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.4rem; /* زيادة حجم العنوان */
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    font-size: 1.1rem; /* زيادة حجم الفقرة */
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    line-height: 1.6; /* زيادة تباعد الأسطر */
+    height: auto; /* السماح بتمدد الارتفاع حسب النص */
+}
+
+.learn-more-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem; /* زيادة التباعد الداخلي */
+    border-radius: 7px; /* زيادة انحناء الحواف */
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+      width: fit-content;
+    margin: 0 auto;
+    
+}
+.learn-more-btn:hover {
+    background-color: #0056b3;
 }
