@@ -47,18 +47,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Service details modal functionality
     const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach(card => {
+      serviceCards.forEach(card => {
         const learnMoreBtn = card.querySelector('.learn-more-btn');
-        if (learnMoreBtn) {
-            learnMoreBtn.addEventListener('click', (event) => {
-                event.preventDefault();
-                const serviceId = card.getAttribute('data-service');
-                const serviceModal = document.getElementById(serviceId);
-                if (serviceModal) {
-                    serviceModal.style.display = 'block';
-                }
-            });
-        }
+          if(learnMoreBtn){
+        learnMoreBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            const serviceId = card.getAttribute('data-service');
+            const serviceModal = document.getElementById(serviceId);
+            if (serviceModal) {
+              serviceModal.style.display = 'block';
+            }
+        });
+          }
     });
 
     // Close service modal
@@ -76,7 +76,63 @@ document.addEventListener('DOMContentLoaded', function () {
             event.target.style.display = 'none';
         }
     });
+      const learnMoreButtons = document.querySelectorAll('.services .learn-more-btn');
+        learnMoreButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+           event.preventDefault();
+             const modalId = this.getAttribute('data-modal');
+             const modal = document.getElementById(modalId);
+        if (modal) {
+               modal.style.display = 'block';
+            }
+        });
+    });
+
+     const closeButtons = document.querySelectorAll('.modal .close-modal');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function () {
+             const modal = this.closest('.modal');
+           if(modal) {
+              modal.style.display = 'none';
+            }
+        });
+    });
+    
+     window.addEventListener('click', function (event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+        }
+    });
+    // consultation form
+    const consultationForm = document.getElementById('consultationForm');
+
+    consultationForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Collect form data
+        const formData = new FormData(consultationForm);
+        const name = formData.get('fullName');
+         const email = formData.get('email');
+         const phone = formData.get('phone');
+           const serviceType = formData.get('serviceType');
+           const preferredDate = formData.get('preferredDate');
+         const message = formData.get('message');
+
+    // Log form data for now (replace with your submit logic)
+        console.log('Form Data:');
+        console.log('Name:', name);
+        console.log('Email:', email);
+        console.log('Phone:', phone);
+        console.log('Service Type:', serviceType);
+         console.log('Preferred Date:', preferredDate);
+          console.log('Message:', message);
+
+       alert('تم استلام طلب الاستشارة بنجاح. سيتم التواصل معك قريبًا.');
+
+      consultationForm.reset();
+    });
 });
+
 
 window.addEventListener('load', function () {
     // Array of canvas IDs
@@ -97,9 +153,10 @@ window.addEventListener('load', function () {
         'animated-bg-process-automation',
         'animated-bg-data-analytics',
         'animated-bg-ai-consultations',
-        'animated-bg-ar-vr',
-        'animated-bg-digital-library',
-        'animated-bg-banner'
+         'animated-bg-ar-vr',
+          'animated-bg-digital-library',
+           'animated-bg-consultation-form',
+           'animated-bg-banner'
     ];
 
     canvasIds.forEach(canvasId => {
