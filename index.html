@@ -56,8 +56,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     .banner3d {
         position: relative;
         min-height: 100vh;
-        background: linear-gradient(135deg, #2a0845 0%, #6441A5 100%);
+        background: linear-gradient(135deg, #000235 0%, #1e0057 100%);
         overflow: hidden;
+    }
+
+    .tech-particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
     }
 
     .logo {
@@ -76,10 +85,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     .banner3d-content {
+        position: relative;
+        z-index: 2;
         display: flex;
         align-items: center;
         justify-content: space-between;
         min-height: 80vh;
+        padding: 2rem;
     }
 
     .banner3d-text {
@@ -92,8 +104,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     .banner3d-text h2 {
         font-size: 3.5rem;
         margin-bottom: 1.5rem;
-        background: linear-gradient(45deg, #fff, #a855f7);
+        background: linear-gradient(45deg, #00f7ff, #7161ef);
+        -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
     }
 
     .banner3d-text p {
@@ -109,20 +123,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     .button {
+        background: linear-gradient(45deg, #00f7ff, #7161ef);
+        border: none;
         padding: 1rem 2rem;
+        color: white;
         border-radius: 50px;
         text-decoration: none;
         font-weight: bold;
         transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .button:first-child {
-        background: linear-gradient(45deg, #a855f7, #6441A5);
-        color: white;
-        border: none;
+        text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+        box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
     }
 
     .button-outline {
@@ -132,20 +142,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     .button:hover {
         transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        box-shadow: 0 0 30px rgba(0, 247, 255, 0.5);
     }
 
-    .banner3d-cube {
+    .banner3d-visual {
         flex: 1;
-        perspective: 1000px;
+        position: relative;
+        height: 400px;
     }
 
-    .cube {
+    .tech-cube {
+        position: absolute;
         width: 200px;
         height: 200px;
-        position: relative;
         transform-style: preserve-3d;
-        animation: rotate 20s infinite linear;
+        animation: floatAnimation 6s ease-in-out infinite;
+    }
+
+    .tech-line {
+        position: absolute;
+        background: linear-gradient(90deg, transparent, #00f7ff, transparent);
+        height: 2px;
+        width: 100%;
+        opacity: 0.5;
+        animation: scanLine 3s linear infinite;
+    }
+
+    @keyframes floatAnimation {
+        0%, 100% { transform: translateY(0) rotateY(0); }
+        50% { transform: translateY(-20px) rotateY(180deg); }
+    }
+
+    @keyframes scanLine {
+        0% { transform: translateY(0); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(400px); opacity: 0; }
     }
 
     .face {
@@ -197,7 +228,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             justify-content: center;
         }
 
-        .banner3d-cube {
+        .banner3d-visual {
             margin-top: 2rem;
         }
 
@@ -207,33 +238,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 </style>
 
-<section class="banner3d dynamic-background">
+<section class="banner3d">
+    <div class="tech-particles" id="tech-particles"></div>
     <img src="https://www2.0zz0.com/2024/12/23/15/152121425.png" alt="Bright AI Logo" class="logo">
     <canvas id="animated-bg-banner"></canvas>
     <div class="container">
         <div class="banner3d-content">
             <div class="banner3d-text">
-                <h2>نحو مستقبل ذكي مع قوة الذكاء الاصطناعي</h2>
-                <p>Bright AI تقدم حلول الذكاء الاصطناعي المبتكرة لتحويل أفكارك إلى واقع باستخدام الذكاء الاصطناعي</p>
+                <h2>مستقبل الذكاء الاصطناعي معنا</h2>
+                <p>نقدم حلولاً تقنية متقدمة تجمع بين الابتكار والأداء المتميز</p>
                 <div class="banner3d-buttons">
                     <a href="#services" class="button">
-                        <i class="fas fa-rocket"></i>
-                        اكتشف خدمات الذكاء الاصطناعي
+                        <i class="fas fa-microchip"></i>
+                        استكشف خدماتنا
                     </a>
-                    <a href="#ai-contact-section" class="button button-outline">
-                        <i class="fas fa-paper-plane"></i>
-                        تواصل معنا</a>
+                    <a href="#ai-contact-section" class="button">
+                        <i class="fas fa-network-wired"></i>
+                        تواصل معنا
+                    </a>
                 </div>
             </div>
-            <div class="banner3d-cube">
-                <div class="cube">
-                    <div class="face front"></div>
-                    <div class="face back"></div>
-                    <div class="face right"></div>
-                    <div class="face left"></div>
-                    <div class="face top"></div>
-                    <div class="face bottom"></div>
-                </div>
+            <div class="banner3d-visual">
+                <div class="tech-cube"></div>
+                <div class="tech-line"></div>
             </div>
         </div>
     </div>
@@ -295,6 +322,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     animate();
+
+    // إضافة تأثير الجسيمات التقنية
+    const createTechParticles = () => {
+        const particles = document.getElementById('tech-particles');
+        const particleCount = 50;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.style.position = 'absolute';
+            particle.style.width = '2px';
+            particle.style.height = '2px';
+            particle.style.background = '#00f7ff';
+            particle.style.borderRadius = '50%';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animation = `particleFloat ${5 + Math.random() * 5}s linear infinite`;
+            particles.appendChild(particle);
+        }
+    };
+
+    // إضافة الأنيمشن للجسيمات
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-100px) scale(1.5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-200px) scale(1);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // تشغيل التأثيرات عند تحميل الصفحة
+    window.addEventListener('load', createTechParticles);
 </script>
 
 <section id="services-section" class="services-section">
@@ -805,13 +874,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     هل يمكنني الاطلاع على مشاريع ناجحة من Bright AI؟
                 </div>
                 <div class="faq-answer">نعم، يمكنك زيارة صفحة “أمثلة من أعمالنا” للاطلاع على إنجازاتنا السابقة في تطبيقات الذكاء الاصطناعي.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <i class="fas fa-question"></i>
-                        هل يمكنكم تصميم حلول الذكاء الاصطناعي للشركات مخصصة لمؤسستي؟
-                 </div>
-                 <div class="faq-answer">بالتأكيد، نقوم بتصميم حلول الذكاء الاصطناعي التوليدية التي تناسب احتياجات مؤسستك تحديدًا.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">
