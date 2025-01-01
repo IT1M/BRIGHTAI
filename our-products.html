@@ -29,7 +29,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' data: https://www2.0zz0.com https://*.0zz0.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://www.google-analytics.com;">
 </head>
 <body>
 
@@ -89,248 +89,388 @@
 </section>
 
 <main>
-  <h2>استكشف منتجاتنا وخدماتنا</h2>
-  <div class="product-list">
-    <!-- قائمة المنتجات -->
-    <div class="product" data-product-id="1">
-      <h3>تحليل بيانات المبيعات الشهرية</h3>
-      <p>تحليل شامل ومفصل لأداء المبيعات الشهرية يساعد على تحسين الكفاءة التشغيلية وزيادة الإيرادات.</p>
-      <p class="price">267 ريال (بدلاً من 356 ريال)</p>
-       <button class="buy-button">شراء الآن</button>
-       <button class="details-button" data-target="details-1">تفاصيل المنتج</button>
+    <h2>استكشف منتجاتنا وخدماتنا</h2>
+    <div class="product-list">
+        <!-- قائمة المنتجات الحالية -->
+        <div class="product" data-product-id="1">
+            <h3>تحليل بيانات المبيعات الشهرية</h3>
+            <p>تحليل شامل ومفصل لأداء المبيعات الشهرية يساعد على تحسين الكفاءة التشغيلية وزيادة الإيرادات.</p>
+            <p class="price">267 ريال (بدلاً من 356 ريال)</p>
+            <p class="delivery-time">مدة التوصيل: 5-13 يوم</p>
+            <button class="buy-button">شراء الآن</button>
+            <button class="details-button" data-target="details-1">تفاصيل المنتج</button>
+        </div>
+        <div class="product-details-modal" id="details-1">
+            <div class="modal-content">
+                <span class="close-button" data-close-target="details-1">×</span>
+                <h3>تحليل بيانات المبيعات الشهرية - تفاصيل المنتج</h3>
+                <p>يقدم هذا المنتج تحليلاً شاملاً لأداء المبيعات الشهرية، مع التركيز على تحديد الاتجاهات الرئيسية، ونقاط القوة والضعف في الأداء. يتضمن تحليلًا للإيرادات، وحجم المبيعات، ومتوسط قيمة الصفقة، وأداء المنتجات أو الخدمات المختلفة. يساعد هذا التحليل الشركات على فهم أفضل لأداء مبيعاتها، واتخاذ قرارات مبنية على البيانات لتحسين الكفاءة وزيادة الإيرادات.</p>
+                <p><strong>الميزات الرئيسية:</strong></p>
+                <ul>
+                    <li>تحليل مفصل للإيرادات وحجم المبيعات.</li>
+                    <li>تحديد المنتجات أو الخدمات الأفضل أداءً.</li>
+                    <li>تحليل الاتجاهات الموسمية والتغيرات الشهرية.</li>
+                    <li>مقارنة الأداء الشهري مع الفترات السابقة.</li>
+                    <li>توصيات لتحسين الأداء وزيادة المبيعات.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="product" data-product-id="2">
+            <h3>تحليل أداء العملاء (Customer Segmentation)</h3>
+            <p>تقسيم العملاء إلى مجموعات متميزة بناءً على سلوكهم وخصائصهم لتحسين استراتيجيات التسويق وزيادة الولاء.</p>
+            <p class="price">801 ريال (بدلاً من 1,069 ريال)</p>
+             <p class="delivery-time">مدة التوصيل: 5-13 يوم</p>
+            <button class="buy-button">شراء الآن</button>
+            <button class="details-button" data-target="details-2">تفاصيل المنتج</button>
+        </div>
+        <div class="product-details-modal" id="details-2">
+            <div class="modal-content">
+                <span class="close-button" data-close-target="details-2">×</span>
+                <h3>تحليل أداء العملاء (Customer Segmentation) - تفاصيل المنتج</h3>
+                <p>يهدف هذا المنتج إلى تقسيم قاعدة العملاء إلى شرائح متجانسة بناءً على مجموعة متنوعة من المعايير مثل السلوك الشرائي، التركيبة السكانية، والقيمة الدائمة للعميل. يساعد هذا التقسيم الشركات على فهم أفضل لعملائها، وتخصيص استراتيجيات التسويق والمبيعات لتلبية احتياجات كل شريحة بشكل فعال، مما يزيد من رضا العملاء وولائهم.</p>
+                <p><strong>الميزات الرئيسية:</strong></p>
+                <ul>
+                    <li>تقسيم العملاء بناءً على معايير متعددة.</li>
+                    <li>تحديد خصائص كل شريحة من العملاء.</li>
+                    <li>تحليل سلوك الشراء والتفضيلات لكل شريحة.</li>
+                    <li>توصيات لتخصيص الحملات التسويقية.</li>
+                    <li>تحسين تجربة العملاء وزيادة الولاء.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="product" data-product-id="3">
+            <h3>لوحة معلومات تفاعلية للمبيعات</h3>
+            <p>أداة تفاعلية سهلة الاستخدام تقدم تقاريرًا ورسومًا بيانية ديناميكية لتحليل المبيعات وتقديم رؤى قيمة.</p>
+            <p class="price">1,603 ريال (بدلاً من 2,138 ريال)</p>
+             <p class="delivery-time">مدة التوصيل: 5-13 يوم</p>
+            <button class="buy-button">شراء الآن</button>
+            <button class="details-button" data-target="details-3">تفاصيل المنتج</button>
+        </div>
+        <div class="product-details-modal" id="details-3">
+            <div class="modal-content">
+                <span class="close-button" data-close-target="details-3">×</span>
+                <h3>لوحة معلومات تفاعلية للمبيعات - تفاصيل المنتج</h3>
+                <p>توفر هذه اللوحة عرضًا مرئيًا وديناميكيًا لبيانات المبيعات الرئيسية، مما يتيح للمستخدمين تحليل الأداء وتتبع المؤشرات الهامة بسهولة. تتضمن اللوحة مجموعة متنوعة من الرسوم البيانية والجداول التفاعلية التي يمكن تخصيصها لتلبية احتياجات المستخدمين المختلفة، مما يساعد في اتخاذ قرارات أسرع وأكثر استنارة.</p>
+                <p><strong>الميزات الرئيسية:</strong></p>
+                <ul>
+                    <li>عرض مرئي وديناميكي لبيانات المبيعات.</li>
+                    <li>مجموعة متنوعة من الرسوم البيانية والجداول التفاعلية.</li>
+                    <li>إمكانية تخصيص اللوحة لتلبية الاحتياجات الفردية.</li>
+                    <li>تتبع المؤشرات الرئيسية للأداء (KPIs) بسهولة.</li>
+                    <li>تحسين عملية اتخاذ القرارات بناءً على البيانات.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="product" data-product-id="4">
+            <h3>توقع الإيرادات المستقبلية باستخدام الذكاء الاصطناعي</h3>
+            <p>نظام تنبؤ متقدم يستخدم تقنيات الذكاء الاصطناعي لتحليل البيانات التاريخية وتوقع الإيرادات المستقبلية بدقة عالية.</p>
+            <p class="price">2,672 ريال (بدلاً من 3,563 ريال)</p>
+             <p class="delivery-time">مدة التوصيل: 5-13 يوم</p>
+            <button class="buy-button">شراء الآن</button>
+            <button class="details-button" data-target="details-4">تفاصيل المنتج</button>
+        </div>
+        <div class="product-details-modal" id="details-4">
+            <div class="modal-content">
+                <span class="close-button" data-close-target="details-4">×</span>
+                <h3>توقع الإيرادات المستقبلية باستخدام الذكاء الاصطناعي - تفاصيل المنتج</h3>
+                <p>يستخدم هذا النظام نماذج تعلم آلي متطورة لتحليل البيانات التاريخية للمبيعات، واتجاهات السوق، والعوامل الاقتصادية الأخرى للتنبؤ بالإيرادات المستقبلية بدقة. يساعد الشركات على التخطيط المالي بشكل أفضل، وتحديد الأهداف الواقعية، واتخاذ قرارات استراتيجية مبنية على توقعات دقيقة.</p>
+                <p><strong>الميزات الرئيسية:</strong></p>
+                <ul>
+                    <li>توقعات دقيقة للإيرادات المستقبلية.</li>
+                    <li>تحليل البيانات التاريخية واتجاهات السوق.</li>
+                    <li>نماذج تعلم آلي متطورة.</li>
+                    <li>مساعدة في التخطيط المالي وتحديد الأهداف.</li>
+                    <li>تحسين القرارات الاستراتيجية.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="product" data-product-id="5">
+            <h3>تحليل بيانات وسائل التواصل الاجتماعي</h3>
+            <p>تحليل شامل لبيانات وسائل التواصل الاجتماعي لتحديد اتجاهات العملاء، وفهم تفاعلاتهم، وتقييم أداء الحملات التسويقية.</p>
+            <p class="price">535 ريال (بدلاً من 713 ريال)</p>
+             <p class="delivery-time">مدة التوصيل: 5-13 يوم</p>
+            <button class="buy-button">شراء الآن</button>
+            <button class="details-button" data-target="details-5">تفاصيل المنتج</button>
+        </div>
+        <div class="product-details-modal" id="details-5">
+            <div class="modal-content">
+                <span class="close-button" data-close-target="details-5">×</span>
+                <h3>تحليل بيانات وسائل التواصل الاجتماعي - تفاصيل المنتج</h3>
+                <p>يوفر هذا المنتج تحليلاً معمقًا لبيانات وسائل التواصل الاجتماعي لفهم آراء العملاء، وتحديد الاتجاهات الشائعة، وقياس فعالية الحملات التسويقية. يساعد الشركات على تحسين استراتيجيات التواصل الاجتماعي، وزيادة التفاعل مع العملاء، وتعزيز الوعي بالعلامة التجارية.</p>
+                <p><strong>الميزات الرئيسية:</strong></p>
+                <ul>
+                    <li>تحليل المشاعر والآراء في التعليقات والمنشورات.</li>
+                    <li>تحديد الاتجاهات والموضوعات الشائعة.</li>
+                    <li>قياس أداء الحملات التسويقية على وسائل التواصل الاجتماعي.</li>
+                    <li>تحليل المنافسين وأدائهم.</li>
+                    <li>تحسين استراتيجيات التواصل الاجتماعي.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="product" data-product-id="6">
+            <h3>تصور البيانات التفاعلي</h3>
+            <p>خدمة تصميم وتنفيذ تصورات بيانات تفاعلية تسهل فهم البيانات المعقدة واتخاذ القرارات بناءً عليها.</p>
+            <p class="price">1,336 ريال (بدلاً من 1,781 ريال)</p>
+            <p class="delivery-time">مدة التوصيل: 5-13 يوم</p>
+            <button class="buy-button">شراء الآن</button>
+            <button class="details-button" data-target="details-6">تفاصيل المنتج</button>
+        </div>
+        <div class="product-details-modal" id="details-6">
+            <div class="modal-content">
+                <span class="close-button" data-close-target="details-6">×</span>
+                <h3>تصور البيانات التفاعلي - تفاصيل المنتج</h3>
+                <p>تحويل البيانات المعقدة إلى رسوم بيانية وجداول تفاعلية سهلة الفهم، مما يساعد المستخدمين على استكشاف البيانات، وتحديد الأنماط، واستخلاص الرؤى القيمة بشكل فعال. تتيح هذه الخدمة للشركات تقديم البيانات بطريقة جذابة ومفهومة لجميع أصحاب المصلحة.</p>
+                <p><strong>الميزات الرئيسية:</strong></p>
+                <ul>
+                    <li>تصميم رسوم بيانية وجداول تفاعلية مخصصة.</li>
+                    <li>تحويل البيانات المعقدة إلى معلومات سهلة الفهم.</li>
+                    <li>تسهيل استكشاف البيانات وتحديد الأنماط.</li>
+                    <li>تقديم البيانات بطريقة جذابة ومرئية.</li>
+                    <li>تحسين عملية اتخاذ القرارات.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="product" data-product-id="7">
+            <h3>تقييم أداء الموظفين عبر تحليل البيانات</h3>
+            <p>أداة تحليل متقدمة لبيانات أداء الموظفين الفردي والجماعي، تساعد في تحديد نقاط القوة والضعف وتحسين الأداء العام.</p>
+            <p class="price">801 ريال (بدلاً من 1,069 ريال)</p>
+             <p class="delivery-time">مدة التوصيل: 5-13 يوم</p>
+            <button class="buy-button">شراء الآن</button>
+            <button class="details-button" data-target="details-7">تفاصيل المنتج</button>
+        </div>
+        <div class="product-details-modal" id="details-7">
+            <div class="modal-content">
+                <span class="close-button" data-close-target="details-7">×</span>
+                <h3>تقييم أداء الموظفين عبر تحليل البيانات - تفاصيل المنتج</h3>
+                <p>تحليل شامل لبيانات أداء الموظفين باستخدام مؤشرات الأداء الرئيسية (KPIs) لتحديد المساهمين المتميزين والمجالات التي تحتاج إلى تحسين. يساعد هذا التحليل في اتخاذ قرارات مستنيرة بشأن الترقيات، والتدريب، وتطوير الموظفين، مما يعزز الأداء العام للمؤسسة.</p>
+                <p><strong>الميزات الرئيسية:</strong></p>
+                <ul>
+                    <li>تحليل بيانات الأداء الفردي والجماعي.</li>
+                    <li>تحديد نقاط القوة والضعف للموظفين.</li>
+                    <li>تقييم الأداء بناءً على مؤشرات الأداء الرئيسية (KPIs).</li>
+                    <li>توصيات لتحسين أداء الموظفين.</li>
+                    <li>دعم اتخاذ القرارات المتعلقة بالموارد البشرية.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="product" data-product-id="8">
+            <h3>تحليل اتجاهات السوق</h3>
+            <p>دراسة متعمقة لتحديد الاتجاهات الجديدة والفرص المتاحة في السوق، مما يساعد الشركات على البقاء في المقدمة وتطوير استراتيجيات فعالة.</p>
+            <p class="price">1,336 ريال (بدلاً من 1,781 ريال)</p>
+            <p class="delivery-time">مدة التوصيل: 5-13 يوم</p>
+            <button class="buy-button">شراء الآن</button>
+            <button class="details-button" data-target="details-8">تفاصيل المنتج</button>
+        </div>
+        <div class="product-details-modal" id="details-8">
+            <div class="modal-content">
+                <span class="close-button" data-close-target="details-8">×</span>
+                <h3>تحليل اتجاهات السوق - تفاصيل المنتج</h3>
+                <p>تحليل شامل لاتجاهات السوق الحالية والمستقبلية، يتضمن دراسة سلوك المستهلكين، وتحليل المنافسين، وتقييم التغيرات التكنولوجية والاقتصادية. يساعد الشركات على تحديد الفرص الجديدة، وفهم التحديات المحتملة، وتطوير استراتيجيات مبتكرة للحفاظ على تنافسيتها.</p>
+                <p><strong>الميزات الرئيسية:</strong></p>
+                <ul>
+                    <li>تحديد الاتجاهات السوقية الحالية والمستقبلية.</li>
+                    <li>تحليل سلوك المستهلكين وتفضيلاتهم.</li>
+                    <li>تقييم أداء المنافسين واستراتيجياتهم.</li>
+                    <li>تحديد الفرص والتحديات في السوق.</li>
+                    <li>دعم تطوير استراتيجيات عمل فعالة.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="product" data-product-id="9">
+            <h3>نظام ذكاء اصطناعي لتوصيات الأعمال</h3>
+            <p>نظام ذكي يقدم توصيات مخصصة لتحسين العمليات، وزيادة الكفاءة، وتعزيز الربحية بناءً على تحليل البيانات الشامل.</p>
+            <p class="price">2,008 ريال (بدلاً من 3,344 ريال)</p>
+             <p class="delivery-time">مدة التوصيل: 5-13 يوم</p>
+            <button class="buy-button">شراء الآن</button>
+            <button class="details-button" data-target="details-9">تفاصيل المنتج</button>
+        </div>
+        <div class="product-details-modal" id="details-9">
+            <div class="modal-content">
+                <span class="close-button" data-close-target="details-9">×</span>
+                <h3>نظام ذكاء اصطناعي لتوصيات الأعمال - تفاصيل المنتج</h3>
+                <p>نظام متقدم يستخدم تقنيات الذكاء الاصطناعي لتحليل مجموعة واسعة من البيانات المتعلقة بالعمليات التجارية، وتقديم توصيات قابلة للتنفيذ لتحسين الكفاءة، وتقليل التكاليف، وزيادة الإيرادات. يشمل ذلك توصيات لتحسين إدارة المخزون، وتخصيص الموارد، وتحسين استراتيجيات التسويق والمبيعات.</p>
+                <p><strong>الميزات الرئيسية:</strong></p>
+                <ul>
+                    <li>توصيات مخصصة لتحسين العمليات التجارية.</li>
+                    <li>تحليل شامل للبيانات المتعلقة بالعمليات.</li>
+                    <li>تحسين الكفاءة التشغيلية وتقليل التكاليف.</li>
+                    <li>زيادة الإيرادات والربحية.</li>
+                    <li>دعم اتخاذ قرارات استراتيجية مستنيرة.</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
-    <div class="product-details-modal" id="details-1">
+      <!-- قسم روبوتات الذكاء الاصطناعي -->
+        <h2>روبوتات الذكاء الاصطناعي</h2>
+    <div class="product-list">
+            <div class="product" data-product-id="10">
+    <h3>روبوت يد آلية بشرية لذراع الكبوت</h3>
+    <div class="product-images">
+        <button class="slider-button prev-button">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="images-container">
+            <img src="https://www2.0zz0.com/2025/01/01/22/810067321.png" alt="روبوت يد آلية 1">
+            <img src="https://www2.0zz0.com/2025/01/01/22/462905110.png" alt="روبوت يد آلية 2">
+            <img src="https://www2.0zz0.com/2025/01/01/22/449306842.png" alt="روبوت يد آلية 3">
+            <img src="https://www2.0zz0.com/2025/01/01/22/883087309.png" alt="روبوت يد آلية 4">
+        </div>
+        <button class="slider-button next-button">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    <p class="price">76,686.42 ر.س.</p>
+      <p class="delivery-time">مدة التوصيل: 5-13 يوم</p>
+    <button class="buy-button">شراء الآن</button>
+    <button class="details-button" data-target="details-10">تفاصيل المنتج</button>
+</div>
+        <div class="product-details-modal" id="details-10">
+            <div class="modal-content">
+                <span class="close-button" data-close-target="details-10">×</span>
+                <h3>روبوت يد آلية بشرية لذراع الكبوت - تفاصيل المنتج</h3>
+                <p>روبوت يد آلية بشرية مصممة خصيصًا للاستخدام في الصناعة. يوفر هذا الروبوت دقة وكفاءة عالية في أداء المهام المتنوعة. يتميز بتصميم متين وموثوق به، مما يجعله مثاليًا للاستخدام في البيئات الصناعية الصعبة.</p>
+                <p><strong>المواصفات الأساسية:</strong></p>
+                <ul>
+                    <li><strong>الضمان:</strong> أكثر من 5 سنوات</li>
+                    <li><strong>مكان المنشأ:</strong> Guangdong, China</li>
+                    <li><strong>الوزن:</strong> 1 كجم</li>
+                    <li><strong>الأبعاد:</strong> 238.5 × 88 × 40.7 (مم)</li>
+                    <li><strong>الحالة:</strong> جديد</li>
+                    <li><strong>اسم العلامة التجارية:</strong> zhaowei</li>
+                </ul>
+                <p><strong>التعبئة والتغليف:</strong></p>
+                <ul>
+                    <li><strong>بيع وحدات:</strong> عنصر واحد</li>
+                    <li><strong>حزمة واحدة الحجم:</strong> 238.5X88X40.7 سم</li>
+                    <li><strong>واحد الوزن الإجمالي:</strong> 1.000 كجم</li>
+                </ul>
+            </div>
+        </div>
+
+      <div class="product" data-product-id="11">
+          <h3>كونسيرج ذكي ، استعلام معلومات الفندق الذكي ، روبوت استقبال Vip للمطاعم</h3>
+          <div class="product-images">
+              <button class="slider-button prev-button">
+                  <i class="fas fa-chevron-left"></i>
+              </button>
+              <div class="images-container">
+                  <img src="https://www2.0zz0.com/2025/01/01/22/603556805.png" alt="روبوت استقبال 1">
+                  <img src="https://www2.0zz0.com/2025/01/01/22/341827203.png" alt="روبوت استقبال 2">
+                  <img src="https://www2.0zz0.com/2025/01/01/22/793042462.png" alt="روبوت استقبال 3">
+                  <img src="https://www2.0zz0.com/2025/01/01/22/915381731.png" alt="روبوت استقبال 4">
+              </div>
+              <button class="slider-button next-button">
+                  <i class="fas fa-chevron-right"></i>
+              </button>
+          </div>
+           <p class="price">6,242.43 ر.س.</p>
+            <p class="delivery-time">مدة التوصيل: 5-13 يوم</p>
+          <button class="buy-button">شراء الآن</button>
+           <button class="details-button" data-target="details-11">تفاصيل المنتج</button>
+       </div>
+       <div class="product-details-modal" id="details-11">
         <div class="modal-content">
-            <span class="close-button" data-close-target="details-1">×</span>
-            <h3>تحليل بيانات المبيعات الشهرية - تفاصيل المنتج</h3>
-            <p>يقدم هذا المنتج تحليلاً شاملاً لأداء المبيعات الشهرية، مع التركيز على تحديد الاتجاهات الرئيسية، ونقاط القوة والضعف في الأداء. يتضمن تحليلًا للإيرادات، وحجم المبيعات، ومتوسط قيمة الصفقة، وأداء المنتجات أو الخدمات المختلفة. يساعد هذا التحليل الشركات على فهم أفضل لأداء مبيعاتها، واتخاذ قرارات مبنية على البيانات لتحسين الكفاءة وزيادة الإيرادات.</p>
-            <p><strong>الميزات الرئيسية:</strong></p>
+            <span class="close-button" data-close-target="details-11">×</span>
+            <h3>كونسيرج ذكي ، استعلام معلومات الفندق الذكي ، روبوت استقبال Vip للمطاعم - تفاصيل المنتج</h3>
+            <p>روبوت استقبال ذكي ومتطور يستخدم في الفنادق والمطاعم والمؤسسات الأخرى لتوفير تجربة استعلام ومساعدة تفاعلية للزوار. يمكن للروبوت تقديم معلومات، وتوجيه الضيوف، وتنفيذ مهام الاستقبال بكفاءة.</p>
+            <p><strong>المواصفات الأساسية:</strong></p>
             <ul>
-                <li>تحليل مفصل للإيرادات وحجم المبيعات.</li>
-                <li>تحديد المنتجات أو الخدمات الأفضل أداءً.</li>
-                <li>تحليل الاتجاهات الموسمية والتغيرات الشهرية.</li>
-                <li>مقارنة الأداء الشهري مع الفترات السابقة.</li>
-                <li>توصيات لتحسين الأداء وزيادة المبيعات.</li>
-            </ul>
+                <li><strong>فترة الضمان:</strong> 1 سنة</li>
+                <li><strong>مكان المنشأ:</strong> Jiangsu, China</li>
+                <li><strong>رقم الموديل:</strong> Lele</li>
+                <li><strong>تطبيق:</strong> الفندق ، البنك ، المستشفى ، المدرسة ، الخ</li>
+                <li><strong>نوع المحرك:</strong> الاخري</li>
+                 <li><strong>أقصى وقت التشغيل:</strong> لا حدود</li>
+                <li><strong>وضع التنقل:</strong> أخرى</li>
+                 <li><strong>الأبعاد:</strong> 500*500*1466 مم</li>
+                  <li><strong>وقت العمل:</strong> لا حدود</li>
+                  <li><strong>تطبيقات التحكم:</strong> لا</li>
+                    <li><strong>الوزن الصافي:</strong> 42.5 كجم</li>
+                  <li><strong>سعة البطارية:</strong> لا يوجد بطارية مدمجة</li>
+                 <li><strong>وقت الشحن:</strong> الاخري</li>
+                 <li><strong>الشحن التلقائي:</strong> لا</li>
+                 <li><strong>الميزة:</strong> الحوار الصوتي</li>
+                 <li><strong>شاشة العرض:</strong> 27 بوصة ؛ resolution: 1080*1920</li>
+                 <li><strong>مصدر الطاقة:</strong> التيار المتردد</li>
+             </ul>
+               <p><strong>التعبئة والتغليف:</strong></p>
+                <ul>
+                    <li><strong>بيع وحدات:</strong> عنصر واحد</li>
+                    <li><strong>حزمة واحدة الحجم:</strong> 63X71X161 سم</li>
+                    <li><strong>واحد الوزن الإجمالي:</strong> 55.000 كجم</li>
+                </ul>
+        </div>
+    </div>
+        <div class="product" data-product-id="12">
+          <h3>ميكو 3: روبوت ذكي يعمل بالذكاء الاصطناعي للأطفال</h3>
+          <div class="product-images">
+              <button class="slider-button prev-button">
+                  <i class="fas fa-chevron-left"></i>
+              </button>
+              <div class="images-container">
+                  <img src="https://www2.0zz0.com/2025/01/01/22/350296636.jpg" alt="روبوت ميكو 1">
+                  <img src="https://www2.0zz0.com/2025/01/01/22/346953156.jpg" alt="روبوت ميكو 2">
+                  <img src="https://www2.0zz0.com/2025/01/01/22/299090700.jpg" alt="روبوت ميكو 3">
+                  <img src="https://www2.0zz0.com/2025/01/01/22/785496329.jpg" alt="روبوت ميكو 4">
+              </div>
+              <button class="slider-button next-button">
+                  <i class="fas fa-chevron-right"></i>
+              </button>
+          </div>
+          <p class="price">1,111 ر.س</p>
+            <p class="delivery-time">مدة التوصيل: 5-13 يوم</p>
+           <button class="buy-button">شراء الآن</button>
+            <button class="details-button" data-target="details-12">تفاصيل المنتج</button>
+        </div>
+         <div class="product-details-modal" id="details-12">
+        <div class="modal-content">
+            <span class="close-button" data-close-target="details-12">×</span>
+             <h3>ميكو 3: روبوت ذكي يعمل بالذكاء الاصطناعي للأطفال - تفاصيل المنتج</h3>
+             <p>ميكو 3 هو روبوت تعليمي وتفاعلي يعمل بالذكاء الاصطناعي مصمم خصيصًا للأطفال من سن 5 إلى 12 عامًا. يقدم هذا الروبوت تجربة تعليمية ممتعة من خلال مجموعة متنوعة من التطبيقات التعليمية والألعاب التفاعلية. يساعد ميكو 3 الأطفال على تطوير مهاراتهم المعرفية والإبداعية.</p>
+            <p><strong>الميزات الرئيسية:</strong></p>
+             <ul>
+             <li>روبوت تعليمي وتفاعلي للأطفال من سن 5 إلى 12 عامًا.</li>
+              <li>يعمل بالذكاء الاصطناعي لتقديم تجربة تعليمية مخصصة.</li>
+               <li>تطبيقات تعليمية وألعاب غير محدودة لزيادة التفاعل.</li>
+               <li>يساعد الأطفال على تطوير مهاراتهم المعرفية والإبداعية.</li>
+               <li>هدية مثالية لأعياد الميلاد والمناسبات الخاصة.</li>
+           </ul>
+
         </div>
     </div>
 
-    <div class="product" data-product-id="2">
-      <h3>تحليل أداء العملاء (Customer Segmentation)</h3>
-      <p>تقسيم العملاء إلى مجموعات متميزة بناءً على سلوكهم وخصائصهم لتحسين استراتيجيات التسويق وزيادة الولاء.</p>
-      <p class="price">801 ريال (بدلاً من 1,069 ريال)</p>
-       <button class="buy-button">شراء الآن</button>
-       <button class="details-button" data-target="details-2">تفاصيل المنتج</button>
     </div>
-    <div class="product-details-modal" id="details-2">
-        <div class="modal-content">
-            <span class="close-button" data-close-target="details-2">×</span>
-            <h3>تحليل أداء العملاء (Customer Segmentation) - تفاصيل المنتج</h3>
-            <p>يهدف هذا المنتج إلى تقسيم قاعدة العملاء إلى شرائح متجانسة بناءً على مجموعة متنوعة من المعايير مثل السلوك الشرائي، التركيبة السكانية، والقيمة الدائمة للعميل. يساعد هذا التقسيم الشركات على فهم أفضل لعملائها، وتخصيص استراتيجيات التسويق والمبيعات لتلبية احتياجات كل شريحة بشكل فعال، مما يزيد من رضا العملاء وولائهم.</p>
-            <p><strong>الميزات الرئيسية:</strong></p>
-            <ul>
-                <li>تقسيم العملاء بناءً على معايير متعددة.</li>
-                <li>تحديد خصائص كل شريحة من العملاء.</li>
-                <li>تحليل سلوك الشراء والتفضيلات لكل شريحة.</li>
-                <li>توصيات لتخصيص الحملات التسويقية.</li>
-                <li>تحسين تجربة العملاء وزيادة الولاء.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="product" data-product-id="3">
-      <h3>لوحة معلومات تفاعلية للمبيعات</h3>
-      <p>أداة تفاعلية سهلة الاستخدام تقدم تقاريرًا ورسومًا بيانية ديناميكية لتحليل المبيعات وتقديم رؤى قيمة.</p>
-      <p class="price">1,603 ريال (بدلاً من 2,138 ريال)</p>
-       <button class="buy-button">شراء الآن</button>
-       <button class="details-button" data-target="details-3">تفاصيل المنتج</button>
-    </div>
-    <div class="product-details-modal" id="details-3">
-        <div class="modal-content">
-            <span class="close-button" data-close-target="details-3">×</span>
-            <h3>لوحة معلومات تفاعلية للمبيعات - تفاصيل المنتج</h3>
-            <p>توفر هذه اللوحة عرضًا مرئيًا وديناميكيًا لبيانات المبيعات الرئيسية، مما يتيح للمستخدمين تحليل الأداء وتتبع المؤشرات الهامة بسهولة. تتضمن اللوحة مجموعة متنوعة من الرسوم البيانية والجداول التفاعلية التي يمكن تخصيصها لتلبية احتياجات المستخدمين المختلفة، مما يساعد في اتخاذ قرارات أسرع وأكثر استنارة.</p>
-            <p><strong>الميزات الرئيسية:</strong></p>
-            <ul>
-                <li>عرض مرئي وديناميكي لبيانات المبيعات.</li>
-                <li>مجموعة متنوعة من الرسوم البيانية والجداول التفاعلية.</li>
-                <li>إمكانية تخصيص اللوحة لتلبية الاحتياجات الفردية.</li>
-                <li>تتبع المؤشرات الرئيسية للأداء (KPIs) بسهولة.</li>
-                <li>تحسين عملية اتخاذ القرارات بناءً على البيانات.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="product" data-product-id="4">
-      <h3>توقع الإيرادات المستقبلية باستخدام الذكاء الاصطناعي</h3>
-      <p>نظام تنبؤ متقدم يستخدم تقنيات الذكاء الاصطناعي لتحليل البيانات التاريخية وتوقع الإيرادات المستقبلية بدقة عالية.</p>
-      <p class="price">2,672 ريال (بدلاً من 3,563 ريال)</p>
-       <button class="buy-button">شراء الآن</button>
-       <button class="details-button" data-target="details-4">تفاصيل المنتج</button>
-    </div>
-    <div class="product-details-modal" id="details-4">
-        <div class="modal-content">
-            <span class="close-button" data-close-target="details-4">×</span>
-            <h3>توقع الإيرادات المستقبلية باستخدام الذكاء الاصطناعي - تفاصيل المنتج</h3>
-            <p>يستخدم هذا النظام نماذج تعلم آلي متطورة لتحليل البيانات التاريخية للمبيعات، واتجاهات السوق، والعوامل الاقتصادية الأخرى للتنبؤ بالإيرادات المستقبلية بدقة. يساعد الشركات على التخطيط المالي بشكل أفضل، وتحديد الأهداف الواقعية، واتخاذ قرارات استراتيجية مبنية على توقعات دقيقة.</p>
-            <p><strong>الميزات الرئيسية:</strong></p>
-            <ul>
-                <li>توقعات دقيقة للإيرادات المستقبلية.</li>
-                <li>تحليل البيانات التاريخية واتجاهات السوق.</li>
-                <li>نماذج تعلم آلي متطورة.</li>
-                <li>مساعدة في التخطيط المالي وتحديد الأهداف.</li>
-                <li>تحسين القرارات الاستراتيجية.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="product" data-product-id="5">
-      <h3>تحليل بيانات وسائل التواصل الاجتماعي</h3>
-      <p>تحليل شامل لبيانات وسائل التواصل الاجتماعي لتحديد اتجاهات العملاء، وفهم تفاعلاتهم، وتقييم أداء الحملات التسويقية.</p>
-      <p class="price">535 ريال (بدلاً من 713 ريال)</p>
-       <button class="buy-button">شراء الآن</button>
-       <button class="details-button" data-target="details-5">تفاصيل المنتج</button>
-    </div>
-    <div class="product-details-modal" id="details-5">
-        <div class="modal-content">
-            <span class="close-button" data-close-target="details-5">×</span>
-            <h3>تحليل بيانات وسائل التواصل الاجتماعي - تفاصيل المنتج</h3>
-            <p>يوفر هذا المنتج تحليلاً معمقًا لبيانات وسائل التواصل الاجتماعي لفهم آراء العملاء، وتحديد الاتجاهات الشائعة، وقياس فعالية الحملات التسويقية. يساعد الشركات على تحسين استراتيجيات التواصل الاجتماعي، وزيادة التفاعل مع العملاء، وتعزيز الوعي بالعلامة التجارية.</p>
-            <p><strong>الميزات الرئيسية:</strong></p>
-            <ul>
-                <li>تحليل المشاعر والآراء في التعليقات والمنشورات.</li>
-                <li>تحديد الاتجاهات والموضوعات الشائعة.</li>
-                <li>قياس أداء الحملات التسويقية على وسائل التواصل الاجتماعي.</li>
-                <li>تحليل المنافسين وأدائهم.</li>
-                <li>تحسين استراتيجيات التواصل الاجتماعي.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="product" data-product-id="6">
-      <h3>تصور البيانات التفاعلي</h3>
-      <p>خدمة تصميم وتنفيذ تصورات بيانات تفاعلية تسهل فهم البيانات المعقدة واتخاذ القرارات بناءً عليها.</p>
-      <p class="price">1,336 ريال (بدلاً من 1,781 ريال)</p>
-       <button class="buy-button">شراء الآن</button>
-       <button class="details-button" data-target="details-6">تفاصيل المنتج</button>
-    </div>
-    <div class="product-details-modal" id="details-6">
-        <div class="modal-content">
-            <span class="close-button" data-close-target="details-6">×</span>
-            <h3>تصور البيانات التفاعلي - تفاصيل المنتج</h3>
-            <p>تحويل البيانات المعقدة إلى رسوم بيانية وجداول تفاعلية سهلة الفهم، مما يساعد المستخدمين على استكشاف البيانات، وتحديد الأنماط، واستخلاص الرؤى القيمة بشكل فعال. تتيح هذه الخدمة للشركات تقديم البيانات بطريقة جذابة ومفهومة لجميع أصحاب المصلحة.</p>
-            <p><strong>الميزات الرئيسية:</strong></p>
-            <ul>
-                <li>تصميم رسوم بيانية وجداول تفاعلية مخصصة.</li>
-                <li>تحويل البيانات المعقدة إلى معلومات سهلة الفهم.</li>
-                <li>تسهيل استكشاف البيانات وتحديد الأنماط.</li>
-                <li>تقديم البيانات بطريقة جذابة ومرئية.</li>
-                <li>تحسين عملية اتخاذ القرارات.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="product" data-product-id="7">
-      <h3>تقييم أداء الموظفين عبر تحليل البيانات</h3>
-      <p>أداة تحليل متقدمة لبيانات أداء الموظفين الفردي والجماعي، تساعد في تحديد نقاط القوة والضعف وتحسين الأداء العام.</p>
-      <p class="price">801 ريال (بدلاً من 1,069 ريال)</p>
-       <button class="buy-button">شراء الآن</button>
-       <button class="details-button" data-target="details-7">تفاصيل المنتج</button>
-    </div>
-    <div class="product-details-modal" id="details-7">
-        <div class="modal-content">
-            <span class="close-button" data-close-target="details-7">×</span>
-            <h3>تقييم أداء الموظفين عبر تحليل البيانات - تفاصيل المنتج</h3>
-            <p>تحليل شامل لبيانات أداء الموظفين باستخدام مؤشرات الأداء الرئيسية (KPIs) لتحديد المساهمين المتميزين والمجالات التي تحتاج إلى تحسين. يساعد هذا التحليل في اتخاذ قرارات مستنيرة بشأن الترقيات، والتدريب، وتطوير الموظفين، مما يعزز الأداء العام للمؤسسة.</p>
-            <p><strong>الميزات الرئيسية:</strong></p>
-            <ul>
-                <li>تحليل بيانات الأداء الفردي والجماعي.</li>
-                <li>تحديد نقاط القوة والضعف للموظفين.</li>
-                <li>تقييم الأداء بناءً على مؤشرات الأداء الرئيسية (KPIs).</li>
-                <li>توصيات لتحسين أداء الموظفين.</li>
-                <li>دعم اتخاذ القرارات المتعلقة بالموارد البشرية.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="product" data-product-id="8">
-      <h3>تحليل اتجاهات السوق</h3>
-      <p>دراسة متعمقة لتحديد الاتجاهات الجديدة والفرص المتاحة في السوق، مما يساعد الشركات على البقاء في المقدمة وتطوير استراتيجيات فعالة.</p>
-      <p class="price">1,336 ريال (بدلاً من 1,781 ريال)</p>
-       <button class="buy-button">شراء الآن</button>
-       <button class="details-button" data-target="details-8">تفاصيل المنتج</button>
-    </div>
-    <div class="product-details-modal" id="details-8">
-        <div class="modal-content">
-            <span class="close-button" data-close-target="details-8">×</span>
-            <h3>تحليل اتجاهات السوق - تفاصيل المنتج</h3>
-            <p>تحليل شامل لاتجاهات السوق الحالية والمستقبلية، يتضمن دراسة سلوك المستهلكين، وتحليل المنافسين، وتقييم التغيرات التكنولوجية والاقتصادية. يساعد الشركات على تحديد الفرص الجديدة، وفهم التحديات المحتملة، وتطوير استراتيجيات مبتكرة للحفاظ على تنافسيتها.</p>
-            <p><strong>الميزات الرئيسية:</strong></p>
-            <ul>
-                <li>تحديد الاتجاهات السوقية الحالية والمستقبلية.</li>
-                <li>تحليل سلوك المستهلكين وتفضيلاتهم.</li>
-                <li>تقييم أداء المنافسين واستراتيجياتهم.</li>
-                <li>تحديد الفرص والتحديات في السوق.</li>
-                <li>دعم تطوير استراتيجيات عمل فعالة.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="product" data-product-id="9">
-      <h3>نظام ذكاء اصطناعي لتوصيات الأعمال</h3>
-      <p>نظام ذكي يقدم توصيات مخصصة لتحسين العمليات، وزيادة الكفاءة، وتعزيز الربحية بناءً على تحليل البيانات الشامل.</p>
-      <p class="price">2,008 ريال (بدلاً من 3,344 ريال)</p>
-       <button class="buy-button">شراء الآن</button>
-       <button class="details-button" data-target="details-9">تفاصيل المنتج</button>
-    </div>
-    <div class="product-details-modal" id="details-9">
-        <div class="modal-content">
-            <span class="close-button" data-close-target="details-9">×</span>
-            <h3>نظام ذكاء اصطناعي لتوصيات الأعمال - تفاصيل المنتج</h3>
-            <p>نظام متقدم يستخدم تقنيات الذكاء الاصطناعي لتحليل مجموعة واسعة من البيانات المتعلقة بالعمليات التجارية، وتقديم توصيات قابلة للتنفيذ لتحسين الكفاءة، وتقليل التكاليف، وزيادة الإيرادات. يشمل ذلك توصيات لتحسين إدارة المخزون، وتخصيص الموارد، وتحسين استراتيجيات التسويق والمبيعات.</p>
-            <p><strong>الميزات الرئيسية:</strong></p>
-            <ul>
-                <li>توصيات مخصصة لتحسين العمليات التجارية.</li>
-                <li>تحليل شامل للبيانات المتعلقة بالعمليات.</li>
-                <li>تحسين الكفاءة التشغيلية وتقليل التكاليف.</li>
-                <li>زيادة الإيرادات والربحية.</li>
-                <li>دعم اتخاذ قرارات استراتيجية مستنيرة.</li>
-            </ul>
-        </div>
-    </div>
-    <!-- يمكنك إضافة المزيد من المنتجات هنا -->
-    </div>
-
     <div class="payment-modal" id="paymentModal">
-    <div class="modal-content">
-    <span class="close-button" id="closeModal">×</span>
-       <h2>بيانات الدفع</h2>
-       <p><strong>وسيلة الدفع المتاحة حاليًا:</strong> تحويل بنكي</p>
-          <p><strong>اسم المستفيد:</strong> رتاج احمد ابراهيم</p>
-          <p><strong>رقم الحساب:</strong> 077020010006081361397</p>
-          <p><strong>رقم الايبان:</strong> SA1580000857608011361397</p>
-        <p><strong>اسم البنك:</strong> بنك الراجحي</p>
-          <p>بعد إتمام عملية التحويل، يرجى إرسال صورة الإيصال عبر الواتساب لتأكيد الشراء.</p>
-       <button class="whatsapp-button" id="sendReceipt">
-         <i class="fab fa-whatsapp"></i> إرسال الإيصال عبر الواتساب
-       </button>
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">×</span>
+            <h2>بيانات الدفع</h2>
+            <p><strong>وسيلة الدفع المتاحة حاليًا:</strong> تحويل بنكي</p>
+            <p><strong>اسم المستفيد:</strong> رتاج احمد ابراهيم</p>
+            <p><strong>رقم الحساب:</strong> 077020010006081361397</p>
+            <p><strong>رقم الايبان:</strong> SA1580000857608011361397</p>
+            <p><strong>اسم البنك:</strong> بنك الراجحي</p>
+            <p>بعد إتمام عملية التحويل، يرجى إرسال صورة الإيصال عبر الواتساب لتأكيد الشراء.</p>
+            <button class="whatsapp-button" id="sendReceipt">
+                <i class="fab fa-whatsapp"></i> إرسال الإيصال عبر الواتساب
+            </button>
+        </div>
     </div>
-  </div>
 </main>
 
 <footer>
     <div class="social-media">
         <h3>تابعنا على</h3>
-           <a href="https://x.com/BrightAIII" target="_blank" title="X"> <img src="x-logo.webp" alt="X" > </a>
-         <a href="https://www.youtube.com/@TeechLab" target="_blank" title="Youtube">  <img src="youtube-logo.webp" alt="Youtube"> </a>
-         <a href="https://instagram.com/" target="_blank" title="Instagram"> <img src="instagram-logo.webp" alt="Instagram"></a>
+        <a href="https://x.com/BrightAIII" target="_blank" title="X"> <img src="x-logo.webp" alt="X" > </a>
+        <a href="https://www.youtube.com/@TeechLab" target="_blank" title="Youtube">  <img src="youtube-logo.webp" alt="Youtube"> </a>
+        <a href="https://instagram.com/" target="_blank" title="Instagram"> <img src="instagram-logo.webp" alt="Instagram"></a>
 
-    </div>
-    <div class="contact-info">
-        <h3>تواصل معنا</h3>
-         <p><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com </p>
-        <p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i class="fab fa-whatsapp"></i>  </a></p>
-    </div>
+   </div>
+   <div class="contact-info">
+       <h3>تواصل معنا</h3>
+        <p><i class="fas fa-envelope"></i> yazeedaiai0@gmail.com </p>
+       <p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i class="fab fa-whatsapp"></i>  </a></p>
+   </div>
 </footer>
 <script src="our-products.js"></script>
 </body>
