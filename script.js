@@ -291,4 +291,19 @@ window.addEventListener('load', function () {
         init();
         animate();
     });
+
+    // Initialize particles for AI Agents section
+    const agentsCanvas = document.getElementById('agents-particles');
+    const agentsCtx = agentsCanvas.getContext('2d');
+
+    function initAgentsCanvas() {
+        agentsCanvas.width = window.innerWidth;
+        agentsCanvas.height = document.querySelector('.ai-agents').offsetHeight;
+    }
+
+    // Call this function when the page loads and on resize
+    window.addEventListener('load', initAgentsCanvas);
+    window.addEventListener('resize', initAgentsCanvas);
+
+    // Add particles animation code here similar to the existing banner animation
 });
