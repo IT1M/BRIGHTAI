@@ -1441,3 +1441,255 @@ h1 {
     margin-bottom: 2rem;
     line-height: 1.6;
 }
+
+/* AI Agents Section */
+.ai-agents-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.ai-agents-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ai-agents-section h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.ai-agents-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.agent-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.agent-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.agent-card .icon {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.agent-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.agent-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ...existing code... */
+
+.ai-agents {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a3c 0%, #0d1b3f 100%);
+    overflow: hidden;
+    padding: 4rem 0;
+}
+
+.agents-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-header-3d {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: white;
+}
+
+.section-header-3d h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #00f7ff, #7161ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
+}
+
+.section-header-3d p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    perspective: 1000px;
+}
+
+.agent-card-3d {
+    height: 400px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.agent-card-3d:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-front i {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: #00f7ff;
+}
+
+.card-front h3 {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.card-back p {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.card-back ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.card-back ul li {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    padding-right: 1.5rem;
+    position: relative;
+}
+
+.card-back ul li::before {
+    content: "•";
+    position: absolute;
+    right: 0;
+    color: #00f7ff;
+}
+
+.cta-button {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(45deg, #00f7ff, #7161ef);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
+}
+
+.cta-section-3d {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-section-3d h3 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.main-cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #00f7ff, #7161ef);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 247, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+    .section-header-3d h2 {
+        font-size: 2rem;
+    }
+    
+    .agents-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .agent-card-3d {
+        height: 350px;
+    }
+}
+
+/* ...existing code... */
