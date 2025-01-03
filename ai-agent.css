@@ -1,0 +1,615 @@
+/* عامة */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #121212;
+    overflow-x: hidden;
+    text-align: right;
+}
+
+/* البانر الرئيسي (Hero Section) */
+#hero {
+    position: relative;
+    height: 100vh;
+    background: url('https://www2.0zz0.com/2025/01/03/04/897159034.jpeg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.hero-content {
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: right;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transform: translateZ(50px);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    transform: translateZ(50px);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #6200ea;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    transform: translateZ(50px);
+}
+
+.cta-button:hover {
+    background-color: #3700b3;
+    transform: scale(1.05) translateZ(50px);
+}
+
+/* Remove robot and particle animations */
+.hero-3d-elements {
+    display: none;
+}
+
+/* قسم عرض وكلاء الذكاء الاصطناعي (AI Agents Showcase) */
+#ai-agents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    background-color: #1e1e1e;
+    perspective: 1000px;
+}
+
+/* Update agent card styles */
+.agent-card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    background-color: #212121;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    transform-style: preserve-3d;
+    padding: 20px;
+    text-align: right;
+}
+
+/* Enhance card hover effects */
+.agent-card:hover {
+    transform: translateY(-15px) rotateY(5deg);
+    box-shadow: 0 12px 24px rgba(98, 0, 234, 0.2);
+}
+
+.agent-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.agent-card p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.agent-icon {
+    font-size: 2.5em;
+    color: #6200ea;
+    margin-bottom: 15px;
+}
+
+.agent-features {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: right;
+    width: 100%;
+}
+
+.agent-features li {
+    padding: 8px 15px;
+    margin: 5px 0;
+    background: rgba(98, 0, 234, 0.1);
+    border-radius: 5px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+}
+
+.agent-features li:before {
+    content: "•";
+    color: #6200ea;
+    margin-left: 8px;
+    font-size: 1.2em;
+}
+
+/* Enhance card hover effects */
+.agent-card:hover .agent-icon {
+    transform: scale(1.1) rotate(5deg);
+    color: #7c4dff;
+}
+
+.more-details {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.more-details:hover {
+    background-color: #3700b3;
+    transform: scale(1.05);
+}
+
+/* قسم المزايا (Features Section) */
+#features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    background-color: #1e1e1e;
+    perspective: 1000px;
+}
+
+.feature {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    background-color: #212121;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    transform-style: preserve-3d;
+    text-align: right;
+}
+
+.feature:hover {
+    transform: translateY(-10px) rotateY(10deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.feature h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+/* قسم الآراء (Testimonials Section) */
+#testimonials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    background-color: #1e1e1e;
+    perspective: 1000px;
+}
+
+.testimonial {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    background-color: #212121;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    transform-style: preserve-3d;
+    text-align: right;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px) rotateY(10deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.testimonial p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.testimonial cite {
+    font-size: 1em;
+    font-style: italic;
+}
+
+/* قسم CTA النهائي (Final CTA Section) */
+#final-cta {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(135deg, #6200ea, #3700b3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.final-cta-content {
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.final-cta-content h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transform: translateZ(50px);
+}
+
+.final-cta-content .final-cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #6200ea;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    transform: translateZ(50px);
+}
+
+.final-cta-content .final-cta-button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05) translateZ(50px);
+}
+
+/* قسم الأسئلة المتكررة (FAQ) */
+#faq {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    background-color: #1e1e1e;
+    perspective: 1000px;
+}
+
+.faq-item {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    background-color: #212121;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    transform-style: preserve-3d;
+    text-align: right;
+}
+
+.faq-item:hover {
+    transform: translateY(-10px) rotateY(10deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.faq-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+/* تأثيرات التمرير (Scroll Animations) */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* الألوان والإضاءة */
+body {
+    background-color: #121212;
+    color: #fff;
+}
+
+.hero-content {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    background-color: #6200ea;
+    color: #fff;
+}
+
+.cta-button:hover {
+    background-color: #3700b3;
+}
+
+.agent-card, .feature, .testimonial, .faq-item {
+    background-color: #212121;
+    color: #fff;
+    text-align: right;
+}
+
+/* إضافة أنماط المودال */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #212121;
+    margin: 50px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(98, 0, 234, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #6200ea;
+}
+
+.modal-body {
+    padding: 20px;
+    color: #fff;
+    text-align: right;
+}
+
+.modal-body h3 {
+    color: #6200ea;
+    margin: 20px 0 10px 0;
+}
+
+.modal-body ul, .modal-body ol {
+    padding-right: 20px;
+    margin: 10px 0;
+}
+
+.modal-body li {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.modal-body a.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.modal-body a.cta-button:hover {
+    background-color: #3700b3;
+    transform: scale(1.05);
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* تحسين تصميم شريط التنقل */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #1e1e1e;
+    padding: 10px 0;
+    list-style: none;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #6200ea;
+}
+
+/* قسم وكلاء الأعمال (Business Agents Section) */
+#business-agents {
+    padding: 50px;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+#business-agents h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.business-agents-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.business-agent {
+    background-color: #212121;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 300px;
+    text-align: right;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.business-agent img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.business-agent h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.business-agent p {
+    font-size: 1em;
+    color: #fff;
+}
+
+.business-agent:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* قسم التكنولوجيا التي نعتمد عليها (Technologies We Rely On Section) */
+#technologies {
+    padding: 50px;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+#technologies h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.technologies-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.technology {
+    background-color: #212121;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 300px;
+    text-align: right;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.technology img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.technology h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.technology p {
+    font-size: 1em;
+    color: #fff;
+}
+
+.technology:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
