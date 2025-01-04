@@ -9,6 +9,9 @@
     --modal-overlay-color: rgba(0, 0, 0, 0.5);
     --background-color: #f0f2f5;
     --font-family: 'Tajawal', sans-serif;
+    --container-padding: clamp(1rem, 5vw, 2rem);
+    --text-scale-ratio: clamp(1rem, 2vw, 1.2rem);
+    --heading-scale: clamp(1.5rem, 4vw, 2.5rem);
 }
 html {
     scroll-behavior: smooth;
@@ -24,13 +27,14 @@ body {
     color: var(--dark-gray);
     background-color: var(--background-color);
     overflow-x: hidden;
+    font-size: var(--text-scale-ratio);
+    line-height: 1.6;
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+    width: min(90%, 1200px);
+    margin-inline: auto;
+    padding: var(--container-padding);
 }
 
 /* الهيدر */
@@ -95,11 +99,53 @@ header {
         flex-direction: column; /* Stack links vertically */
         align-items: center; /* Center links horizontally */
         gap: 0; /* Remove gap between links */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--background-color);
+        transition: 0.3s;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .navbar.active {
+        right: 0;
     }
 
     .navbar li a {
         padding: 0.5rem 1rem; /* Reduce padding */
         text-align: center; /* Center text */
+    }
+
+    .service-card,
+    .agent-card-3d {
+        width: 100%;
+        margin-inline: auto;
+        min-height: auto;
+        aspect-ratio: 3/4;
+    }
+
+    body {
+        font-size: var(--text-scale-ratio);
+        line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+        font-size: var(--heading-scale);
+        line-height: 1.3;
+    }
+
+    section {
+        padding: clamp(2rem, 5vw, 4rem) 0;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 300px;
+        margin-inline: auto;
+        padding: 0.8em 1.5em;
     }
 }
 
@@ -1442,198 +1488,126 @@ h1 {
     line-height: 1.6;
 }
 
-/* AI Agents Section */
-.ai-agents-section {
-    padding: 4rem 0;
-    background-color: #f8f9fa;
-    text-align: center;
-}
-
-.ai-agents-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.ai-agents-section h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-.ai-agents-section p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 2rem;
-}
-
-.agents-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.agent-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.agent-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.agent-card .icon {
-    font-size: 3rem;
-    color: #3498db;
-    margin-bottom: 1rem;
-}
-
-.agent-card h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.agent-card p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-}
-
 /* ...existing code... */
 
+/* AI Agents Section - Modern & Responsive Design */
 .ai-agents {
     position: relative;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #1a1a3c 0%, #0d1b3f 100%);
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #0a1128 0%, #1a237e 100%);
     overflow: hidden;
-    padding: 4rem 0;
 }
 
 .agents-container {
+    width: min(95%, 1400px);
+    margin: 0 auto;
     position: relative;
     z-index: 2;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
 }
 
 .section-header-3d {
     text-align: center;
-    margin-bottom: 4rem;
-    color: white;
+    margin-bottom: 5rem;
 }
 
 .section-header-3d h2 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(45deg, #00f7ff, #7161ef);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    background: linear-gradient(45deg, #64ffda, #88b2ff);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.3));
 }
 
 .section-header-3d p {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1rem, 2vw, 1.2rem);
     max-width: 800px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 .agents-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    perspective: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .agent-card-3d {
     height: 400px;
-    perspective: 1000px;
-}
-
-@media (max-width: 768px) {
-    .agent-card-3d {
-        height: 350px;
-    }
-    .card-back {
-        text-align: center;
-    }
-    .card-front h3 {
-        font-size: 1.2rem;
-    }
-    .card-back p {
-        font-size: 0.9rem;
-    }
-    .card-back ul li {
-        font-size: 0.9rem;
-    }
+    perspective: 2000px;
+    cursor: pointer;
 }
 
 .card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s;
     transform-style: preserve-3d;
-    cursor: pointer;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .agent-card-3d:hover .card-inner {
     transform: rotateY(180deg);
 }
 
-.card-front, .card-back {
+.card-front,
+.card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     padding: 2rem;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.card-front {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .card-back {
     transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
 }
 
 .card-front i {
     font-size: 4rem;
     margin-bottom: 1.5rem;
-    color: #00f7ff;
+    background: linear-gradient(45deg, #64ffda, #88b2ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 5px rgba(100, 255, 218, 0.3));
 }
 
-.card-front h3 {
-    color: white;
-    font-size: 1.5rem;
-    text-align: center;
+.card-front h3,
+.card-back h3 {
+    color: #fff;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    margin-bottom: 1rem;
 }
 
 .card-back p {
-    color: white;
-    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
 .card-back ul {
     list-style: none;
     padding: 0;
     margin: 1rem 0;
+    text-align: right;
+    width: 100%;
 }
 
 .card-back ul li {
@@ -1641,512 +1615,159 @@ h1 {
     margin-bottom: 0.5rem;
     padding-right: 1.5rem;
     position: relative;
+    font-size: 0.95rem;
 }
 
 .card-back ul li::before {
     content: "•";
     position: absolute;
     right: 0;
-    color: #00f7ff;
+    color: #64ffda;
 }
 
 .cta-button {
     padding: 0.8rem 1.5rem;
-    background: linear-gradient(45deg, #00f7ff, #7161ef);
+    background: linear-gradient(45deg, #64ffda, #88b2ff);
     border: none;
     border-radius: 25px;
-    color: white;
+    color: #0a1128;
+    font-weight: bold;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 0.9rem;
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
 }
 
 .cta-section-3d {
     text-align: center;
     margin-top: 4rem;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cta-section-3d h3 {
-    color: white;
-    margin-bottom: 1.5rem;
+    color: #fff;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: 2rem;
 }
 
 .main-cta-button {
     padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background: linear-gradient(45deg, #00f7ff, #7161ef);
+    font-size: 1.1rem;
+    background: linear-gradient(45deg, #64ffda, #88b2ff);
     border: none;
     border-radius: 30px;
-    color: white;
+    color: #0a1128;
+    font-weight: bold;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .main-cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 247, 255, 0.4);
+    box-shadow: 0 8px 20px rgba(100, 255, 218, 0.4);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    .section-header-3d h2 {
-        font-size: 2rem;
-    }
-    
-    .agents-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .agent-card-3d {
-        height: 350px;
-    }
-}
-
-/* ...existing code... */
-
-/* تحسينات للأجهزة المحمولة */
-@media (max-width: 768px) {
-    /* تحسين قسم البطاقات */
-    .agents-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-    .agent-card-3d {
-        height: auto;
-        min-height: 300px;
-        margin-bottom: 1rem;
-    }
-
-    /* تحسين المحتوى النصي */
-    .banner3d-text h2 {
-        font-size: 2rem;
-    }
-
-    .banner3d-text p {
-        font-size: 1.1rem;
-    }
-
-    /* تحسين الأقسام */
-    .section-header-3d h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-
-    .section-header-3d p {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
-    /* تحسين البطاقات */
-    .card-front, .card-back {
-        padding: 1rem;
-    }
-
-    .card-front i {
-        font-size: 2.5rem;
-    }
-
-    .card-back p {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .card-back ul {
-        margin: 0.5rem 0;
-    }
-
-    .card-back ul li {
-        font-size: 0.9rem;
-        margin-bottom: 0.3rem;
-    }
-
-    /* تحسين الأزرار */
-    .cta-button {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-
-    /* تحسين التباعد */
-    .container {
-        padding: 1rem;
-    }
-
-    .services-section {
-        padding: 2rem 0;
-    }
-
-    /* تحسين عرض المحتوى */
-    .service-item {
-        min-height: auto;
-        margin-bottom: 1.5rem;
-    }
-
-    /* تصحيح مشكلة الارتفاع */
-    .banner3d {
-        min-height: auto;
+    .ai-agents {
         padding: 4rem 0;
     }
 
-    .banner3d-content {
-        min-height: auto;
-    }
-
-    /* تحسين القائمة */
-    .navbar {
-        padding: 0.5rem;
-    }
-
-    .navbar li {
-        margin: 0.3rem 0;
-    }
-
-    /* تحسين الأقسام المتحركة */
-    .tech-particles {
-        display: none; /* إيقاف الجزيئات على الموبايل لتحسين الأداء */
-    }
-
-    /* تحسين النموذج */
-    .form-group {
-        margin-bottom: 1rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 0.5rem;
-    }
-}
-
-/* تحسينات إضافية للشاشات الصغيرة جداً */
-@media (max-width: 480px) {
-    .banner3d-text h2 {
-        font-size: 1.5rem;
-    }
-
-    .banner3d-buttons {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .button {
-        width: 100%;
-        text-align: center;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .agent-card-3d {
-        min-height: 250px;
-    }
-}
-
-/* تحسين أداء الموقع */
-* {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* تحسين التحميل التدريجي للصور */
-img {
-    loading: lazy;
-}
-
-/* تحسين الانتقالات */
-.banner3d-content,
-.agent-card-3d,
-.service-item {
-    will-change: transform;
-}
-/* ...existing code... */
-
-/* تحسينات قسم وكلاء الذكاء الاصطناعي */
-.ai-agents {
-    padding: 3rem 1rem;
-    min-height: auto;
-    overflow: hidden;
-    max-width: 100vw;
-}
-
-.agents-container {
-    max-width: 100%;
-    padding: 0 15px;
-}
-
-.agents-grid {
-    display: grid;
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.agent-card-3d {
-    height: auto;
-    min-height: 280px;
-    margin-bottom: 1rem;
-    perspective: 1000px;
-}
-
-.card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-/* تحسين العرض على الأجهزة المحمولة */
-@media (max-width: 768px) {
-    .section-header-3d h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        padding: 0 1rem;
-    }
-
-    .section-header-3d p {
-        font-size: 1rem;
-        line-height: 1.6;
-        padding: 0 1rem;
-        margin-bottom: 2rem;
-    }
-
     .agents-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
         padding: 0.5rem;
     }
 
     .agent-card-3d {
-        min-height: 250px;
-        margin: 0.5rem 0;
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .card-front, .card-back {
-        padding: 1rem;
-        height: 100%;
+        height: 350px;
     }
 
     .card-front i {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .card-front h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .card-back {
-        padding: 1rem;
-    }
-
-    .card-back p {
-        font-size: 0.9rem;
-        margin-bottom: 0.8rem;
-    }
-
-    .card-back ul {
-        margin: 0.8rem 0;
-        padding-right: 1.2rem;
-    }
-
-    .card-back ul li {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .cta-button {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.9rem;
-        margin-top: 1rem;
-    }
-
-    /* تحسين أداء الحركات */
-    .agent-card-3d:hover .card-inner {
-        transform: rotateY(180deg);
-    }
-
-    /* تحسين التفاعل على الأجهزة اللمسية */
-    .agent-card-3d {
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    /* إضافة تأثير عند الضغط */
-    .agent-card-3d:active {
-        transform: scale(0.98);
-    }
-}
-
-/* تحسين إضافي للشاشات الصغيرة جداً */
-@media (max-width: 480px) {
-    .agent-card-3d {
-        min-height: 220px;
-    }
-
-    .card-front i {
-        font-size: 2rem;
-    }
-
-    .card-front h3 {
-        font-size: 1.1rem;
-    }
-
-    .card-back p {
-        font-size: 0.85rem;
+        font-size: 3rem;
     }
 
     .cta-section-3d {
-        padding: 1.5rem 1rem;
-        margin-top: 2rem;
+        margin-top: 3rem;
+        padding: 2rem 1rem;
     }
 
     .main-cta-button {
         width: 100%;
-        padding: 0.8rem;
-        font-size: 1rem;
+        max-width: 300px;
     }
 }
 
-/* تحسينات الأداء */
-.card-front, .card-back {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-}
-
-/* منع التمرير الأفقي */
-.ai-agents {
-    max-width: 100vw;
-    overflow-x: hidden;
-}
-
-/* ...existing code... */
-
-/* تحسينات جذرية لقسم وكلاء الذكاء الاصطناعي */
-.ai-agents {
-    min-height: auto !important;
-    padding: 2rem 0;
-    background: linear-gradient(135deg, #1a1a3c 0%, #0d1b3f 100%);
-    overflow: hidden;
-}
-
-.agents-container {
-    padding: 1rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.agents-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-}
-
-.agent-card-3d {
-    height: 300px;
-    margin-bottom: 1rem;
-    perspective: 1000px;
-}
-
-/* تحسين العرض على الأجهزة المحمولة */
-@media (max-width: 768px) {
-    .ai-agents {
-        padding: 1rem 0;
-    }
-    
-    .agents-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .agent-card-3d {
-        height: auto;
-        min-height: 250px;
-        margin: 0.5rem 0;
-    }
-    
-    .card-inner {
-        min-height: 250px;
-    }
-
-    .card-front, .card-back {
-        height: 100%;
-        min-height: 250px;
-        padding: 1rem;
-    }
-    
-    .section-header-3d {
-        padding: 1rem;
-        margin-bottom: 1rem;
-    }
-    
-    .section-header-3d h2 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .section-header-3d p {
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-    }
-
-    /* إصلاح تراكب البطاقات */
-    .card-front, .card-back {
-        position: absolute;
-        width: 100%;
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-    }
-    
-    /* تحسين أداء الحركة */
-    .card-inner {
-        transform-style: preserve-3d;
-        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-}
-
-/* تحسينات إضافية للشاشات الصغيرة جداً */
 @media (max-width: 480px) {
+    .ai-agents {
+        padding: 3rem 0;
+    }
+
     .agent-card-3d {
-        min-height: 220px;
+        height: 300px;
     }
-    
-    .card-inner,
-    .card-front,
-    .card-back {
-        min-height: 220px;
+
+    .card-front i {
+        font-size: 2.5rem;
     }
-    
-    .cta-section-3d {
-        margin-top: 1rem;
-        padding: 1rem;
+
+    .card-back ul li {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
     }
 }
 
-/* تحسين الأداء */
-.card-front, .card-back {
-    backface-visibility: hidden;
+/* Animation for cards */
+@keyframes cardHover {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.agent-card-3d:hover {
+    animation: cardHover 2s ease infinite;
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .agent-card-3d:hover .card-inner {
+        transform: none;
+    }
+    
+    .card-inner.touched {
+        transform: rotateY(180deg);
+    }
+    
+    .agent-card-3d:hover {
+        animation: none;
+    }
+}
+
+/* Performance Optimizations */
+.card-front,
+.card-back {
+    will-change: transform;
     -webkit-backface-visibility: hidden;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    backface-visibility: hidden;
 }
 
 /* ...existing code... */
