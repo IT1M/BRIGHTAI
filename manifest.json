@@ -1,0 +1,21 @@
+{
+  "name": "Bright AI - حلول الذكاء الاصطناعي",
+  "short_name": "Bright AI",
+  "description": "خدمات الذكاء الاصطناعي المتكاملة في السعودية",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6759ff",
+  "icons": [
+    {
+      "src": "images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
