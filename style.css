@@ -1870,3 +1870,168 @@ img {
 .service-item {
     will-change: transform;
 }
+/* ...existing code... */
+
+/* تحسينات قسم وكلاء الذكاء الاصطناعي */
+.ai-agents {
+    padding: 3rem 1rem;
+    min-height: auto;
+    overflow: hidden;
+    max-width: 100vw;
+}
+
+.agents-container {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.agents-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.agent-card-3d {
+    height: auto;
+    min-height: 280px;
+    margin-bottom: 1rem;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* تحسين العرض على الأجهزة المحمولة */
+@media (max-width: 768px) {
+    .section-header-3d h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+    }
+
+    .section-header-3d p {
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .agents-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    .agent-card-3d {
+        min-height: 250px;
+        margin: 0.5rem 0;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .card-front, .card-back {
+        padding: 1rem;
+        height: 100%;
+    }
+
+    .card-front i {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-front h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-back {
+        padding: 1rem;
+    }
+
+    .card-back p {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .card-back ul {
+        margin: 0.8rem 0;
+        padding-right: 1.2rem;
+    }
+
+    .card-back ul li {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
+
+    /* تحسين أداء الحركات */
+    .agent-card-3d:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+
+    /* تحسين التفاعل على الأجهزة اللمسية */
+    .agent-card-3d {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* إضافة تأثير عند الضغط */
+    .agent-card-3d:active {
+        transform: scale(0.98);
+    }
+}
+
+/* تحسين إضافي للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .agent-card-3d {
+        min-height: 220px;
+    }
+
+    .card-front i {
+        font-size: 2rem;
+    }
+
+    .card-front h3 {
+        font-size: 1.1rem;
+    }
+
+    .card-back p {
+        font-size: 0.85rem;
+    }
+
+    .cta-section-3d {
+        padding: 1.5rem 1rem;
+        margin-top: 2rem;
+    }
+
+    .main-cta-button {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+}
+
+/* تحسينات الأداء */
+.card-front, .card-back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+/* منع التمرير الأفقي */
+.ai-agents {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
