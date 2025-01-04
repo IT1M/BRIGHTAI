@@ -87,6 +87,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Adding event listener for "cta-button" elements
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://wa.me/966501120781?text=اكتب%20لنا%20بيانات%20الوكيل%20اللذي%20تريده', '_blank');
+        });
+    });
+
     // تفاعلات البانر الرئيسي (Hero Section)
     const heroSection = document.getElementById('hero');
     const heroContent = document.querySelector('.hero-content');
