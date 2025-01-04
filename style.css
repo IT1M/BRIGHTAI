@@ -1556,6 +1556,24 @@ h1 {
     perspective: 1000px;
 }
 
+@media (max-width: 768px) {
+    .agent-card-3d {
+        height: 350px;
+    }
+    .card-back {
+        text-align: center;
+    }
+    .card-front h3 {
+        font-size: 1.2rem;
+    }
+    .card-back p {
+        font-size: 0.9rem;
+    }
+    .card-back ul li {
+        font-size: 0.9rem;
+    }
+}
+
 .card-inner {
     position: relative;
     width: 100%;
