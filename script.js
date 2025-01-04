@@ -188,6 +188,56 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     animate();
+
+    // تحسين تحميل الصور
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
+    }
+
+    // تحسين الأداء على الأجهزة المحمولة
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        // تعطيل بعض الأنيميشن على الموبايل
+        document.querySelectorAll('.animate').forEach(el => {
+            el.style.animation = 'none';
+        });
+        
+        // تقليل عدد الجزيئات
+        if (typeof particleCount !== 'undefined') {
+            particleCount = Math.floor(particleCount / 2);
+        }
+    }
+
+    // تحسين التفاعل مع القائمة على الموبايل
+    const menuBtn = document.querySelector('.menu-btn');
+    const navbar = document.querySelector('.navbar');
+    
+    if (menuBtn && navbar) {
+        menuBtn.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target) && !menuBtn.contains(e.target)) {
+                navbar.classList.remove('active');
+            }
+        });
+    }
 });
 
 
