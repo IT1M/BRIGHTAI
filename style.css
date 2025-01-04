@@ -1489,3 +1489,60 @@ h1 {
 }
 
 /* ...existing code... */
+
+/* AI Agents Section Styles */
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.agent-card-3d {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.agent-card-3d:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.agent-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    transform: translateZ(30px);
+}
+
+.agent-card-3d h3 {
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    transform: translateZ(20px);
+}
+
+.agent-card-3d p {
+    color: var(--secondary-color);
+    line-height: 1.6;
+    transform: translateZ(10px);
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: var(--secondary-color);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* ...existing code... */
