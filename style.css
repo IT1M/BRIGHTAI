@@ -1711,3 +1711,162 @@ h1 {
 }
 
 /* ...existing code... */
+
+/* تحسينات للأجهزة المحمولة */
+@media (max-width: 768px) {
+    /* تحسين قسم البطاقات */
+    .agents-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .agent-card-3d {
+        height: auto;
+        min-height: 300px;
+        margin-bottom: 1rem;
+    }
+
+    /* تحسين المحتوى النصي */
+    .banner3d-text h2 {
+        font-size: 2rem;
+    }
+
+    .banner3d-text p {
+        font-size: 1.1rem;
+    }
+
+    /* تحسين الأقسام */
+    .section-header-3d h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-header-3d p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* تحسين البطاقات */
+    .card-front, .card-back {
+        padding: 1rem;
+    }
+
+    .card-front i {
+        font-size: 2.5rem;
+    }
+
+    .card-back p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-back ul {
+        margin: 0.5rem 0;
+    }
+
+    .card-back ul li {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+
+    /* تحسين الأزرار */
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    /* تحسين التباعد */
+    .container {
+        padding: 1rem;
+    }
+
+    .services-section {
+        padding: 2rem 0;
+    }
+
+    /* تحسين عرض المحتوى */
+    .service-item {
+        min-height: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    /* تصحيح مشكلة الارتفاع */
+    .banner3d {
+        min-height: auto;
+        padding: 4rem 0;
+    }
+
+    .banner3d-content {
+        min-height: auto;
+    }
+
+    /* تحسين القائمة */
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .navbar li {
+        margin: 0.3rem 0;
+    }
+
+    /* تحسين الأقسام المتحركة */
+    .tech-particles {
+        display: none; /* إيقاف الجزيئات على الموبايل لتحسين الأداء */
+    }
+
+    /* تحسين النموذج */
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.5rem;
+    }
+}
+
+/* تحسينات إضافية للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .banner3d-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .banner3d-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .agent-card-3d {
+        min-height: 250px;
+    }
+}
+
+/* تحسين أداء الموقع */
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* تحسين التحميل التدريجي للصور */
+img {
+    loading: lazy;
+}
+
+/* تحسين الانتقالات */
+.banner3d-content,
+.agent-card-3d,
+.service-item {
+    will-change: transform;
+}
