@@ -1507,7 +1507,7 @@ h1 {
     background: white;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(233, 232, 232, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     position: relative;
