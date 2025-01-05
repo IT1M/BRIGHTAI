@@ -155,6 +155,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     <header>
         <nav>
+            <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
             <ul class="navbar">
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="consultation.html">استشارات الذكاء الاصطناعي</a></li>
@@ -1205,6 +1206,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 </section>
+
+<script>
+    function toggleNavbar() {
+        document.querySelector('.navbar').classList.toggle('active');
+    }
+</script>
 
 <script src="script.js"></script>
 </body>
