@@ -104,7 +104,7 @@ header {
         right: -100%;
         width: 80%;
         height: 100vh;
-        background: var(--background-color);
+        background: white; /* Change background to white */
         transition: 0.3s;
         z-index: 1000;
         overflow-y: auto;
@@ -117,6 +117,11 @@ header {
     .navbar li a {
         padding: 0.5rem 1rem; /* Reduce padding */
         text-align: center; /* Center text */
+        color: var(--dark-gray); /* Ensure text color is dark */
+    }
+
+    .navbar-toggle {
+        display: block;
     }
 
     .service-card,
@@ -1573,7 +1578,7 @@ h1 {
         right: -100%;
         width: 80%;
         height: 100vh;
-        background: var(--background-color);
+        background: white; /* Change background to white */
         transition: right 0.3s ease;
         z-index: 1000;
         overflow-y: auto;
@@ -1586,6 +1591,7 @@ h1 {
     .navbar li a {
         padding: 0.5rem 1rem;
         text-align: center;
+        color: var(--dark-gray); /* Ensure text color is dark */
     }
 
     .navbar-toggle {
