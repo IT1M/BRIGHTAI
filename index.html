@@ -357,33 +357,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 </style>
 
-<section class="banner3d">
-    <div class="tech-particles" id="tech-particles"></div>
-    <img src="https://www2.0zz0.com/2024/12/23/15/152121425.png" alt="Bright AI Logo" class="logo">
-    <canvas id="animated-bg-banner"></canvas>
-    <div class="container">
-        <div class="banner3d-content">
-            <div class="banner3d-text">
-                <h2>حلول الذكاء الاصطناعي المتكاملة في السعودية</h2>
-                <p>نقدم حلولاً تقنية متقدمة تجمع بين الابتكار والأداء المتميز</p>
-                <div class="banner3d-buttons">
-                    <a href="#services" class="button">
-                        <i class="fas fa-microchip"></i>
-                        استكشف خدماتنا
-                    </a>
-                    <a href="#ai-contact-section" class="button">
-                        <i class="fas fa-network-wired"></i>
-                        تواصل معنا
-                    </a>
-                </div>
-            </div>
-            <div class="banner3d-visual">
-                <div class="tech-cube"></div>
-                <div class="tech-line"></div>
-            </div>
+<div class="banner">
+    <div class="animated-bg" id="animatedBg"></div>
+    <img src="https://www2.0zz0.com/2025/01/08/19/506758202.png" alt="شعار الشركة" class="logo">
+    <div class="content">
+        <h1>حلول الذكاء الاصطناعي المتكاملة في السعودية</h1>
+        <p>نقدم حلولاً تقنية متقدمة تجمع بين الابتكار والأداء المتميز.</p>
+        <div class="buttons">
+            <a href="mailto:yazeed1job@gmail.com" class="btn btn-email">
+                <i class="fas fa-envelope"></i>
+                تواصل عبر البريد
+            </a>
+            <a href="https://wa.me/966501120781" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                تواصل عبر واتساب
+            </a>
         </div>
     </div>
-</section>
+</div>
+
+<script>
+    function createCircles() {
+        const bg = document.getElementById('animatedBg');
+        for (let i = 0; i < 15; i++) {
+            const circle = document.createElement('div');
+            circle.className = 'circle';
+            const size = Math.random() * 100 + 50;
+            circle.style.width = size + 'px';
+            circle.style.height = size + 'px';
+            circle.style.left = Math.random() * 100 + '%';
+            circle.style.top = Math.random() * 100 + '%';
+            circle.style.animationDelay = Math.random() * 5 + 's';
+            bg.appendChild(circle);
+        }
+    }
+
+    createCircles();
+</script>
     <section id="services-section" class="services-section">
         <div class="container">
             <h1>خدمات الذكاء الاصطناعي المبتكرة</h1>
