@@ -133,15 +133,29 @@ header {
         aspect-ratio: 3/4;
     }
 
-    body {
-        font-size: var(--text-scale-ratio);
-        line-height: 1.6;
-    }
+body {
+    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #000235 0%, #1e0057 100%);
+    color: #333;
+    line-height: 1.6;
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
 
-    h1, h2, h3 {
-        font-size: var(--heading-scale);
-        line-height: 1.3;
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
     }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
     section {
         padding: clamp(2rem, 5vw, 4rem) 0;
@@ -619,7 +633,7 @@ footer {
     .service-modal .modal-content ul {
     padding-right: 1rem;
     list-style-type: disc;
-    color: var(--secondary-color);
+    color: var (--secondary-color);
     }
     
     .service-modal .modal-content li {
@@ -1395,7 +1409,7 @@ h1 {
     }
 
     @keyframes floatAnimation {
-        0%, 100% { transform: translateY(0) rotateY(0); }
+        0%, 100% { transform: translate(0) rotateY(0); }
         50% { transform: translateY(-20px) rotateY(180deg); }
     }
 
@@ -1616,6 +1630,124 @@ h1 {
 
     .navbar-toggle {
         display: block;
+    }
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(45deg, #1a1a1a, #2d1f4d);
+    border-radius: 20px;
+    padding: 40px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 20%, #000 70%);
+    opacity: 0.7;
+}
+
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(128, 0, 255, 0.1);
+    animation: float 8s infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+.banner .content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: right;
+    margin-top: 40px;
+}
+
+.banner h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(128, 0, 255, 0.5);
+}
+
+.banner p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.banner .buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.banner .btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.banner .btn-email {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+}
+
+.banner .btn-whatsapp {
+    background: linear-gradient(45deg, #25d366, #128C7E);
+}
+
+.banner .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: auto;
+        padding: 20px;
+    }
+
+    .banner h1 {
+        font-size: 1.8em;
+    }
+
+    .banner p {
+        font-size: 1em;
+    }
+
+    .banner .buttons {
+        flex-direction: column;
     }
 }
 
