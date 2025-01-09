@@ -1761,11 +1761,12 @@ h1 {
     margin: 0 auto;
     padding: 20px;
     border-radius: 15px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
     transform-style: preserve-3d;
     perspective: 1000px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .newsletter-form {
@@ -1779,6 +1780,7 @@ h1 {
     margin-bottom: 30px;
     font-size: 2em;
     transform: translateZ(50px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .newsletter-form .input-box {
@@ -1790,13 +1792,19 @@ h1 {
 .newsletter-form .input-box input {
     width: 100%;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     outline: none;
     color: #fff;
     font-size: 1em;
     border-radius: 10px;
     transform: translateZ(20px);
+    transition: all 0.3s ease;
+}
+
+.newsletter-form .input-box input:focus {
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .newsletter-form .input-box label {
@@ -1813,20 +1821,21 @@ h1 {
     width: 100%;
     padding: 15px;
     background: #fff;
-    color: #2c3e50;
+    color: #000;
     border: none;
     border-radius: 10px;
     font-size: 1.1em;
     font-weight: bold;
     cursor: pointer;
     transform: translateZ(40px);
-    transition: 0.5s;
+    transition: all 0.3s ease;
 }
 
 .newsletter-form button:hover {
-    background: #3498db;
+    background: #333;
     color: #fff;
     transform: translateZ(60px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .newsletter-form .loading {
@@ -1834,6 +1843,21 @@ h1 {
     text-align: center;
     color: #fff;
     margin-top: 10px;
+}
+
+#newsletter-subscription {
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    position: relative;
+    overflow: hidden;
+}
+
+#newsletter-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 /* ...existing code... */
