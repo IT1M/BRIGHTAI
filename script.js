@@ -238,6 +238,48 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // Initialize EmailJS
+    (function() {
+        emailjs.init("6IrzpNLO_7S2dD9sE");
+    })();
+
+    // Add 3D effect to newsletter container
+    document.addEventListener('mousemove', function(e) {
+        const container = document.querySelector('.newsletter-container');
+        if (!container) return;
+        
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = container.offsetWidth / 2;
+        const centerY = container.offsetHeight / 2;
+        
+        const rotateX = (y - centerY) / 20;
+        const rotateY = -(x - centerX) / 20;
+        
+        container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    // Handle form submission
+    document.getElementById('subscribeForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const loading = document.getElementById('loading');
+        if (loading) loading.style.display = 'block';
+        
+        emailjs.sendForm('service_9t12lul', 'template_huc2yqy', this)
+            .then(function() {
+                if (loading) loading.style.display = 'none';
+                alert('تم الاشتراك بنجاح!');
+                e.target.reset();
+            }, function(error) {
+                if (loading) loading.style.display = 'none';
+                alert('حدث خطأ في الإرسال');
+                console.log(error);
+            });
+    });
 });
 
 
