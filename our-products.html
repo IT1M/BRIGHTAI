@@ -37,6 +37,10 @@
 <header>
   <h1>منتجاتنا وخدماتنا المبتكرة</h1>
   <p>اختر الاشتراك المناسب لك واستفد من حلول تحليل البيانات والأتمتة لتحقيق النمو</p>
+  <div class="cart-icon">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count">0</span>
+  </div>
 </header>
         <nav>
             <ul class="navbar">
@@ -462,6 +466,19 @@
        <p> <a href="https://wa.me/966501120781" target="_blank" title="Whatsapp"><i class="fab fa-whatsapp"></i>  </a></p>
    </div>
 </footer>
+<div class="cart-modal" id="cartModal">
+    <div class="modal-content">
+        <span class="close-button" id="closeCartModal">×</span>
+        <h2>سلة المشتريات</h2>
+        <div class="cart-items">
+            <!-- ستضاف المنتجات هنا ديناميكياً -->
+        </div>
+        <div class="cart-summary">
+            <p>المجموع: <span class="cart-total">0</span> ر.س</p>
+            <button class="checkout-button">إتمام الشراء</button>
+        </div>
+    </div>
+</div>
 <script src="our-products.js"></script>
 </body>
 </html>
