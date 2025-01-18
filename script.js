@@ -282,6 +282,58 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Use requestIdleCallback for non-critical operations
+const deferredInit = () => {
+    // Move non-critical initializations here
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+            initializeAnimations();
+            initializeLazyLoading();
+        });
+    } else {
+        setTimeout(() => {
+            initializeAnimations();
+            initializeLazyLoading();
+        }, 1);
+    }
+};
+
+// Optimize event listeners
+const debounce = (func, wait) => {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
+
+// Optimize scroll handlers
+const optimizedScroll = debounce(() => {
+    // Existing scroll handling code
+}, 16);
+
+window.addEventListener('scroll', optimizedScroll, { passive: true });
+
+// Optimize animations with requestAnimationFrame
+const animate = () => {
+    // Existing animation code
+    requestAnimationFrame(animate);
+};
+
+// Initialize performance optimizations
+document.addEventListener('DOMContentLoaded', () => {
+    // Critical initializations
+    
+    // Defer non-critical operations
+    deferredInit();
+    
+    // Start optimized animations
+    requestAnimationFrame(animate);
+});
 
 window.addEventListener('load', function () {
     // Array of canvas IDs
