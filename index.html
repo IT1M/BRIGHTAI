@@ -147,6 +147,23 @@ crossorigin="anonymous"></script>
       }
     }
     </script>
+    
+    <!-- Performance optimizations -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Add async to non-critical scripts -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX1R7HM1ZD"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6941824700617912"></script>
+    
+    <!-- Add defer to script.js -->
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -743,7 +760,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
                 <div style="text-align: center;">
                     <i class="fas fa-lightbulb fa-3x" style="color: #ff9800; margin-bottom: 20px;"></i>
-                    <p style="font-size: 1.1em; color: #333; line-height: 1.6;">
+                    <p style="font-size: 1.1em; color: #333; line-height: 1.6;"></p>
                         احصل على استشارات الذكاء الاصطناعي المتخصصة لمساعدتك في تحديد الفرص وتطبيق حلول الذكاء الاصطناعي المناسبة لعملك. فريقنا من الخبراء يقدم لك الدعم والإرشاد لتحقيق أهدافك. هذا هو العام والنهج الذي نتبعه في حل المشكلات.
                     </p>
                     <a href="consultation.html" class="button" style="margin-top: 20px;">
@@ -840,7 +857,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                            <option value="other">خدمة أخرى</option>
                     </select>
                 </div>
-                 <div class="form-group">
+                 <div class="form-group"></div>
                     <label for="preferredDate">الوقت المفضل للاستشارة</label>
                     <input type="datetime-local" id="preferredDate" name="preferredDate" required>
                 </div>
@@ -883,7 +900,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h3>+1000</h3>
                 <p>عميل راضٍ</p>
             </div>
-            <div class="stat-item">
+            <div class="stat-item"></div>
                 <i class="fas fa-project-diagram icon"></i>
                 <h3>+500</h3>
                 <p>مشروع مكتمل</p>
@@ -1073,7 +1090,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </footer>
     <div class="modal" id="aboutModal">
-        <div class="modal-content">
+        <div class="modal-content"></div>
             <span class="close-modal">×</span>
             <div class="about-modal-header">
                 <i class="fas fa-info-circle"></i>
@@ -1246,6 +1263,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 </script>
 
-<script src="script.js"></script>
+<script defer src="script.js"></script>
 </body>
 </html>
