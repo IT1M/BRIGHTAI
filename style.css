@@ -12,6 +12,7 @@
     --container-padding: clamp(1rem, 5vw, 2rem);
     --text-scale-ratio: clamp(1rem, 2vw, 1.2rem);
     --heading-scale: clamp(1.5rem, 4vw, 2.5rem);
+    content-visibility: auto;
 }
 html {
     scroll-behavior: smooth;
@@ -1858,6 +1859,28 @@ h1 {
     width: 100%;
     height: 100%;
     z-index: 1;
+}
+
+/* Content delivery optimizations */
+:root {
+    /* ...existing variables... */
+    content-visibility: auto;
+}
+
+/* Use hardware acceleration where beneficial */
+.animated-element {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* ...existing code... */
